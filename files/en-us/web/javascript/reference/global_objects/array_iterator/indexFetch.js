@@ -12,7 +12,9 @@ if(!globalThis['&fetch']){
   objDefProp(globalThis,"&fetch",fetch);
   globalThis.fetch = function fetch(url){
     if(~String(arguments[0]).search(/index\.json($|\?.*|#.*)/i)){
-      arguments[0] = `${document.querySelector('link[hreflang="en"]')?.getAttribute?.('href')}/index.json`;
+      url = new URL(`${document.querySelector('link[hreflang="en"]')?.getAttribute?.('href')}/index.json`);
+      url.host = location.host;
+      arguments[0] = url;
     }
     return globalThis['&fetch'].call(this,...arguments);
   }
