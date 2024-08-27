@@ -1,5 +1,6 @@
 .top-banner,
-.auth-container
+.auth-container,
+a[rel*="sponsored"]
 {
   display:none !important;
   visibility:hidden !important;
