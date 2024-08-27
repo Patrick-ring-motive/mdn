@@ -1,6 +1,8 @@
 .top-banner,
 .auth-container,
-a[rel*="sponsored"]
+a[rel*="sponsored"],
+section:has(a[rel*="sponsored"]),
+a[href*="advertising"]
 {
   display:none !important;
   visibility:hidden !important;
