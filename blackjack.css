@@ -1,4 +1,6 @@
-.auth-container{
+.top-banner,
+.auth-container
+{
   display:none !important;
   visibility:hidden !important;
 }
