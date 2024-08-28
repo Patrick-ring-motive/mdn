@@ -1,10 +1,10 @@
 void async function ArrayIterators(){
-  document.title = document.title.replace(/^Iterator/,'Array Iterator');
+  if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
   globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
   swapTextBack('Iterator', 'Array Iterator');
   await DOMInteractive();
   swapTextBack('Iterator', 'Array Iterator');
-  document.title = document.title.replace(/^Iterator/,'Array Iterator');
+  if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
   console.log(document.readyState);
   await DOMComplete();
   console.log('DOMComplete');
@@ -19,7 +19,7 @@ void async function ArrayIterators(){
   });
   declare(()=>{
     queryApplyAll('article>div.section-content:not([written])',el=>{
-      document.title = document.title.replace(/^Iterator/,'Array Iterator');
+      if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
       el.setAttribute('written',true);
       swapTextBack('Iterator', 'Array Iterator');
       el.innerHTML = content;
