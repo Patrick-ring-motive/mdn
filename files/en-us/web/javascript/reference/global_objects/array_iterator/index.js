@@ -11,8 +11,8 @@ void async function ArrayIterators(){
   select('article>div.section-content').innerHTML=content;
   declare(()=>{
     queryApplyAll('article>div.section-content:not(written)',el=>{
-      el.innerHTML = content;
       el.setAttribute('written',true);
+      el.innerHTML = content;
     });
   });
 }?.();
