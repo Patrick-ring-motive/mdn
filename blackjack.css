@@ -2,7 +2,9 @@
 .auth-container,
 a[rel*="sponsored"],
 section:has(a[rel*="sponsored"]),
-a[href*="advertising"]
+a[href*="advertising"],
+h1:has(a[href="https://patrick-ring-motive.github.io/mdn/"]),
+a[href="https://patrick-ring-motive.github.io/mdn/"]
 {
   display:none !important;
   visibility:hidden !important;
