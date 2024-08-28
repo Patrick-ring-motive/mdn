@@ -3,12 +3,15 @@ void async function ArrayIterators(){
   swapTextBack('Iterator', 'Array Iterator');
   await DOMInteractive();
   swapTextBack('Iterator', 'Array Iterator');
-
-
+  await DOMComplete();
+  swapTextBack('Iterator', 'Array Iterator');
   const resources = Q(()=>JSON.parse(select('script[type="resources"]').innerHTML))??[];
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1]));
   select('article>div.section-content').innerHTML=content;
-  
-  await DOMComplete();
-  swapTextBack('Iterator', 'Array Iterator');
+  declare(()=>{
+    queryApplyAll('article>div.section-content:not(written)',el=>{
+      el.innerHTML = content;
+      el.setAttribute('written',true);
+    });
+  });
 }?.();
