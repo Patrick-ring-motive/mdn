@@ -31,6 +31,9 @@ void async function ArrayIterators(){
       filter: invert(1) hue-rotate(180deg);
       background-color:rgb(200,200,225) !important;
     }
+    .dark .language-js{
+      background-color:rgb(200,200,225) !important;
+    }
     span.token.operator{
       background-color:rgba(0,0,0,0) !important;
     }
