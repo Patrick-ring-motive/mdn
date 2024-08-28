@@ -5,7 +5,7 @@ void async function ArrayIterators(){
   await DOMInteractive();
   swapTextBack('Iterator', 'Array Iterator');
   document.title = document.title.replace('Iterator','Array Iterator');
-  console.log(document.readystate);
+  console.log(document.readyState);
   await DOMComplete();
   console.log('DOMComplete');
   swapTextBack('Iterator', 'Array Iterator');
