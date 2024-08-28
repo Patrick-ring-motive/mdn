@@ -20,7 +20,7 @@ void async function ArrayIterators(){
         display:none !important;
         visibility:hidden !important;
     }
-    .dark div.language-js{
+    .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
     }
     </style>`;
