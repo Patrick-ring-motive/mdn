@@ -5,7 +5,9 @@ void async function ArrayIterators(){
   await DOMInteractive();
   swapTextBack('Iterator', 'Array Iterator');
   document.title = document.title.replace('Iterator','Array Iterator');
+  console.log(document.readystate);
   await DOMComplete();
+  console.log('DOMComplete');
   swapTextBack('Iterator', 'Array Iterator');
   document.title = document.title.replace('Iterator','Array Iterator');
   const resources = Q(()=>JSON.parse(select('script[type="resources"]').innerHTML))??[];
