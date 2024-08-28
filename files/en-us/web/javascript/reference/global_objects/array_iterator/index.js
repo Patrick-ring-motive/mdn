@@ -22,7 +22,11 @@ void async function ArrayIterators(){
     li.document-toc-item:has(a[href="#constructor"]),
     a[href="#constructor"],
     li.document-toc-item:has(a[href="#static_methods"]),
-    a[href="#static_methods"]
+    a[href="#static_methods"],
+    li:has(a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from"]),
+    a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from"],
+    li:has(a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"]),
+    a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"]
     {
         display:none !important;
         visibility:hidden !important;
