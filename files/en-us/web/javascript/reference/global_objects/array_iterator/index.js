@@ -38,6 +38,13 @@ void async function ArrayIterators(){
     .dark .language-js{
       background-color:rgb(200,200,225) !important;
     }
+    .dark .language-js *{
+      text-shadow:
+        1px 1px 0 #fff,
+        -1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff !important;
+    }
     span.token.operator{
       background-color:rgba(0,0,0,0) !important;
     }
