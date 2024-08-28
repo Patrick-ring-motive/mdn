@@ -16,7 +16,14 @@ void async function ArrayIterators(){
     <style>
     section[aria-labelledby="description"],
     section[aria-labelledby="iterator_helpers"],
-    section[aria-labelledby="proper_iterators"]{
+    section[aria-labelledby="proper_iterators"],
+    section[aria-labelledby="constructor"],
+    section[aria-labelledby="static_methods"],
+    li.document-toc-item:has(a[href="#constructor"]),
+    a[href="#constructor"],
+    li.document-toc-item:has(a[href="#static_methods"]),
+    a[href="#static_methods"]
+    {
         display:none !important;
         visibility:hidden !important;
     }
