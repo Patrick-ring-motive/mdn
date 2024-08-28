@@ -19,16 +19,16 @@ section[aria-labelledby="description"],
         display:none !important;
         visibility:hidden !important;
     }
+    [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
       background-color:rgb(200,200,225) !important;
     }
+    [darkish="true"] .language-js,
     .dark .language-js{
       background-color:rgb(200,200,225) !important;
     }
-    [darkish="true"] .language-js{
-      background-color:rgb(200,200,225) !important;
-    }
+    [darkish="true"] .language-js *,
     .dark .language-js *{
       text-shadow:
         1px 1px 0 rgb(220,220,250),
