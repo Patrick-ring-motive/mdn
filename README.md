@@ -1,3 +1,3 @@
-# mdn
+# tdn
 mdn with blackjack and hookers
-https://mdn.typescripts.org/
+https://developer.typescripts.org/
