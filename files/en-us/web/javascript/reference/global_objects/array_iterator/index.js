@@ -10,7 +10,7 @@ void async function ArrayIterators(){
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1]));
   select('article>div.section-content').innerHTML=content;
   declare(()=>{
-    queryApplyAll('article>div.section-content:not(written)',el=>{
+    queryApplyAll('article>div.section-content:not([written])',el=>{
       el.setAttribute('written',true);
       el.innerHTML = content;
     });
