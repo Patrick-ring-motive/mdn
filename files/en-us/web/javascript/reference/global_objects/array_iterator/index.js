@@ -14,10 +14,13 @@ void async function ArrayIterators(){
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1])) + 
     `<link  href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet"></link>
     <style>
-    section[aria-labelledby="description"]{
+    section[aria-labelledby="description"],
+    section[aria-labelledby="iterator_helpers"],
+    section[aria-labelledby="proper_iterators"]{
         display:none !important;
         visibility:hidden !important;
     }
+    
     </style>`;
   Q(()=>{
     select('article>div.section-content').innerHTML = content;
