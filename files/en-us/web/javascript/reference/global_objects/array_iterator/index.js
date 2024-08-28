@@ -20,7 +20,9 @@ void async function ArrayIterators(){
         display:none !important;
         visibility:hidden !important;
     }
-    
+    .dark div.language-js{
+      filter: invert(1) hue-rotate(180deg);
+    }
     </style>`;
   Q(()=>{
     select('article>div.section-content').innerHTML = content;
