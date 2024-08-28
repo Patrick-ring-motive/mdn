@@ -40,10 +40,10 @@ void async function ArrayIterators(){
     }
     .dark .language-js *{
       text-shadow:
-        1px 1px 0 #fff,
-        -1px 1px 0 #fff,
-        -1px -1px 0 #fff,
-        1px -1px 0 #fff !important;
+        1px 1px 0 rgb(220,220,250),
+        -1px 1px 0 rgb(220,220,250),
+        -1px -1px 0 rgb(220,220,250),
+        1px -1px 0 rgb(220,220,250) !important;
     }
     span.token.operator{
       background-color:rgba(0,0,0,0) !important;
