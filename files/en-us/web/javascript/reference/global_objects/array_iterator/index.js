@@ -28,6 +28,15 @@ void async function ArrayIterators(){
       document.body.appendChild(prism);
     });
   });
+  declare(()=>{
+    const bodyStyles = window.getComputedStyle(document.body);
+    const b = bodyStyles.getPropertyValue("background-color").replace(/[^0-9,]/g,'').split(",")
+    if(b.length == 3 && b.every(x=>x<128)){
+      document.body.updateAttribute('darkish',true);
+    }else{
+      document.body.updateAttribute('darkish',false);
+    }
+  });
   let prism = document.createElement('script');
   prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
   document.body.appendChild(prism);
