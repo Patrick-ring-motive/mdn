@@ -29,6 +29,10 @@ void async function ArrayIterators(){
     }
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
+      background-color:rgb(200,200,225) !important;
+    }
+    span.token.operator{
+      background-color:rgba(0,0,0,0) !important;
     }
     </style>`;
   Q(()=>{
