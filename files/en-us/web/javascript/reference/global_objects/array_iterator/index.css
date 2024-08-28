@@ -26,6 +26,9 @@ section[aria-labelledby="description"],
     .dark .language-js{
       background-color:rgb(200,200,225) !important;
     }
+    [darkish="true"] .language-js{
+      background-color:rgb(200,200,225) !important;
+    }
     .dark .language-js *{
       text-shadow:
         1px 1px 0 rgb(220,220,250),
