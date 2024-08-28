@@ -33,6 +33,9 @@ section[aria-labelledby="description"],
         -1px -1px 0 rgb(220,220,250),
         1px -1px 0 rgb(220,220,250) !important;
     }
+    .highlighter-rouge{
+      border-radius:1vmax;
+    }
     span.token.operator{
       background-color:rgba(0,0,0,0) !important;
     }
