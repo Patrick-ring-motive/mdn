@@ -19,6 +19,7 @@ void async function ArrayIterators(){
   declare(()=>{
     queryApplyAll('article>div.section-content:not([written])',el=>{
       el.setAttribute('written',true);
+      swapTextBack('Iterator', 'Array Iterator');
       el.innerHTML = content;
     });
   });
