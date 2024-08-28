@@ -36,6 +36,13 @@ void async function ArrayIterators(){
     }else{
       document.body.updateAttribute('darkish',false);
     }
+    const htmlStyles = window.getComputedStyle(page_html);
+    const h = htmlStyles.getPropertyValue("background-color").replace(/[^0-9,]/g,'').split(",")
+    if(h.length == 3 && h.every(x=>x<128)){
+      page_html.updateAttribute('darkish',true);
+    }else{
+      page_html.updateAttribute('darkish',false);
+    }
   });
   let prism = document.createElement('script');
   prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
