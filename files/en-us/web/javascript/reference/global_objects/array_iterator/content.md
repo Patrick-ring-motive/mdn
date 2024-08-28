@@ -12,9 +12,10 @@ Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#arra
 How to retrieve an `Array Iterator` from an Array-Like object with that doesn't have it's own iterator methods:
 
 ```js
-const collection = document.getElementsByTagName('*'); //an HTMLCollection containing all elements in the document
-const arrValues = [].values.call(collection); //call the array values method with collection as this
-
+/* Create an HTMLCollection containing all elements in the document */
+const collection = document.getElementsByTagName('*');
+/* call the array values method with collection as this */
+const arrValues = [].values.call(collection);
 for (const value of arrValues) {
   console.log(value);
 }
