@@ -19,15 +19,21 @@ void async function ArrayIterators(){
         visibility:hidden !important;
     }
     </style>`;
-  let prism = document.createElement('script');
-  prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
-  document.body.appendChild(prism);
-  Q(()=>(select('article>div.section-content').innerHTML = content));
+  Q(()=>{
+    select('article>div.section-content').innerHTML = content;
+    select('article>div.section-content').setAttribute('written',true);
+  });
   declare(()=>{
     queryApplyAll('article>div.section-content:not([written])',el=>{
       el.setAttribute('written',true);
       swapTextBack('Iterator', 'Array Iterator');
       el.innerHTML = content;
+      let prism = document.createElement('script');
+      prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
+      document.body.appendChild(prism);
     });
   });
+  let prism = document.createElement('script');
+  prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
+  document.body.appendChild(prism);
 }?.();
