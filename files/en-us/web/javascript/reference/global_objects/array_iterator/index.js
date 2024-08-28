@@ -12,7 +12,7 @@ void async function ArrayIterators(){
   declare(()=>{
     queryApplyAll('article>div.section-content:not([written])',el=>{
       el.setAttribute('written',true);
-      el.innerHTML = content;
+      el.innerHTML = content + `<link rel="stylesheet" href="https://patrick-ring-motive.github.io/mdn/assets/css/style.css">` ;
     });
   });
 }?.();
