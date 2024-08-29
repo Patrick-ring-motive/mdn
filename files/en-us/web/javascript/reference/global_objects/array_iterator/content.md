@@ -3,13 +3,15 @@ An **`Array Iterator`** object is an object that conforms to the [iterator proto
 
 ## Description
 
-The `Array Iterator` is returned by [`Array.prototype.values()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values), [`Array.prototype.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys), [`Array.prototype.entries()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries), [`Array.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator), [`TypedArray.prototype.values()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values), [`TypedArray.prototype.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys), [`TypedArray.prototype.entries()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries), [`TypedArray.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/Symbol.iterator), and [`arguments[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator).
+The `Array Iterator` is returned by [`Array.prototype.values()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values), [`Array.prototype.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys), [`Array.prototype.entries()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries), [`Array.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator), [`TypedArray.prototype.values()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values), [`TypedArray.prototype.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys), [`TypedArray.prototype.entries()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries), [`TypedArray.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/Symbol.iterator), and [`arguments[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator). For [`Arrays`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array),  [`[Symbol.iterator]`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator) is equivalent to [`values`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values). 
 
 Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#array-like_objects) objects such as [`NodeList`](/en-US/docs/Web/API/NodeList) return an `Array Iterator` from their respective methods `keys()`, `values()`, `entries()`, and `[Symbol.iterator]()`.
   
 > **Note:** Some Array-Like objects such as [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) do not have a reference to the `Array Iterator` object. 
 
-How to retrieve an `Array Iterator` from an Array-Like object with that doesn't have it's own iterator methods:
+## Examples
+
+### Retrieve an `Array Iterator` from Array-Like objects with no iterator methods:
 
 ```js
 /* Create an HTMLCollection containing all elements in the document */
@@ -24,3 +26,5 @@ const arrKeys = [].keys.call(collection);
 const arrEntries = [].entries.call(collection);
 const arrIter = [][Symbol.iterator].call(collection);
 ```
+
+### Generator
