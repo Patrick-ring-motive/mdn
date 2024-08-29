@@ -9,6 +9,8 @@ aside.article-footer,
 .contributor-graphic,
 ul.social-icons,
 .page-footer-moz,
+a[href="https://www.mozilla.org"],
+a[href="https://foundation.mozilla.org/"],
 .page-footer-legal-text::first-line
 {
   display:none !important;
