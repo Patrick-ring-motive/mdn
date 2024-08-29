@@ -28,7 +28,15 @@ a[aria-label="MDN homepage"]::before{
   font-size: xx-large;
   color: cadetblue;
 }
+.dark a[aria-label="MDN homepage"]::before{
+  color: #24d6bc;
+}
 
 :root{
     --text-link: cadetblue !important;
+}
+
+:root.dark,
+:rood .dark{
+  --text-link: #24d6bc !important;
 }
