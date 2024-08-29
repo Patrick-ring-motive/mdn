@@ -34,7 +34,7 @@ void async function ArrayIterators(){
                   el=>el.updateAttribute('href','https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%arrayiteratorprototype%-object');
     queryApplyAll('details code:not([nbsp])',el=>{
       el.updateAttribute('nbsp',true);
-      el.innerHTML = el.innerHTML.replace('Array Iterator','Array&nbsp;Itеrator');
+      el.innerHTML = el.innerHTML.replace('Array Iterator','Array&nbsp;Itеrator');/*Usage of Cyrillic Ye*/;
     });
   });
   let prism = document.createElement('script');
