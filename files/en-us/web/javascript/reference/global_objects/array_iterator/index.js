@@ -48,4 +48,5 @@ void async function ArrayIterators(){
   prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
   document.body.appendChild(prism);
   queryApplyAll('.highlighter-rouge:not(.language-js)',el=>el.setAttribute('class',''));
+  queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
 }?.();
