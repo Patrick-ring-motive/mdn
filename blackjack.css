@@ -29,6 +29,6 @@ a[aria-label="MDN homepage"]::before{
   color: cadetblue;
 }
 
-a:link:not(:active):not(.button){
-    color: cadetblue;
+:root{
+    --text-link: cadetblue !important;
 }
