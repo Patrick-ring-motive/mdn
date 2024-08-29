@@ -14,3 +14,13 @@ ul.social-icons,
   display:none !important;
   visibility:hidden !important;
 }
+
+.mdn-footer-logo,
+svg[id="mdn-docs-logo"]
+{
+  visibility:hidden !important;
+}
+
+a[aria-label="MDN homepage"]::before{
+  content:"TDN";
+}
