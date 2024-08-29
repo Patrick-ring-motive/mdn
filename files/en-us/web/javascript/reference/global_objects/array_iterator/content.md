@@ -37,7 +37,6 @@ Simply put:
 const range = [...Array(3).keys()];
 console.log(range);//[0,1,2]
 ```
-⠀
 
 For a generalized range:
 ```js
