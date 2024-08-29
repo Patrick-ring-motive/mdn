@@ -30,12 +30,14 @@ const arrIter = [][Symbol.iterator].call(collection);
 #### Generating a range of values
 The keys of an array are a sequence of numbers starting with 0. Using this with an iterator lets us create a range of values.
 
+⠀
+
 Simply put:
 ```js
 const range = [...Array(3).keys()];
 console.log(range);//[0,1,2]
 ```
-
+⠀
 
 For a generalized range:
 ```js
