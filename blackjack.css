@@ -4,7 +4,12 @@ a[rel*="sponsored"],
 section:has(a[rel*="sponsored"]),
 a[href*="advertising"],
 h1:has(a[href="https://patrick-ring-motive.github.io/mdn/"]),
-a[href="https://patrick-ring-motive.github.io/mdn/"]
+a[href="https://patrick-ring-motive.github.io/mdn/"],
+aside,
+.contributor-graphic,
+ul.social-icons,
+.page-footer-moz,
+.page-footer-legal-text::first-line
 {
   display:none !important;
   visibility:hidden !important;
