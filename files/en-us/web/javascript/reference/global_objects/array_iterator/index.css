@@ -19,6 +19,9 @@ section[aria-labelledby="description"],
         display:none !important;
         visibility:hidden !important;
     }
+    .language-js *{
+      font-size:var(--type-smaller-font-size);
+    }
     [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
