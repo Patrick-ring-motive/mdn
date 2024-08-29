@@ -51,7 +51,7 @@ makeRange(3,7);//[3,4,5,6,7]
 ```
 ⠀
 
-#### Advanced Usage Copy an Iterator
+#### Advanced Usage: Copy an Iterator
 Typically when iterating through values, the iterator is consumed in the process.
 
 ```js
