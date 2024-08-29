@@ -39,6 +39,8 @@ const range = [...Array(3).keys()];
 console.log(range);//[0,1,2]
 ```
 
+⠀
+
 For a generalized range:
 ```js
 const makeRange = (start,end) => {
@@ -62,6 +64,7 @@ console.log([...arrIter]);//[1,2,3]
 console.log([...arrIterCopy]);//[]
 ```
 
+⠀
 
 To get an actual copy we need to create another iterator from the source
 ```js
@@ -72,6 +75,7 @@ console.log([...arrIter]);//[1,2,3]
 console.log([...arrIterCopy]);//[1,2,3]
 ```
 
+⠀
 
 In scenarios where a reference to the original array is not available, there are methods to copy an array iterator without consuming it. 
 ```js
