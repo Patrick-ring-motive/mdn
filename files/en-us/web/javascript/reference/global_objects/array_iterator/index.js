@@ -31,7 +31,7 @@ void async function ArrayIterators(){
   declare(()=>{
     swapTextBack('%iteratorprototype%','%arrayiteratorprototype%');
     queryApplyAll('a[href="https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-%iteratorprototype%-object"]',
-                  el=>el.updateAttribute('href','https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%arrayiteratorprototype%-object');
+                  el=>el.updateAttribute('href','https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%arrayiteratorprototype%-object'));
     queryApplyAll('details code:not([nbsp])',el=>{
       el.updateAttribute('nbsp',true);
       el.innerHTML = el.innerHTML.replace('Array Iterator','Array&nbsp;Itеrator');/*Usage of Cyrillic Ye*/;
