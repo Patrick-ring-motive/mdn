@@ -25,6 +25,7 @@
     .language-js *{
       font-size:var(--type-smaller-font-size) !important;
     }
+    :root[user-agent*="mobile"i] .language-js *,
     :root[orientation="portrait"] .language-js *,
     .language-js[shrink-me="true"] *
     {
