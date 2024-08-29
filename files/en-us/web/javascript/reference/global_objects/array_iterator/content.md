@@ -36,9 +36,9 @@ const range = [...Array(3).keys()];
 console.log(range);//[0,1,2]
 ```
 
+
 For a generalized range:
 ```js
-
 const makeRange = (start,end)=>{
   const dif = end - start;
   const range = [...Array(dif+1).keys()];
