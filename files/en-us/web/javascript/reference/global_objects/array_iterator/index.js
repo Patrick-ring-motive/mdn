@@ -44,4 +44,5 @@ void async function ArrayIterators(){
   queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
   await waitExists('aside.toc .document-toc-item:has([href="#description"])');
   select('aside.toc .document-toc-item:has([href="#description"])').insertAdjacentElement("afterend",select('aside.toc .document-toc-item:has([href="#examples"])'));
+  select('section[aria-labelledby="examples"]')?.remove?.();
 }?.();
