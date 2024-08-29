@@ -28,15 +28,20 @@ a[aria-label="MDN homepage"]::before{
   font-size: xx-large;
   color: cadetblue;
 }
-.dark a[aria-label="MDN homepage"]::before{
+.dark a[aria-label="MDN homepage"]::before,
+[darkish="true"] a[aria-label="MDN homepage"]::before
+{
   color: #24d6bc;
 }
 
-:root{
+:root:not(.dark):not(:has(.dark)):not([darkish="true"]):not(:has([darkish="true"])){
     --text-link: cadetblue !important;
 }
 
 :root.dark,
-:rood .dark{
+:rood .dark,
+:root[darkish="true"],
+:rood [darkish="true"]
+{
   --text-link: #24d6bc !important;
 }
