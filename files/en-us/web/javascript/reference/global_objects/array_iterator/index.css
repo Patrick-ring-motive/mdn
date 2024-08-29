@@ -25,7 +25,9 @@
     .language-js *{
       font-size:var(--type-smaller-font-size) !important;
     }
-    :root[orientation="portrait"] .language-js *{
+    :root[orientation="portrait"] .language-js *,
+    .language-js[shrink-me="true"] *
+    {
       font-size: 1.75vw !important;
     }
     [darkish="true"] .highlighter-rouge,
