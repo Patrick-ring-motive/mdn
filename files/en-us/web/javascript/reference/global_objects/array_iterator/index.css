@@ -23,7 +23,7 @@
         visibility:hidden !important;
     }
     .language-js *{
-      font-size:var(--type-smaller-font-size);
+      font-size:var(--type-smaller-font-size) !important;
     }
     [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
