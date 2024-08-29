@@ -41,3 +41,11 @@ a[aria-label="MDN homepage"]::before{
 :root.dark{
   --text-link: #24d6bc !important;
 }
+
+:root[darkish="true"]{
+  --text-link: #24d6bc !important;
+}
+
+:root [darkish="true"]{
+  --text-link: #24d6bc !important;
+}
