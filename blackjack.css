@@ -34,14 +34,10 @@ a[aria-label="MDN homepage"]::before{
   color: #24d6bc;
 }
 
-:root:not(.dark):not(:has(.dark)):not([darkish="true"]):not(:has([darkish="true"])){
+:root:not(.dark){
     --text-link: cadetblue !important;
 }
 
-:root.dark,
-:rood .dark,
-:root[darkish="true"],
-:rood [darkish="true"]
-{
+:root.dark{
   --text-link: #24d6bc !important;
 }
