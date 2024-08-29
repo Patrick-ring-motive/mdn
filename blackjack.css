@@ -23,4 +23,12 @@ svg[id="mdn-docs-logo"]
 
 a[aria-label="MDN homepage"]::before{
   content:"TDN";
+  font-family: serif;
+  font-weight: bold;
+  font-size: xx-large;
+  color: cadetblue;
+}
+
+a:link:not(:active):not(.button){
+    color: cadetblue;
 }
