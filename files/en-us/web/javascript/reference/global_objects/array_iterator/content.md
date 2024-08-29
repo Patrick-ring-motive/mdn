@@ -41,7 +41,9 @@ For a generalized range:
 
 const makeRange = (start,end)=>{
   const dif = end - start;
-  const range = [...Array(dif).keys()].map(x=>x+start+1);
-  return range;
+  const range = [...Array(dif+1).keys()];
+  return range.map(x=>x+start);
 }
+
+makeRange(3,7);//[3,4,5,6,7]
 ```
