@@ -61,6 +61,7 @@ console.log([...arrIter]);//[1,2,3]
 console.log([...arrIterCopy]);//[]
 ```
 
+
 To get an actual copy we need to create another iterator from the source
 ```js
 const arr = [1,2,3];
@@ -69,6 +70,7 @@ const arrIterCopy = arr.values();
 console.log([...arrIter]);//[1,2,3]
 console.log([...arrIterCopy]);//[1,2,3]
 ```
+
 
 In scenarios where a reference to the original array is not available, there are methods to copy an array iterator without consuming it. 
 ```js
