@@ -1,13 +1,14 @@
-.icon-experimental{
-  display:none !important;
-  visibility:hidden !important;
-}
-section[aria-labelledby="description"],
+    .icon-experimental{
+      display:none !important;
+      visibility:hidden !important;
+    }
+    section[aria-labelledby="description"],
     section[aria-labelledby="iterator_helpers"],
     section[aria-labelledby="proper_iterators"],
     section[aria-labelledby="constructor"],
     section[aria-labelledby="static_methods"],
     section[aria-labelledby="examples"],
+    section[aria-labelledby="using_an_iterator_as_an_iterable"],
     section[aria-labelledby="see_also"],
     li.document-toc-item:has(a[href="#constructor"]),
     a[href="#constructor"],
