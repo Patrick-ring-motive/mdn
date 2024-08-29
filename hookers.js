@@ -2,6 +2,9 @@ void async function ArrayIterators(){
 
   globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
   declare(()=>{
+    if(~document.title.search(/mdn/i){
+      document.title = document.title.replace(/mdn/gi,'TDN');
+    }
     swapTextBack('MDN', 'TDN');
     swapTextBack('mdn', 'tdn');
     swapTextBack('Joshua Chen', 'John Cena');
