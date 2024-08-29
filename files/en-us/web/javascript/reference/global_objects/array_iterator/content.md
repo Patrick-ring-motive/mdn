@@ -11,7 +11,7 @@ Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#arra
 
 ## Examples
 
-### Retrieve an `Array Iterator` from Array-Like objects with no iterator methods:
+#### Retrieve an `Array Iterator` from Array-Like objects with no iterator methods
 
 ```js
 /* Create an HTMLCollection containing all elements in the document */
@@ -27,7 +27,7 @@ const arrEntries = [].entries.call(collection);
 const arrIter = [][Symbol.iterator].call(collection);
 ```
 
-### Generating a range of values
+#### Generating a range of values
 The keys of an array are a sequence of numbers starting with 0. Using this with an iterator lets us create a range of values.
 
 Simply put:
@@ -39,10 +39,10 @@ console.log(range);//[0,1,2]
 
 For a generalized range:
 ```js
-const makeRange = (start,end)=>{
+const makeRange = (start,end) => {
   const dif = end - start;
-  const range = [...Array(dif+1).keys()];
-  return range.map(x=>x+start);
+  const range = [...Array(dif + 1).keys()];
+  return range.map(x => x + start);
 }
 
 makeRange(3,7);//[3,4,5,6,7]
