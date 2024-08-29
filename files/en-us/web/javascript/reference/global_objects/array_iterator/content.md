@@ -11,8 +11,8 @@ Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#arra
 
 ## Examples
 
-#### Retrieve an `Array Iterator` from Array-Like objects with no iterator methods
-
+#### HTMLCollection Iterator
+Retrieve an `Array Iterator` from Array-Like objects with no iterator methods
 ```js
 /* Create an HTMLCollection containing all elements in the document */
 const collection = document.getElementsByTagName('*');
@@ -26,6 +26,7 @@ const arrKeys = [].keys.call(collection);
 const arrEntries = [].entries.call(collection);
 const arrIter = [][Symbol.iterator].call(collection);
 ```
+⠀
 
 #### Generating a range of values
 The keys of an array are a sequence of numbers starting with 0. Using this with an iterator lets us create a range of values.
