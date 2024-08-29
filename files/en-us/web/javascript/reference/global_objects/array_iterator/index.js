@@ -29,20 +29,10 @@ void async function ArrayIterators(){
     });
   });
   declare(()=>{
-    const bodyStyles = window.getComputedStyle(document.body);
-    const b = bodyStyles.getPropertyValue("background-color").replace(/[^0-9,]/g,'').split(",")
-    if(b.length == 3 && b.every(x=>x<128)){
-      document.body.updateAttribute('darkish',true);
-    }else{
-      document.body.updateAttribute('darkish',false);
-    }
-    const htmlStyles = window.getComputedStyle(page_html);
-    const h = htmlStyles.getPropertyValue("background-color").replace(/[^0-9,]/g,'').split(",")
-    if(h.length == 3 && h.every(x=>x<128)){
-      page_html.updateAttribute('darkish',true);
-    }else{
-      page_html.updateAttribute('darkish',false);
-    }
+    https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%arrayiteratorprototype%-object
+    swapTextBack('%iteratorprototype%','%arrayiteratorprototype%');
+    queryApplyAll('a[href="https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-%iteratorprototype%-object"]',
+                  el=>el.updateAttribute('href','https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%arrayiteratorprototype%-object');
   });
   let prism = document.createElement('script');
   prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
