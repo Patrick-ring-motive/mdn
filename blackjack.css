@@ -24,7 +24,7 @@ svg[id="mdn-docs-logo"]
 }
 
 a[aria-label="MDN homepage"]::before{
-  content:"TDN";
+  content:"tdn";
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, "Exo 2", monospace !important;
   font-weight: bold;
   font-size: xx-large;
