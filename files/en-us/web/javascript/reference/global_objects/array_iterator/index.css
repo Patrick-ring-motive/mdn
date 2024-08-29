@@ -25,6 +25,9 @@
     .language-js *{
       font-size:var(--type-smaller-font-size) !important;
     }
+    :root[orientation="portrait"] .language-js *{
+      font-size: 1.5vw !important;
+    }
     [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
