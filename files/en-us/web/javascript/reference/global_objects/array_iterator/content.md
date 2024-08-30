@@ -1,5 +1,5 @@
 
-An **`Array Iterator`** object is an object that conforms to the [iterator protocol](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol) by providing a `next()` method that returns an iterator result object. All built-in iterators inherit from the `Iterator` class. The `Iterator` class provides a [`[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Symbol.iterator) method that returns the iterator object itself, making the iterator also [iterable](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol). It also provides some helper methods for working with iterators.
+An **`Array Iterator`** object is an object that conforms to the [iterator protocol](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol) by providing a `next()` method that returns an iterator result object. All Array Iterators inherit from a hidden prototype object `ArrayIteratorPrototype` which in tern inherits from the `Iterator` class. The `Iterator` class provides a [`[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Symbol.iterator) method that returns the iterator object itself, making the iterator also [iterable](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol). It also provides some helper methods for working with iterators.
 
 ## Description
 
@@ -7,7 +7,7 @@ The `Array Iterator` is returned by [`Array.prototype.values()`](/en-US/docs/Web
 
 Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#array-like_objects) objects such as [`NodeList`](/en-US/docs/Web/API/NodeList) return an `Array Iterator` from their respective methods `keys()`, `values()`, `entries()`, and `[Symbol.iterator]()`.
   
-> **Note:** Some Array-Like objects such as [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) do not have a reference to the `Array Iterator` object. 
+> **Note:** Some Array-Like objects such as [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) do not have a reference to an `Array Iterator` object. 
 
 ## Examples
 
