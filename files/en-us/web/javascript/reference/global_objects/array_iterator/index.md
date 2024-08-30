@@ -4,6 +4,6 @@
     "https://patrick-ring-motive.github.io/mdn/files/en-us/web/javascript/reference/global_objects/array_iterator/content"
   ],
   "preplacements" : {
-    "Iterator" : "Array Iterator"
+    "<h1>Iterator</h1>" : "<h1>Array Iterator</h1>"
   }
 }
