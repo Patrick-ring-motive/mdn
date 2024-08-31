@@ -25,11 +25,12 @@
     .language-js *{
       font-size:var(--type-smaller-font-size) !important;
     }
+    :root[user-agent*="ios"i] .language-js *,
     :root[user-agent*="mobile"i] .language-js *,
     :root[orientation="portrait"] .language-js *,
     .language-js[shrink-me="true"] *
     {
-      font-size: 1.75vw !important;
+      font-size: 2vw !important;
     }
     [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
