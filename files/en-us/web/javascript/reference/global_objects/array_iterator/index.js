@@ -9,12 +9,14 @@ void async function ArrayIterators(){
   swapTitle();
   //swapTextBack('Iterator', 'Array Iterator');
   await DOMInteractive();
+  swapTitle();
   //swapTextBack('Iterator', 'Array Iterator');
   if(!~`${document.title}`.search(/Array/)){
     document.title = document.title.replace(/^Iterator/,'Array Iterator');
   }
   console.log(document.readyState);
   await DOMComplete();
+  swapTitle();
   console.log('DOMComplete');
   //swapTextBack('Iterator', 'Array Iterator');
   const resources = Q(()=>JSON.parse(select('script[type="resources"]').innerHTML))??[];
@@ -38,6 +40,7 @@ void async function ArrayIterators(){
     });
   });
   declare(()=>{
+    swapTitle();
     swapTextBack('%iteratorprototype%','%arrayiteratorprototype%');
     queryApplyAll('a[href="https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-%iteratorprototype%-object"]',
                   el=>el.updateAttribute('href','https://tc39.es/ecma262/multipage/indexed-collections.html#sec-%arrayiteratorprototype%-object'));
