@@ -1,7 +1,13 @@
 void async function ArrayIterators(){
   if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
   globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
-  swapTextBack('Iterator', 'Array Iterator');
+  const swapTitle = () => queryApplyAll('h1',el=>{
+    if(el.textContent.trim() == 'Iterator'){
+      el.textContent = 'Array Iterator';
+    }
+  });
+  swapTitle();
+  //swapTextBack('Iterator', 'Array Iterator');
   await DOMInteractive();
   swapTextBack('Iterator', 'Array Iterator');
   if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
