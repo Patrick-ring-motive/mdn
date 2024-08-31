@@ -30,7 +30,7 @@
     :root[orientation="portrait"] .language-js *,
     .language-js[shrink-me="true"] *
     {
-      font-size: 2vw !important;
+      font-size: 2vmin !important;
     }
     [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
