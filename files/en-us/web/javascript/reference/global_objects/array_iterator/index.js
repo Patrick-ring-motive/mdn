@@ -7,10 +7,8 @@ void async function ArrayIterators(){
     }
   });
   swapTitle();
-  //swapTextBack('Iterator', 'Array Iterator');
   await DOMInteractive();
   swapTitle();
-  //swapTextBack('Iterator', 'Array Iterator');
   if(!~`${document.title}`.search(/Array/)){
     document.title = document.title.replace(/^Iterator/,'Array Iterator');
   }
@@ -18,7 +16,6 @@ void async function ArrayIterators(){
   await DOMComplete();
   swapTitle();
   console.log('DOMComplete');
-  //swapTextBack('Iterator', 'Array Iterator');
   const resources = Q(()=>JSON.parse(select('script[type="resources"]').innerHTML))??[];
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1])) + 
     `<link  href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet"></link>`;
@@ -32,7 +29,6 @@ void async function ArrayIterators(){
         document.title = document.title.replace(/^Iterator/,'Array Iterator');
       }
       el.setAttribute('written',true);
-      //swapTextBack('Iterator', 'Array Iterator');
       el.innerHTML = content;
       let prism = document.createElement('script');
       prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
