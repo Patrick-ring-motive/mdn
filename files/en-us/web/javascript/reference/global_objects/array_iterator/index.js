@@ -5,7 +5,11 @@
 });
 void async function ArrayIterators(){
   if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
-  globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+  try{
+    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+  }catch{
+    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
+  }
   const swapTitle = () => queryApplyAll('h1',el=>{
     if(el.textContent.trim() == 'Iterator'){
       el.textContent = 'Array Iterator';
