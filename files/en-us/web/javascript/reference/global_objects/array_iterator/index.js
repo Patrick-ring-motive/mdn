@@ -1,3 +1,8 @@
+[...document.querySelectorAll('h1')||[]].forEach(x=>{
+  if(x?.innerText?.trim?.() == 'Iterator'){
+    x.innerText = 'Array Iterator';
+  }
+});
 void async function ArrayIterators(){
   if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
   globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
