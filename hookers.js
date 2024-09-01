@@ -1,6 +1,10 @@
 void async function ArrayIterators(){
 
-  globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+  try{
+    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+  }catch{
+    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
+  }
   declare(()=>{
     if(~document.title.search(/mdn/i)){
       document.title = document.title.replace(/mdn/gi,'TDN');
