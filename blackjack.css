@@ -50,8 +50,10 @@ a[aria-label="MDN homepage"]::before{
   --text-link: #24d6bc !important;
   --color-links: #24d6bc !important;
   --green1: #24d6bc !important;
+  --green2: #24d6bc !important;
   --green3: #24d6bc !important;
   --green4: #24d6bc !important;
+  --green5: #24d6bc !important;
 }
 
 :root[darkish="true"]{
