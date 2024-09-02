@@ -28,14 +28,26 @@ void async function LinkResolver(){
       });
     }
   });
-  declare(()=>{
-    queryApplyAll('a[href^="https://nodejs.org"i]',el => {
-      el.updateAttribute('href',String(el.getAttribute('href')).replace(/https:\/\/nodejs.org/i,"https://developer.typescripts.org"));
-    });
-  });
-  declare(()=>{
-    queryApplyAll('a[href^="https://developer.mozilla.org"i]',el => {
-      el.updateAttribute('href',String(el.getAttribute('href')).replace(/https:\/\/developer.mozilla.org/i,"https://developer.typescripts.org"));
+  [
+   "nodejs.org",
+   "developer.mozilla.org"
+  ].forEach(hostname=>{
+    declare(()=>{
+      queryApplyAll(`a[href^="https://${hostname}"i]`,el => {
+        let url = String(el.getAttribute('href'));
+        let hash = '';
+        let char = '?';
+        if(url.includes('#')){
+          hash = `#${url.split('#')[1]}`;
+          url = url.split('#')[0];
+        }
+        if(url.includes('?')){
+          char = '&';
+        }
+        url = `${url}${char}hostname=${hostname}${hash}`;
+        el.updateAttribute('href',url);
+        el.updateAttribute('href',String(url).replace(RegExp(`https://${hostname}`,"i"),"https://developer.typescripts.org"));
+      });
     });
   });
 }?.();
