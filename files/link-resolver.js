@@ -24,9 +24,14 @@ void async function LinkResolver(){
       });
     }
   });
-    declare(()=>{
-      queryApplyAll('a[href^="https://nodejs.org"i]',el => {
-        el.updateAttribute('href',String(el.getAttribute('href')).replace(/https:\/\/nodejs.org/i,"https://developer.typescripts.org"));
-      });
+  declare(()=>{
+    queryApplyAll('a[href^="https://nodejs.org"i]',el => {
+      el.updateAttribute('href',String(el.getAttribute('href')).replace(/https:\/\/nodejs.org/i,"https://developer.typescripts.org"));
+    });
+  });
+  declare(()=>{
+    queryApplyAll('a[href^="https://developer.mozilla.org"i]',el => {
+      el.updateAttribute('href',String(el.getAttribute('href')).replace(/https:\/\/developer.mozilla.org/i,"https://developer.typescripts.org"));
+    });
   });
 }?.();
