@@ -45,8 +45,6 @@ a[aria-label="MDN homepage"]::before{
 
 :root.dark,
 :root.dark-mode,
-:root.dark-mode .hljs-comment,
-:root.dark-mode[window-location*="nodejs.org"i] a:link
 {
   --text-link: #24d6bc !important;
   --color-links: #24d6bc !important;
@@ -56,6 +54,14 @@ a[aria-label="MDN homepage"]::before{
   --green4: #24d6bc !important;
   --green5: #24d6bc !important;
 }
+
+:root.dark-mode .hljs-comment,
+:root.dark-mode .hljs-quote,
+:root.dark-mode[window-location*="nodejs.org"i] a:link
+{
+  color: #24d6bc !important;
+}
+
 
 :root[darkish="true"]{
   --text-link: #24d6bc !important;
