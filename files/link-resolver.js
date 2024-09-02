@@ -20,7 +20,7 @@ void async function LinkResolver(){
           char = '&';
         }
         url = `${url}${char}hostname=${hostname}${hash}`;
-        el.updateAttrubute('href',url);
+        el.updateAttribute('href',url);
       });
     }
   });
