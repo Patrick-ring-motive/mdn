@@ -26,7 +26,7 @@ void async function LinkResolver(){
   });
     declare(()=>{
       queryApplyAll('a[href^="https://nodejs.org"]i',el => {
-        el.updateAttribute('href',el.href.replace(/https:\/\/nodejs.org/i,"https://developer.typescripts.org"));
+        el.updateAttribute('href',String(el.getAttribute('href')).replace(/https:\/\/nodejs.org/i,"https://developer.typescripts.org"));
       });
   });
 }?.();
