@@ -13,7 +13,7 @@ void async function LinkResolver(){
         let hash = '';
         let char = '?';
         if(url.includes('#')){
-          hash = `#${hash.split('#')[1]}`;
+          hash = `#${url.split('#')[1]}`;
           url = url.split('#')[0];
         }
         if(url.includes('?')){
