@@ -1,10 +1,14 @@
 void async function LinkResolver(){
-
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
+  declare(()=>{
+    queryApplyAll('a[href]:not([href^="http"i],[href^="blob"i])',el => {
+      el.updateAttribute('href',String(el.href));
+    });
+  });
   declare(()=>{
     if(~location.href.search(/hostname=/i)){
       const hostname = location.href.split(/hostname=/i)[1].split(/\?|#|&/)[0];
