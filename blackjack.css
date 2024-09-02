@@ -44,7 +44,9 @@ a[aria-label="MDN homepage"]::before{
 }
 
 :root.dark,
-:root.dark-mode{
+:root.dark-mode
+:root.dark-mode .hljs-comment
+{
   --text-link: #24d6bc !important;
   --color-links: #24d6bc !important;
   --green1: #24d6bc !important;
