@@ -8,8 +8,8 @@ void async function LinkResolver(){
   declare(()=>{
     if(~location.href.search(/hostname=/i)){
       const hostname = location.href.split(/hostname=|\?|#|&/i)[0];
-      queryApplyAll('a:not([href*="hostname="i])',el => {
-        let url = el.getAttribute('href');
+      queryApplyAll('a[href]:not([href*="hostname="i])',el => {
+        let url = String(el.getAttribute('href'));
         let hash = '';
         let char = '?';
         if(url.includes('#')){
