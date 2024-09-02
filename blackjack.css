@@ -43,7 +43,7 @@ a[aria-label="MDN homepage"]::before{
     --text-link: cadetblue !important;
 }
 
-:root.dark
+:root.dark,
 :root.dark-mode{
   --text-link: #24d6bc !important;
   --color-links: #24d6bc !important;
