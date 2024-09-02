@@ -7,7 +7,7 @@ void async function LinkResolver(){
   }
   declare(()=>{
     if(~location.href.search(/hostname=/i)){
-      const hostname = location.href.split(/hostname=|\?|#|&/i)[0];
+      const hostname = location.href.split(/hostname=|\?|#|&/i)[1];
       queryApplyAll('a[href]:not([href*="hostname="i])',el => {
         let url = String(el.getAttribute('href'));
         let hash = '';
@@ -23,5 +23,10 @@ void async function LinkResolver(){
         el.updateAttribute('href',url);
       });
     }
+  });
+    declare(()=>{
+      queryApplyAll('a[href^="https://nodejs.org"]',el => {
+        el.updateAttribute('href',el.href.replace("https://nodejs.org","https://developer.typescripts.org"));
+      });
   });
 }?.();
