@@ -47,6 +47,7 @@ a[aria-label="MDN homepage"]::before{
 :root.dark-mode{
   --text-link: #24d6bc !important;
   --green3: #24d6bc !important;
+  --green4: #24d6bc !important;
 }
 
 :root[darkish="true"]{
