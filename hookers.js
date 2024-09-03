@@ -90,7 +90,7 @@ void (async function Hookers() {
           float: "right",
         },
         attr:{
-          onclick : function onclick(){console.log(this);}
+          onclick : `(${function onclick(t){console.log(t);}})(this)`
         }
       });
       el.prepend(copy);
