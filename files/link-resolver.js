@@ -33,28 +33,28 @@ void async function LinkResolver(){
    "nodejs.org",
    "developer.mozilla.org"
   ].forEach(hostname=>{
-    declare(()=>{
-      queryApplyAll(`a[href^="https://${hostname}"i]`,el => {
+   eval(`declare(()=>{
+      queryApplyAll('a[href^="https://${hostname}"i]',el => {
         let url = String(el.getAttribute('href'));
         let hash = '';
         let char = '?';
         if(url.includes('#')){
-          hash = `#${url.split('#')[1]}`;
+          hash = \`#\${url.split('#')[1]}\`;
           url = url.split('#')[0];
         }
         if(url.includes('?')){
           char = '&';
         }
-        url = `${url}${char}hostname=${hostname}${hash}`;
+        url = '\${url}\${char}hostname=${hostname}\${hash}';
         el.updateAttribute('href',url);
         el.updateAttribute('href',String(url).replace(
-          RegExp(`https://${hostname}`,"i"),
+          RegExp('https://${hostname}',"i"),
           "https://developer.typescripts.org"
         ).replace(
-          `${hostname}&hostname=${hostname}`,
+          '${hostname}&hostname=${hostname}',
           hostname
         ));
       });
-    });
+    });`);
   });
 }?.();
