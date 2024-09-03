@@ -81,3 +81,8 @@ a[aria-label="MDN homepage"]::before{
 {
   color: orange;
 }
+
+.dark-mode .hljs-function
+{
+  color: yellow;
+}
