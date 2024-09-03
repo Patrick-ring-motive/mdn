@@ -72,3 +72,8 @@ a[aria-label="MDN homepage"]::before{
 :root [darkish="true"]{
   --text-link: #24d6bc !important;
 }
+
+.dark-mode .hljs-title.function_
+{
+  color: magenta;
+}
