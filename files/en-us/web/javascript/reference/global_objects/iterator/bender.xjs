@@ -1,3 +1,13 @@
-const li = document.createElement('li');
-li.innerHTML='&lt;a "href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
-document.querySelector('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]').appendChild(li);
+void async function ArrayIterators(){
+  if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
+  try{
+    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+  }catch{
+    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
+  }
+await DOMInteractive();
+  const li = document.createElement('li');
+  li.innerHTML='&lt;a "href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
+  select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]').appendChild(li);
+
+}?.();
