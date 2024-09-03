@@ -24,11 +24,13 @@ a[title="Go back to the home page"]{
   text-decoration:none;
 }
 
+svg[class*="nodejsLogo"i],
 .mdn-footer-logo,
 svg[id="mdn-docs-logo"]{
   visibility:hidden !important;
 }
 
+svg[class*="nodejsLogo"i]::before,
 a[title="Go back to the home page"],
 a[aria-label="MDN homepage"]::before{
   content:"tdn";
