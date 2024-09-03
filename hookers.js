@@ -92,6 +92,7 @@ void (async function Hookers() {
           padding: "0.5vmax",
           margin: "0.5vmax",
           float: "right",
+          cursor: "pointer"
         },
         attr:{
           title: 'Copy to clipboard',
