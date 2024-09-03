@@ -72,7 +72,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-title.function_{
-  color: rebeccapurple;
+  color: rgb(255, 166, 87);
 }
 
 .dark-node .hljs-title.class_{
