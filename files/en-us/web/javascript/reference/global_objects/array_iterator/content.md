@@ -7,7 +7,21 @@ The `Array Iterator` is returned by [`Array.prototype.values()`](/en-US/docs/Web
 
 Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#array-like_objects) objects such as [`NodeList`](/en-US/docs/Web/API/NodeList) return an `Array Iterator` from their respective methods `keys()`, `values()`, `entries()`, and `[Symbol.iterator]()`.
   
-> **Note:** Some Array-Like objects such as [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) do not have a reference to an `Array Iterator` object. 
+> **Note:** Some Array-Like objects such as [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) do not have a reference to an `Array Iterator` object.
+
+## Constructor
+
+_Inherits constructor from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_
+
+  Array Iterators are not instantiated via direct call of a constructor but from one of the associated [Array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) methods.
+
+## Instance properties
+
+_Also inherits instance properties from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)}_.
+
+## Instance methods
+
+_Inherits instance methods from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_.
 
 ## Examples
 
