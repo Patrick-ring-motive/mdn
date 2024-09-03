@@ -57,7 +57,6 @@ a[aria-label="MDN homepage"]::before{
   --green5: #24d6bc !important;
 }
 
-:root.dark-mode .hljs-comment,
 :root.dark-mode .hljs-quote,
 :root.dark-mode[window-location*="nodejs.org"i] a:link
 {
