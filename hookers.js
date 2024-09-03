@@ -1,4 +1,4 @@
-void (async function ArrayIterators() {
+void (async function Hookers() {
   try {
     globalThis.declare ??
       (await import(
