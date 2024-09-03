@@ -19,6 +19,10 @@ a[href="/en-US/plus"],
   visibility:hidden !important;
 }
 
+a[title="Go back to the home page"]{
+  visibility:hidden;
+}
+
 .mdn-footer-logo,
 svg[id="mdn-docs-logo"]{
   visibility:hidden !important;
