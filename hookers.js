@@ -6,6 +6,12 @@ void async function ArrayIterators(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
   declare(()=>{
+    const logoLink = select('a[title="Go back to the home page"]');
+    logoLink.updateAttribute('href','https://developer.typescripts.org?hostname=developer.mozilla.org');
+    logoLink.innerText = ' tdn ';
+    logoLink.style.display = 'block';
+  });
+  declare(()=>{
     if(~document.title.search(/mdn/i)){
       document.title = document.title.replace(/mdn/gi,'TDN');
     }
