@@ -17,7 +17,7 @@ _Inherits constructor from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Re
 
 ## Instance properties
 
-_Also inherits instance properties from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)}_.
+_Also inherits instance properties from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_.
 
 ## Instance methods
 
