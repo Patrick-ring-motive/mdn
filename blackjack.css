@@ -35,12 +35,13 @@ a[aria-label="MDN homepage"]::before{
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, "Exo 2", monospace !important;
   font-weight: bold;
   font-size: xx-large;
-  color: cadetblue;
+  color: cadetblue !important;
 }
+
 .dark-mode a[title="Go back to the home page"],
 .dark a[aria-label="MDN homepage"]::before,
 [darkish="true"] a[aria-label="MDN homepage"]::before{
-  color: #24d6bc;
+  color: #24d6bc !important;
 }
 
 :root:not(.dark){
