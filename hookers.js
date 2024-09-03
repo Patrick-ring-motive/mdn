@@ -100,7 +100,7 @@ void (async function Hookers() {
             function onclick(btn){
               try{
                 navigator.clipboard.writeText(btn?.parentElement?.innerText);
-                btn.updateAttribute('title','Copied?');
+                btn.updateAttribute('title','Copied!');
               }catch(e){
                 btn.updateAttribute('title',`Unable to Copy. ${e.message}`);
               }
