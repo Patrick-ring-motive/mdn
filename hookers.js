@@ -94,7 +94,18 @@ void (async function Hookers() {
           float: "right",
         },
         attr:{
-          onclick : `(${function onclick(t){console.log(t);}})(this)`
+          title: 'Copy to clipboard',
+          onclick : `(${
+            function onclick(btn){
+              try{
+                navigator.clipboard.writeText(btn?.parentElement?.innerText);
+                btn.updateAttribute('title','Copied?');
+              }catch(e){
+                btn.updateAttribute('title',`Unable to Copy. ${e.message}`);
+              }
+              setTimeout(()=>btn.updateAttribute('title','Copy to clipboard'),3000);
+            }
+          })(this)`
         }
       });
       el.prepend(copy);
