@@ -14,15 +14,13 @@ a[href="https://foundation.mozilla.org/"],
 .page-footer-legal-text::first-line,
 li.top-level-entry:has(a[href="/en-US/plus"]),
 a[href="/en-US/plus"],
-[id="mdn-plus-button"]
-{
+[id="mdn-plus-button"]{
   display:none !important;
   visibility:hidden !important;
 }
 
 .mdn-footer-logo,
-svg[id="mdn-docs-logo"]
-{
+svg[id="mdn-docs-logo"]{
   visibility:hidden !important;
 }
 
@@ -34,8 +32,7 @@ a[aria-label="MDN homepage"]::before{
   color: cadetblue;
 }
 .dark a[aria-label="MDN homepage"]::before,
-[darkish="true"] a[aria-label="MDN homepage"]::before
-{
+[darkish="true"] a[aria-label="MDN homepage"]::before{
   color: #24d6bc;
 }
 
@@ -46,8 +43,7 @@ a[aria-label="MDN homepage"]::before{
 :root.dark,
 :root .dark,
 :root.dark-mode,
-:root .dark-mode
-{
+:root .dark-mode{
   --text-link: #24d6bc !important;
   --color-links: #24d6bc !important;
   --green1: #24d6bc !important;
@@ -58,8 +54,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 :root.dark-mode .hljs-quote,
-:root.dark-mode[window-location*="nodejs.org"i] a:link
-{
+:root.dark-mode[window-location*="nodejs.org"i] a:link{
   color: #24d6bc !important;
 }
 
@@ -72,24 +67,24 @@ a[aria-label="MDN homepage"]::before{
   --text-link: #24d6bc !important;
 }
 
-.dark-mode .hljs-title.function_
-{
+.dark-mode .hljs-title.function_{
   color: magenta;
 }
 
-.dark-node .hljs-title.class_
-{
+.dark-node .hljs-title.class_{
   color: orange;
 }
 
-.dark-mode .hljs-function
-{
+.dark-mode .hljs-function{
   color: yellow;
 }
 
-.dark-mode .hljs-string
-{
+.dark-mode .hljs-string{
   color: #cf350d;
+}
+
+.dark-mode .hljs-variable.language_{
+  color: brown;
 }
 
 .darkmode .hljs-built_in{
