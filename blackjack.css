@@ -84,7 +84,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-variable.language_{
-  color: brown;
+  color: red;
 }
 
 .darkmode .hljs-built_in{
