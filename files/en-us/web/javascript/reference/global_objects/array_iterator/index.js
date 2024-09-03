@@ -58,6 +58,15 @@ void async function ArrayIterators(){
   });
 
   /*await waitExists('aside.toc .document-toc-item:has([href="#description"])');
-  select('aside.toc .document-toc-item:has([href$="#description"])').insertAdjacentElement("afterend",select('aside.toc .document-toc-item:has([href$="#examples"])'));
-  select('section[aria-labelledby="examples"]')?.remove?.();*/
+  select('aside.toc .document-toc-item:has([href$="#description"])').insertAdjacentElement("afterend",select('aside.toc .document-toc-item:has([href$="#examples"])'));*/
+  declare(()=>{
+    queryApplyAll(`section[aria-labelledby="constructor"],
+                   section[aria-labelledby="static_methods"],
+                   section[aria-labelledby="examples"],
+                   section[aria-labelledby="using_an_iterator_as_an_iterable"],
+                   section[aria-labelledby="see_also"],
+                   section[aria-labelledby="instance_properties"],
+                   section[aria-labelledby="instance_methods"]`,
+                  el=>el?.remove?.());
+  });
 }?.();
