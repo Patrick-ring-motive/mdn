@@ -5,7 +5,8 @@ void async function LinkResolver(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
   declare(()=>{
-    queryApplyAll('a[href]:not([href^="http"i],[href^="blob"i])',el => {
+    queryApplyAll('a[href]:not([href^="http"i],[href^="blob"i]):not([marked])',el => {
+      el.updateAttribute('marked',true);
       el.updateAttribute('href',String(el.href));
     });
   });
