@@ -12,5 +12,5 @@ void async function References(){
   const section = document.createElement('section');
   section.setAttribute("aria-labelledby","JavaScript_Backend_Runtime_Documentation");
   section.innerHTML = text;
-  document.querySelector('article')?.insertBefore?.(document.querySelector('section[aria-labelledby="documentation_for_web_developers"]'),section);
+  document.querySelector('article.main-page-content')?.insertBefore?.(document.querySelector('section[aria-labelledby="documentation_for_web_developers"]'),section);
 }?.();
