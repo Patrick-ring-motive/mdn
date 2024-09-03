@@ -73,4 +73,7 @@ void async function ArrayIterators(){
   queryApplyAll('h2',el=>{
     el.updateAttribute('aria-labelledby',el.getAttribute('id'));
   });
+
+  const inherit = select('li[class="section no-link"]');
+  inherit?.parentElement?.firstChild?.after?.(inherit);
 }?.();
