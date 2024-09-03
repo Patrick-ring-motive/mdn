@@ -30,7 +30,7 @@ svg[id="mdn-docs-logo"]{
   visibility:hidden !important;
 }
 
-svg[aria-label="Home"]::before,
+a[aria-label="Home"]::before,
 a[title="Go back to the home page"],
 a[aria-label="MDN homepage"]::before{
   content:"tdn";
