@@ -11,7 +11,7 @@ void async function ArrayIterators(){
     if(!lastLink){return;}
     lastLink?.updateAttribute?.('last-link',true);
     const li = createElement('li');
-    li.innerHTML='&lt;a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
+    li.innerHTML='&lt;a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array_Iterator"&gt;Array Iterator&lt;/a&gt;';
     lastLink?.parentElement?.parentElement?.appendChild?.(li);
   });
 }?.();
