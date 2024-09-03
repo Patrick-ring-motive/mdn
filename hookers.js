@@ -89,6 +89,9 @@ void (async function Hookers() {
           margin: "0.5vmax",
           float: "right",
         },
+        attr:{
+          onclick : function onclick(){console.log(this);}
+        }
       });
       el.prepend(copy);
     });
