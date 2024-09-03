@@ -42,6 +42,9 @@ void async function ArrayIterators(){
       el.innerHTML = el.innerHTML.replace('Array Iterator','Array&nbsp;Itеrator');/*Usage of Cyrillic Ye*/;
     });
   });
+  declare(()=>{
+    queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
+  });
   console.log(document.readyState);
   await DOMComplete();
   swapTitle();
@@ -53,7 +56,7 @@ void async function ArrayIterators(){
     select('article>div.section-content').innerHTML = content;
     select('article>div.section-content').setAttribute('written',true);
   });
-  queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
+
   /*await waitExists('aside.toc .document-toc-item:has([href="#description"])');
   select('aside.toc .document-toc-item:has([href$="#description"])').insertAdjacentElement("afterend",select('aside.toc .document-toc-item:has([href$="#examples"])'));
   select('section[aria-labelledby="examples"]')?.remove?.();*/
