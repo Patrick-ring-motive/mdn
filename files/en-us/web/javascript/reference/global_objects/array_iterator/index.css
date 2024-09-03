@@ -10,6 +10,8 @@
     section[aria-labelledby="examples"],
     section[aria-labelledby="using_an_iterator_as_an_iterable"],
     section[aria-labelledby="see_also"],
+    section[aria-labelledby="instance_properties"],
+    section[aria-labelledby="instance_methods"],
     li.document-toc-item:has(a[href="#constructor"]),
     a[href="#constructor"],
     li.document-toc-item:has(a[href="#static_methods"]),
