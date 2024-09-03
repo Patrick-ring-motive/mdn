@@ -54,10 +54,10 @@ void (async function Hookers() {
       page_html.updateAttribute("darkish", false);
     }
   });
-
+  await DOMInteractive();
   let prism = document.createElement("script");
   prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
-  document.body.appendChild(prism);
+  body().appendChild(prism);
   queryApplyAll('.highlighter-rouge:not(.language-js):not([class="0"])', (el) =>
     el.setAttribute("class", "0"),
   );
