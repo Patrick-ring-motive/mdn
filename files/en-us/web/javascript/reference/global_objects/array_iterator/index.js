@@ -13,7 +13,7 @@ void async function ArrayIterators(){
   const swapTitle = () => queryApplyAll('h1',el=>{
     if(el?.textContent?.trim?.() == 'Iterator'){
       (el??{}).textContent = 'Array Iterator';
-      (el??{}).visibility = 'visible';
+      (el?.style??{}).visibility = 'visible';
     }
   });
   swapTitle();
