@@ -54,13 +54,17 @@ void (async function Hookers() {
       page_html.updateAttribute("darkish", false);
     }
   });
-  await DOMComplete();
-  let prism = document.createElement("script");
-  prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
-  body().appendChild(prism);
-  queryApplyAll('.highlighter-rouge:not(.language-js):not([class="0"])', (el) =>
-    el.setAttribute("class", "0"),
-  );
+  declare(()=>{
+    queryApplyAll('.language-js:not([js-highlighter])',el=>{
+      el.updateAttribute('js-highlighter','js-highlighter');
+      let prism = document.createElement("script");
+      prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
+      body().appendChild(prism);
+    });
+    queryApplyAll('.highlighter-rouge:not(.language-js):not([class="0"])', (el) =>
+      el.setAttribute("class", "0"),
+    );
+  });
   declare(() => {
     queryApplyAll(
       '.highlighter-rouge:not(.language-js):not([class="0"])',
