@@ -6,7 +6,7 @@ void async function ArrayIterators(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
   await DOMInteractive();
-  declare(()=>{
+  declare(()=&gt;{
     const lastLink = select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]:not([last-link])');
     if(lastLink){return;}
     const li = createElement('li');
