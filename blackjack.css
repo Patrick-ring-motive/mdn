@@ -72,7 +72,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-title.function_{
-  color: rgb(121, 192, 255);
+  color: rgb(210, 168, 255);
 }
 
 .dark-node .hljs-title.class_{
@@ -100,7 +100,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-params{
-  color: salmon;
+  color: rgb(121, 192, 255);
 }
 
 .dark-mode .hljs-literal{
