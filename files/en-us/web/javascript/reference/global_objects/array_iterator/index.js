@@ -69,4 +69,8 @@ void async function ArrayIterators(){
                    section[aria-labelledby="instance_methods"]`,
                   el=>el?.remove?.());
   });
+
+  queryApplyAll('h2',el=>{
+    el.updateAttribute('aria-labelledby',el.getAttribute('id'));
+  });
 }?.();
