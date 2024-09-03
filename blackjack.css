@@ -36,6 +36,7 @@ a[aria-label="MDN homepage"]::before{
   font-size: xx-large;
   color: cadetblue;
 }
+.dark-mode a[title="Go back to the home page"],
 .dark a[aria-label="MDN homepage"]::before,
 [darkish="true"] a[aria-label="MDN homepage"]::before{
   color: #24d6bc;
