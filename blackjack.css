@@ -69,6 +69,41 @@ a[aria-label="MDN homepage"]::before{
   color: #24d6bc !important;
 }
 
+    .language-js *{
+      font-size:var(--type-smaller-font-size) !important;
+    }
+    :root[user-agent*="ios"i] .language-js *,
+    :root[user-agent*="mobile"i] .language-js *,
+    :root[orientation="portrait"] .language-js *,
+    .language-js[shrink-me="true"] *
+    {
+      font-size: 2vmin !important;
+    }
+    [darkish="true"] .highlighter-rouge,
+    .dark .highlighter-rouge{
+      filter: invert(1) hue-rotate(180deg);
+      background-color:rgb(200,200,225) !important;
+    }
+    [darkish="true"] .language-js,
+    .dark .language-js{
+      background-color:rgb(200,200,225) !important;
+    }
+    [darkish="true"] .language-js *,
+    .dark .language-js *{
+      text-shadow:
+        1px 1px 0 rgb(220,220,250),
+        -1px 1px 0 rgb(220,220,250),
+        -1px -1px 0 rgb(220,220,250),
+        1px -1px 0 rgb(220,220,250) !important;
+    }
+    .highlighter-rouge,
+    .highlighter-rouge>.highlight,
+    .highlighter-rouge>.highlight>.highlight{
+      border-radius:1vmin;
+    }
+    span.token.operator{
+      background-color:rgba(0,0,0,0) !important;
+    }
 
 :root[darkish="true"]{
   --text-link: #24d6bc !important;
