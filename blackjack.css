@@ -76,3 +76,8 @@ a[aria-label="MDN homepage"]::before{
 {
   color: magenta;
 }
+
+.dark-node .hljs-title.class_
+{
+  color: orange;
+}
