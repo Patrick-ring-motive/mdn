@@ -72,11 +72,11 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-title.function_{
-  color: rgb(255, 166, 87);
+  color: rgb(121, 192, 255);
 }
 
 .dark-node .hljs-title.class_{
-  color: orange;
+  color: rgb(255, 166, 87);
 }
 
 .dark-mode .hljs-function{
