@@ -86,3 +86,8 @@ a[aria-label="MDN homepage"]::before{
 {
   color: yellow;
 }
+
+.dark-mode .hljs-string
+{
+  color: #cf350d;
+}
