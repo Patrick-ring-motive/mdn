@@ -1,1 +1,3 @@
-(()=&gt;console.log('test'))();
+const li = document.createElement('li');
+li.innerHTML='&lt;a "href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
+document.querySelector('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]').appendChild(li);
