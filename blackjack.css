@@ -94,3 +94,7 @@ a[aria-label="MDN homepage"]::before{
 .dark-mode .hljs-params{
   color: salmon;
 }
+
+.dark-mode .hljs-literal{
+  color: cornflowerblue;
+}
