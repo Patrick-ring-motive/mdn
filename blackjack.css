@@ -80,8 +80,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-function{
-  color: yellow;
-}
+  color: lemonchiffon;
 
 .dark-mode .hljs-string{
   color: rgb(165, 214, 255);
