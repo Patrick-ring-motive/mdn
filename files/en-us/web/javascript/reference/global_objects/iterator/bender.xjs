@@ -12,6 +12,6 @@ void async function ArrayIterators(){
     lastLink?.updateAttribute?.('last-link',true);
     const li = createElement('li');
     li.innerHTML='&lt;a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
-    lastLink?.parentElement?.appendChild?.(li);
+    lastLink?.parentElement?.parentElement?.appendChild?.(li);
   });
 }?.();
