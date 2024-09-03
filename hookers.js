@@ -47,24 +47,24 @@ void (async function Hookers() {
     }
   });
   declare(()=>{
-    queryApplyAll(':not([window-location*="hostname=nodejs.org"]) .language-js:not([js-highlighter])',el=>{
+    queryApplyAll('html:not([window-location*="hostname=nodejs.org"]) .language-js:not([js-highlighter])',el=>{
       el.updateAttribute('js-highlighter','js-highlighter');
       let prism = document.createElement("script");
       prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
       body().appendChild(prism);
     });
-    queryApplyAll(':not([window-location*="hostname=nodejs.org"]) .highlighter-rouge:not(.language-js):not([class="0"])', (el) =>
+    queryApplyAll('html:not([window-location*="hostname=nodejs.org"]) .highlighter-rouge:not(.language-js):not([class="0"])', (el) =>
       el.setAttribute("class", "0"),
     );
   });
   declare(() => {
     queryApplyAll(
-      ':not([window-location*="hostname=nodejs.org"]) .highlighter-rouge:not(.language-js):not([class="0"])',
+      'html:not([window-location*="hostname=nodejs.org"]) .highlighter-rouge:not(.language-js):not([class="0"])',
       (el) => el.setAttribute("class", "0"),
     );
   });
   declare(() => {
-    queryApplyAll(':not([window-location*="hostname=nodejs.org"]) .language-js', (el) => {
+    queryApplyAll('html:not([window-location*="hostname=nodejs.org"]) .language-js', (el) => {
       if (el.clientWidth > window.clientWidth()) {
         el.updateAttribute("shrink-me", true);
       } else {
