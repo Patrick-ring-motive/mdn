@@ -8,7 +8,7 @@ void async function ArrayIterators(){
   await DOMInteractive();
   declare(()=&gt;{
     const lastLink = select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]:not([last-link])');
-    if(lastLink){return;}
+    if(!lastLink){return;}
     const li = createElement('li');
     li.innerHTML='&lt;a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
     lastLink?.parentElement?.appendChild?.(li);
