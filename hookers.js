@@ -1,22 +1,14 @@
 void (async function Hookers() {
   try {
-    globalThis.declare ??
-      (await import(
-        `https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`
-      ));
+    globalThis.declare ?? (await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`));
   } catch {
-    await import(
-      `https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`
-    );
+    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
   declare(() => {
     const logoLink = select('a[title="Go back to the home page"]');
-    logoLink?.updateAttribute?.(
-      "href",
-      "https://developer.typescripts.org?hostname=developer.mozilla.org",
-    );
-    (logoLink ?? {}).innerText = " tdn ";
-    (logoLink?.style ?? {}).visibility = "visible";
+    logoLink?.updateAttribute?.("href","https://developer.typescripts.org?hostname=developer.mozilla.org");
+    (logoLink??{}).innerText = " tdn ";
+    (logoLink?.style??{}).visibility = "visible";
   });
   declare(() => {
     if (~document.title.search(/mdn/i)) {
