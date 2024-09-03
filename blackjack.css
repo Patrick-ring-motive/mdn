@@ -84,7 +84,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 .dark-mode .hljs-string{
-  color: #cf350d;
+  color: rgb(165, 214, 255);
 }
 
 .dark-mode .hljs-number{
