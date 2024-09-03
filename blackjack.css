@@ -67,6 +67,10 @@ a[aria-label="MDN homepage"]::before{
   --text-link: #24d6bc !important;
 }
 
+.dark-mode .hljs-keyword{
+  color: rgb(255, 123, 114);
+}
+
 .dark-mode .hljs-title.function_{
   color: rebeccapurple;
 }
