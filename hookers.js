@@ -7,9 +7,9 @@ void async function ArrayIterators(){
   }
   declare(()=>{
     const logoLink = select('a[title="Go back to the home page"]');
-    logoLink.updateAttribute('href','https://developer.typescripts.org?hostname=developer.mozilla.org');
-    logoLink.innerText = ' tdn ';
-    logoLink.style.visibility = 'visible';
+    logoLink?.updateAttribute?.('href','https://developer.typescripts.org?hostname=developer.mozilla.org');
+    (logoLink??{}).innerText = ' tdn ';
+    (logoLink?.style??{}).visibility = 'visible';
   });
   declare(()=>{
     if(~document.title.search(/mdn/i)){
