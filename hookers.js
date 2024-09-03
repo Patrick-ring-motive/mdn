@@ -55,5 +55,21 @@ void async function ArrayIterators(){
       }
     });
   });
-  
+  declare(()=>{
+	queryApplyAll('.language-js.highlighter-rouge:not([copy-button])',el=>{
+		el.updateAttribute('copy-button','done');
+		const copy = buildElement('button',{
+								style:{
+									backgroundImage : 'url("https://raw.githubusercontent.com/Patrick-ring-motive/mdn/main/files/clippy.svg")',
+									backgroundRepeat : "no-repeat",
+									backgroundSize : "1vmax",
+									padding : "0.5vmax",
+									margin : "0.5vmax",
+									float : "right"
+								},
+								
+							});
+		el.prepend(copy);
+	});
+});
 }?.();
