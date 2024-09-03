@@ -164,3 +164,9 @@ a[aria-label="MDN homepage"]::before{
         1px -1px 0 rgb(0,0,0) !important;
   
 }
+
+[copy-button="done"]>button[title]:hover::after {
+  content:attr(title);
+  position:absolute;
+  z-index:2;
+}
