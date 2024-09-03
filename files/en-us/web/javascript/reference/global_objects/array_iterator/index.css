@@ -17,7 +17,7 @@
     li:has(a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from"]),
     a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from"],
     li:has(a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"]),
-    a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"],
+    a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"]
     {
         display:none !important;
         visibility:hidden !important;
