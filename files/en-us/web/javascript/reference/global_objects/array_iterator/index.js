@@ -55,22 +55,7 @@ void async function ArrayIterators(){
       el.innerHTML = el.innerHTML.replace('Array Iterator','Array&nbsp;Itеrator');/*Usage of Cyrillic Ye*/;
     });
   });
-  let prism = document.createElement('script');
-  prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
-  document.body.appendChild(prism);
-  queryApplyAll('.highlighter-rouge:not(.language-js):not([class="0"])',el=>el.setAttribute('class','0'));
-  declare(()=>{
-    queryApplyAll('.highlighter-rouge:not(.language-js):not([class="0"])',el=>el.setAttribute('class','0'));
-  });
-  declare(()=>{
-    queryApplyAll('.language-js',el=>{
-      if(el.clientWidth > window.clientWidth()){
-        el.updateAttribute('shrink-me',true);
-      }else{
-        el.updateAttribute('shrink-me',false);
-      }
-    });
-  });
+
   queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
   /*await waitExists('aside.toc .document-toc-item:has([href="#description"])');
   select('aside.toc .document-toc-item:has([href$="#description"])').insertAdjacentElement("afterend",select('aside.toc .document-toc-item:has([href$="#examples"])'));
