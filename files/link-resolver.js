@@ -46,7 +46,13 @@ void async function LinkResolver(){
         }
         url = `${url}${char}hostname=${hostname}${hash}`;
         el.updateAttribute('href',url);
-        el.updateAttribute('href',String(url).replace(RegExp(`https://${hostname}`,"i"),"https://developer.typescripts.org"));
+        el.updateAttribute('href',String(url).replace(
+          RegExp(`https://${hostname}`,"i"),
+          "https://developer.typescripts.org"
+        ).replace(
+          `${hostname}&hostname=${hostname}`,
+          hostname
+        ));
       });
     });
   });
