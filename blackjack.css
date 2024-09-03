@@ -83,6 +83,10 @@ a[aria-label="MDN homepage"]::before{
   color: #cf350d;
 }
 
+.dark-mode .hljs-number{
+  color: chartreuse;
+}
+
 .dark-mode .hljs-variable.language_{
   color: red;
 }
