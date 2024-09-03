@@ -6,8 +6,12 @@ void async function ArrayIterators(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
   await DOMInteractive();
-  const li = createElement('li');
-  li.innerHTML='&lt;a "href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
-  select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]').parentElement.appendChild(li);
-
+  declare(()=>{
+    const lastLink = select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]:not([last-link])');
+    if(lastLink){return;}
+    const li = createElement('li');
+    li.innerHTML='&lt;a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
+    lastLink?.parentElement?.appendChild?.(li);
+    lastLink.updateAttrubute('last-link',true);
+  });
 }?.();
