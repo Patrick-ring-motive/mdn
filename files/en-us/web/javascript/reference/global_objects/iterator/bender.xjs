@@ -8,6 +8,6 @@ void async function ArrayIterators(){
   await DOMInteractive();
   const li = createElement('li');
   li.innerHTML='&lt;a "href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"&gt;Array Iterator&lt;/a&gt;';
-  select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]').appendChild(li);
+  select('a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols"]').parentElement.appendChild(li);
 
 }?.();
