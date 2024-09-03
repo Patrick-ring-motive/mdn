@@ -106,3 +106,12 @@ a[aria-label="MDN homepage"]::before{
 .dark-mode .hljs-property{
   color: burlywood;
 }
+.dark-mode code,
+.dark-mode code *{
+  text-shadow:
+        1px 1px 0 rgb(0,0,),
+        -1px 1px 0 rgb(0,0,0),
+        -1px -1px 0 rgb(0,0,0),
+        1px -1px 0 rgb(0,0,0) !important;
+  
+}
