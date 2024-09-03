@@ -166,7 +166,7 @@ a[aria-label="MDN homepage"]::before{
 }
 
 [copy-button="done"]>button[title]:hover::after {
-  content:"attr(title)";
-  position:absolute;
-  z-index:2;
+  content: attr(title) !important;
+  position:absolute !important;
+  z-index:2 !important;
 }
