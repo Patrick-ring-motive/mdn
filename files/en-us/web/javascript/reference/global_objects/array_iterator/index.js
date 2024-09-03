@@ -76,4 +76,10 @@ void async function ArrayIterators(){
 
   const inherit = select('li[class="section no-link"]');
   inherit?.parentElement?.firstChild?.after?.(inherit);
+
+  const iter = select('em');
+  const arrIter = iter?.cloneNode?.(true);
+  (arrIter?.querySelector?.('a')??{}).href = `${arrIter?.querySelector?.('a')?.href}`.replace('Iterator','Array_Iterator');
+  (arrIter?.querySelector?.('code')??{}).textContent = `${arrIter?.querySelector?.('code')?.textContent}`.trim().replace(/^Iterator/i,'Array Iterator');
+  iter?.parentElement?.parentElement?.prepend?.(arrIter);
 }?.();
