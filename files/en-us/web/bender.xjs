@@ -8,7 +8,7 @@ void async function References(){
     }
   }
   
-  const text = await zfetchText('https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/backend-section.html');
+  const text = await zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/backend-section.html?${new Date().getTime()}`);
   const section = document.createElement('section');
   section.setAttribute("aria-labelledby","JavaScript_Backend_Runtime_Documentation");
   section.innerHTML = text;
