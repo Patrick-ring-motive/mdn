@@ -28,6 +28,7 @@ svg[id="mdn-docs-logo"]{
   visibility:hidden !important;
 }
 
+a[title="Go back to the home page"],
 a[aria-label="MDN homepage"]::before{
   content:"tdn";
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, "Exo 2", monospace !important;
