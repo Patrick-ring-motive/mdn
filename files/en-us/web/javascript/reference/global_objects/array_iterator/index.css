@@ -27,3 +27,6 @@
     div.section-content p{
         margin:unset !important;
     }
+    article.main-page-content>header>h1{
+        visibility:hidden;
+    }
