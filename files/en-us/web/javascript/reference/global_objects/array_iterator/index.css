@@ -28,7 +28,7 @@
     article.main-page-content>header>h1{
         visibility:hidden;
     }
-    em:has([href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator"]){
+    em:has(a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator"]){
         background-color: rgba(0,0,0,0) !important;
         border-color: rgba(0,0,0,0) !important;
     }
