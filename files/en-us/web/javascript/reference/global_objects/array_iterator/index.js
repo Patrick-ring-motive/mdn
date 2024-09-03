@@ -40,9 +40,6 @@ void async function ArrayIterators(){
       }
       el.setAttribute('written',true);
       el.innerHTML = content;
-      let prism = document.createElement('script');
-      prism.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js';
-      document.body.appendChild(prism);
     });
   });
   declare(()=>{
