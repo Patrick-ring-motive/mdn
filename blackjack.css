@@ -21,6 +21,7 @@ a[href="/en-US/plus"],
 
 a[title="Go back to the home page"]{
   visibility:hidden;
+  text-decoration:none;
 }
 
 .mdn-footer-logo,
