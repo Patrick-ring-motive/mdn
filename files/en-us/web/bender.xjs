@@ -10,7 +10,7 @@ void async function References(){
   
   const text = await zfetchText('url');
   const section = document.createElement('section');
-  section.setAttribute("aria-labelledby","JavaScript Backend Runtime Documentation");
+  section.setAttribute("aria-labelledby","JavaScript_Backend_Runtime_Documentation");
   section.innerHTML = text;
   document.querySelector('article')?.insertBefore?.(document.querySelector('section[aria-labelledby="documentation_for_web_developers"]'),section);
 }?.();
