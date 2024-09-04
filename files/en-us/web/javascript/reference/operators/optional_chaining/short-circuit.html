@@ -1,0 +1,12 @@
+<img>I short circuited your short circuiting.</img>
+<p>
+    It can be more performant and more teadable to force a typing part way through an optional chain.
+</p>
+<code>
+    const response = await fetch('https://typescripts.org');
+    const contentType = `${response?.headers?.get?.('content-type')}`.toLowerCase();
+</code>
+<p>
+    Notice how after the backtick we dont need to use optionals because we know that we must have string at that point in the chain.
+    This would break if for some reason the type was Symbol because `\`${Symbol}\`` throws an error. `String(Symbol)` will work though.
+</p>
