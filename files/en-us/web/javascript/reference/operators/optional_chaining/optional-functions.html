@@ -1,1 +1,13 @@
- 
+<p>
+    A safer way to optionally chain a function call is to use the [function call](function call link) method like so.
+</p> 
+<code>
+    const result = someInterface.customMethod?.call?.(someInterface);
+</code>
+<p>
+    This still leaves the possibility for a valid `customMethod` value with non-function `call` property which will throw a type error.
+    Here is safer method for the rare scenario where that might be applicable.
+</p>
+<code>
+    const result = (typeof someInterface.customMethod == 'function') ? someInterface.customMethod() : undefined;
+</code>
