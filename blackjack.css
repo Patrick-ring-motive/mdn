@@ -83,13 +83,14 @@ a[aria-label="MDN homepage"]::before{
     html:not([window-location*="hostname=nodejs.org"]) .language-js *{
       font-size:var(--type-smaller-font-size) !important;
     }
-    :root[user-agent*="ios"i] .language-js *,
-    :root[user-agent*="mobile"i] .language-js *,
-    :root[orientation="portrait"] .language-js *,
+    html[user-agent*="ios"i]:not([window-location*="hostname=nodejs.org"]) .language-js *,
+    html[user-agent*="mobile"i]:not([window-location*="hostname=nodejs.org"]) .language-js *,
+    html[orientation="portrait"]:not([window-location*="hostname=nodejs.org"]) .language-js *,
     html:not([window-location*="hostname=nodejs.org"]) .language-js[shrink-me="true"] *
     {
       font-size: 2vmin !important;
     }
+    
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
