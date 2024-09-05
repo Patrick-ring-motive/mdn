@@ -169,6 +169,10 @@ a[aria-label="MDN homepage"]::before{
   color: burlywood;
 }
 
+[darkish="true"] .code-example code,
+[darkish="true"] .code-example code *
+.dark .code-example code,
+.dark .code-example code *,
 .dark-mode code,
 .dark-mode code *{
   text-shadow: 1px 1px 0 rgb(0,0,0),
