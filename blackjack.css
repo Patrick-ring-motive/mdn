@@ -92,8 +92,8 @@ a[aria-label="MDN homepage"]::before{
       font-size: 2vmin !important;
     }
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code{
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code{
         color:rgb(0,0,0);
     }
 
