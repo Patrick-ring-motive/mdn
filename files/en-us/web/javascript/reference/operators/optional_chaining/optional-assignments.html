@@ -2,11 +2,16 @@
     Optional chaining assignment has a stage 1 proposal and is even implemented in the Babeljs transpiler.
     The next best thing is using the nullish coalescing operator to simulate the behavior.
 </p>
-<code>
-    const link = document.querySelector('a');
-    (link??{}).href = 'https://typescripts.org';
-    (link?.style??{}).color = 'green';
-</code>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight">
+        <code>
+const link = document.querySelector('a');
+(link??{}).href = 'https://typescripts.org';
+(link?.style??{}).color = 'green';</code>
+    </pre>
+</div>
+</div>
 <p>
     This works by creating a dummy stand-in object when the desired object is undefined.
     It isn't very menory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. 
