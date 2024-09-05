@@ -90,7 +90,10 @@ a[aria-label="MDN homepage"]::before{
     {
       font-size: 2vmin !important;
     }
-    
+
+
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code,
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
@@ -100,6 +103,11 @@ a[aria-label="MDN homepage"]::before{
     .dark .language-js{
       background-color:rgb(200,200,225) !important;
     }
+
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code,
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code *
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code *,
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js *,
     html:not([window-location*="hostname=nodejs.org"]) .dark .language-js *{
       text-shadow:
@@ -169,10 +177,7 @@ a[aria-label="MDN homepage"]::before{
   color: burlywood;
 }
 
-[darkish="true"] .code-example code,
-[darkish="true"] .code-example code *
-.dark .code-example code,
-.dark .code-example code *,
+
 .dark-mode code,
 .dark-mode code *{
   text-shadow: 1px 1px 0 rgb(0,0,0),
