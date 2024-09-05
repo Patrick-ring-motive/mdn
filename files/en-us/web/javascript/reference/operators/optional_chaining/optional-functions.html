@@ -1,13 +1,17 @@
 <p>
     A safer way to optionally chain a function call is to use the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">function call</a> method like so.
 </p> 
-<code class="language-js highlighter-rouge">
+<pre class="highlight language-js">
+<code class="language-js">
     const result = someInterface.customMethod?.call?.(someInterface);
 </code>
+</pre>
 <p>
     This still leaves the possibility for a valid `customMethod` value with non-function `call` property which will throw a type error.
     Here is safer method for the rare scenario where that might be applicable.
 </p>
+<pre class="highlight language-js">
 <code class="language-js highlighter-rouge">
     const result = (typeof someInterface.customMethod == 'function') ? someInterface.customMethod() : undefined;
 </code>
+</pre>
