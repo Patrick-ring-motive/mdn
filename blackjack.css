@@ -92,8 +92,8 @@ a[aria-label="MDN homepage"]::before{
     }
 
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code,
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre,
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge,
     .dark .highlighter-rouge{
       filter: invert(1) hue-rotate(180deg);
