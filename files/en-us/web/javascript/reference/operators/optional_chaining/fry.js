@@ -9,7 +9,7 @@ void async function OptionalChaining(){
   div.innerHTML = opFunc;
   await waitExists('section[aria-labelledby="optional_chaining_with_function_calls"]');
   select('section[aria-labelledby="optional_chaining_with_function_calls"]').appendChild(div);
-
+  console.log('asdf')
   let prism = createElement("script");
   prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
   body().appendChild(prism);
