@@ -9,7 +9,6 @@ void async function OptionalChaining(){
   div.innerHTML = opFunc;
   await waitExists('section[aria-labelledby="optional_chaining_with_function_calls"]');
   select('section[aria-labelledby="optional_chaining_with_function_calls"]').appendChild(div);
-  console.log('asdf')
   await Promise.all([import('https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.js'),
                      import('https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-css.js'),
                      import('https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.js')]);
