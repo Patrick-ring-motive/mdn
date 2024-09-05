@@ -89,7 +89,7 @@ a[aria-label="MDN homepage"]::before{
     html[orientation="portrait"]:not([window-location*="hostname=nodejs.org"]) .language-js *,
     html:not([window-location*="hostname=nodejs.org"]) .language-js[shrink-me="true"] *
     {
-      font-size: 2vmin !important;
+      font-size: 3vmin !important;
     }
 
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
