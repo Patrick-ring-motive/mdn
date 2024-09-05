@@ -7,6 +7,7 @@ void async function OptionalChaining(){
   const opFunc = await zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/operators/optional_chaining/optional-functions.html?${new Date().getTime()}`);
   const div = createElement('div');
   div.innerHTML = opFunc;
+  await waitExists('section[aria-labelledby="optional_chaining_with_function_calls"]');
   select('section[aria-labelledby="optional_chaining_with_function_calls"]').appendChild(div);
 
   let prism = createElement("script");
