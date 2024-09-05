@@ -110,10 +110,10 @@ a[aria-label="MDN homepage"]::before{
       background-color:rgb(200,200,225) !important;
     }
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code,
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example code *
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example code *,
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code *
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code *,
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js *,
     html:not([window-location*="hostname=nodejs.org"]) .dark .language-js *{
       text-shadow:
