@@ -5,7 +5,7 @@ void async function OptionalChaining(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
   const opFunc = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/operators/optional_chaining/optional-functions.html?${new Date().getTime()}`);
-  const opAss = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/operators/optional_chaining/optional-assignment.html?${new Date().getTime()}`);
+  const opAss = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/operators/optional_chaining/optional-assignments.html?${new Date().getTime()}`);
   const divOp = createElement('div');
   const divAss = createElement('div');
   divOp.innerHTML = await opFunc;
