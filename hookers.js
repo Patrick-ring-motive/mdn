@@ -95,7 +95,7 @@ void (async function Hookers() {
       tdn.style.float = 'left';
       tdn.style.backgroundImage = 'url("/favicon.ico")';
       tdn.setAttribute('title','Extra Tidbit from TDN');
-      tdn.onclick = ()=>;
+      tdn.onclick = ()=>{};
       el.prepend(copy);
       el.prepend(tdn);
     });
