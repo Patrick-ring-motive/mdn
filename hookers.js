@@ -96,8 +96,6 @@ void (async function Hookers() {
       tdn.style.backgroundImage = 'url("/favicon.png")';
       tdn.style.backgroundSize = "1vmax";
       tdn.style.borderRadius = "0.5vmin";
-      tdn.style.padding = 0;
-      tdn.style.margin = 0;
       tdn.style.cursor = 'help';
       tdn.setAttribute('title','Extra Tidbit from TDN');
       tdn.onclick = ()=>{};
