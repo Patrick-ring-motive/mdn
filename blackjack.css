@@ -123,6 +123,10 @@ a[aria-label="MDN homepage"]::before{
         -1px 1px 0 rgb(220,220,250),
         -1px -1px 0 rgb(220,220,250),
         1px -1px 0 rgb(220,220,250) !important;
+      
+      .token.punctuation{
+        color:blueviolet !important;
+      }
     }
     .highlighter-rouge,
     .highlighter-rouge>.highlight,
