@@ -93,7 +93,7 @@ void (async function Hookers() {
       });
       const tdn = copy.cloneNode(true);
       tdn.style.float = 'left';
-      tdn.style.backgroundImage = 'url("/favicon.ico")';
+      tdn.style.backgroundImage = 'url("/favicon.png")';
       tdn.setAttribute('title','Extra Tidbit from TDN');
       tdn.onclick = ()=>{};
       el.prepend(copy);
