@@ -104,7 +104,11 @@ void (async function Hookers() {
     });
   });
   await DOMComplete();
-  const prism = createElement("script");
-  prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
-  body().appendChild(prism);
+  try {
+      Prism?.highlightAll?.();
+  } catch {
+      const prism = createElement("script");
+      prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
+      body().appendChild(prism);
+  }
 })?.();
