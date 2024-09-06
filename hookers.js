@@ -91,7 +91,12 @@ void (async function Hookers() {
           })(this)`
         }
       });
+      const tdn = copy.cloneNode(true);
+      tdn.style.float = 'left';
+      tdn.backgroundImage = 'url("favicon.ico/clippy.svg")';
+      tdn.setAttribute('title','Extra Tidbit from TDN');
       el.prepend(copy);
+      el.prepend(tdn);
     });
   });
   await DOMComplete();
