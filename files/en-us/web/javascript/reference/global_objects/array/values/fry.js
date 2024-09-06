@@ -5,9 +5,14 @@ void async function ArrayIterators(){
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
   }
-  declare(() =&gt; {
-    queryApplyAll('a[href="/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators"]',el =&gt; {
-      el.updateAttribute('href','/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array_Iterator');
-    });
+  declare(() => {
+    queryApplyAll('a[href*="/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators"i]',el => {
+        el.updateAttribute('href','/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array_Iterator');
+      });
+  });
+  declare(() => {
+    queryApplyAll('a[href*="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator"i]',el => {
+        el.updateAttribute('href','/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array_Iterator');
+      });
   });
 }?.()
