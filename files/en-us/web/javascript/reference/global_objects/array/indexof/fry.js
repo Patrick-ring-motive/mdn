@@ -11,11 +11,7 @@ void async function OptionalChaining(){
   await waitExists('section[aria-labelledby="using_indexof"]');
   select('section[aria-labelledby="using_indexof"]').appendChild(divOp);
   
-  if(Prism){
-    Prism?.highlightAll?.();
-  }else{
-    const prism = createElement("script");
-    prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
-    body().appendChild(prism);
-  }
+  const prism = createElement("script");
+  prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
+  body().appendChild(prism);
 }?.()
