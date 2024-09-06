@@ -93,8 +93,9 @@ void (async function Hookers() {
       });
       const tdn = copy.cloneNode(true);
       tdn.style.float = 'left';
-      tdn.backgroundImage = 'url("favicon.ico/clippy.svg")';
+      tdn.style.backgroundImage = 'url("/favicon.ico")';
       tdn.setAttribute('title','Extra Tidbit from TDN');
+      tdn.onclick = ()=>;
       el.prepend(copy);
       el.prepend(tdn);
     });
