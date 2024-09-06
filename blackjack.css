@@ -26,8 +26,8 @@ ul.social-icons,
 a[href="https://www.mozilla.org"],
 a[href="https://foundation.mozilla.org/"],
 .page-footer-legal-text::first-line,
-li.top-level-entry:has(a[href="/en-US/plus"]),
-a[href="/en-US/plus"],
+li.top-level-entry:has(a[href*="/en-US/plus"]),
+a[href="*/en-US/plus"],
 [id="mdn-plus-button"]{
   display:none !important;
   visibility:hidden !important;
