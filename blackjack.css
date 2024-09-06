@@ -60,7 +60,8 @@ a[aria-label="MDN homepage"]::before{
 }
 
 :root:not(.dark){
-    --text-link: cadetblue !important;
+  --text-link: cadetblue !important;
+  --text-primary-green: cadetblue !important;
 }
 
 :root.dark,
@@ -74,6 +75,7 @@ a[aria-label="MDN homepage"]::before{
   --green3: #24d6bc !important;
   --green4: #24d6bc !important;
   --green5: #24d6bc !important;
+  --text-primary-green: #24d6bc !important;
 }
 
 :root.dark-mode .hljs-quote,
@@ -133,10 +135,12 @@ a[aria-label="MDN homepage"]::before{
 
 :root[darkish="true"]{
   --text-link: #24d6bc !important;
+  --text-primary-green: #24d6bc !important;
 }
 
 :root [darkish="true"]{
   --text-link: #24d6bc !important;
+  --text-primary-green: #24d6bc !important;
 }
 
 .dark-mode .hljs-keyword{
