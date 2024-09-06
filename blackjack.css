@@ -127,6 +127,9 @@ a[aria-label="MDN homepage"]::before{
       .token.punctuation{
         color:blueviolet !important;
       }
+      .token.template-punctuation{
+        color:brown !important;
+      }
     }
     .highlighter-rouge,
     .highlighter-rouge>.highlight,
