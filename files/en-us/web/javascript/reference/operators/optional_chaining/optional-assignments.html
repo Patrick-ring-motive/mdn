@@ -14,5 +14,17 @@ const link = document.querySelector('a');
 </div>
 <p>
     This works by creating a dummy stand-in object when the desired object is undefined.
-    It isn't very menory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. 
+    It isn't very menory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
 </p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight">
+        <code>
+const link = document.querySelector('a');
+if(link){
+  link.href = 'https://typescripts.org';
+  link.style.color = 'green';
+}</code>
+    </pre>
+</div>
+</div>
