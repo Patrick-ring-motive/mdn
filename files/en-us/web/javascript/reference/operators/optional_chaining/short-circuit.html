@@ -20,5 +20,5 @@ const isScript = `${response?.headers?.get?.('content-type')}`.toLowerCase().inc
 <p>
     Notice how after the backtick we dont need to use optionals because we know that we must have string at that point in the chain.
     This would break if for some reason the type was Symbol because <code>`${Symbol}`</code> throws an error. <code>String(Symbol)</code> will work though.
-    If there is an <code>undefined</code> in the chain then it will get coerced into a String <code>'undefined'</code> from which we can safeley use String methods.
+    If there is an <code>undefined</code> in the chain then it will get coerced into a String <code>'undefined'</code> from which we can safely use String methods.
 </p>
