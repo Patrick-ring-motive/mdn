@@ -14,7 +14,7 @@
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const response = await fetch('https://typescripts.org');
-const contentType = `${response?.headers?.get?.('content-type')}`.toLowerCase().includes('script');</code></pre>
+const isScript = `${response?.headers?.get?.('content-type')}`.toLowerCase().includes('script');</code></pre>
 </div>
 </div>
 <p>
