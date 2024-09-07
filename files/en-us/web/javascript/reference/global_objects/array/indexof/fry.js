@@ -1,11 +1,11 @@
 void async function OptionalChaining(){
   try{
-    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
   }catch{
-    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
+    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
   
-  const opFunc = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/array/indexof/shiftbit.html?${new Date().getTime()}`);
+  const opFunc = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/array/indexof/shiftbit.html?${globalThis.cache}`);
   const divOp = createElement('div');
   divOp.innerHTML = await opFunc;
   await waitExists('section[aria-labelledby="using_indexof"]');
