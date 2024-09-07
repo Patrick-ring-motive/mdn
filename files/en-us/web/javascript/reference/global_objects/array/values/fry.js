@@ -1,4 +1,3 @@
-/* TODO array iterator links. */
 void async function ArrayIterators(){
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
