@@ -1,8 +1,8 @@
 void async function ArrayIterators(){
   try{
-    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${new Date().getTime()}`);
+    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
   }catch{
-    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${new Date().getTime()}`);
+    await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
   declare(() => {
     queryApplyAll('a[href*="/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators"i]',el => {
