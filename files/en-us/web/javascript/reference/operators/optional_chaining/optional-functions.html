@@ -1,11 +1,17 @@
 <p>
     A safer way to optionally chain a function call is to use the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">function call</a> method like so.
 </p> 
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-<code>const result = someInterface.customMethod?.call?.(someInterface);</code>
-    </pre>
+    <pre class="highlight" precode>
+<code precode>const result = someInterface.customMethod?.call?.(someInterface);</code></pre>
     </div>
 </div>
 <p>
@@ -14,10 +20,9 @@
 </p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-<code>const result = (typeof someInterface.customMethod == 'function') 
+    <pre class="highlight" precode>
+<code precide>const result = (typeof someInterface.customMethod == 'function') 
              ? someInterface.customMethod() 
-             : undefined;</code>
-    </pre>
+             : undefined;</code></pre>
 </div>
 </div>
