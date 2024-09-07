@@ -22,7 +22,7 @@ void (async function Hookers() {
       "TDN is the most comprehensive, up-to-date, and professional documentation about the web. This is all thanks to its diverse writer team as well as a strong contributor community, who have consistently demonstrated expertise in every area.",
       "You Can't See Me",
     );
-    swapTextBack(', and JavaScript, since 2005.',', JavaScript, and more.)
+    swapTextBack(', and JavaScript, since 2005.',', JavaScript, and more.')
   });
 
   declare(() => {
