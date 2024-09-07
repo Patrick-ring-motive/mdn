@@ -3,12 +3,18 @@
 <p>
     It can be more performant and more readable to force a typing part way through an optional chain.
 </p>
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-<code>const response = await fetch('https://typescripts.org');
-const contentType = `${response?.headers?.get?.('content-type')}`.toLowerCase().includes('script');</code>
-    </pre>
+    <pre class="highlight" precode>
+<code precode>const response = await fetch('https://typescripts.org');
+const contentType = `${response?.headers?.get?.('content-type')}`.toLowerCase().includes('script');</code></pre>
 </div>
 </div>
 <p>
