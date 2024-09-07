@@ -2,10 +2,17 @@
     Optional chaining assignment has a <a href="https://github.com/tc39/proposal-optional-chaining-assignment">stage 1 proposal</a> and is even implemented in the <a href="https://babeljs.io">Babeljs transpiler</a>.
     The next best thing is using the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing">nullish coalescing operator</a> to simulate the behavior.
 </p>
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-<code>const link = document.querySelector('a');
+    <pre class="highlight" precode>
+<code precode>const link = document.querySelector('a');
 (link??{}).href = 'https://typescripts.org';
 (link?.style??{}).color = 'green';</code>
     </pre>
@@ -17,8 +24,8 @@
 </p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-<code>const link = document.querySelector('a');
+    <pre class="highlight" precode>
+<code precode>const link = document.querySelector('a');
 if(link){
   link.href = 'https://typescripts.org';
   if(link.style){
