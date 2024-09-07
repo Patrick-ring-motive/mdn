@@ -1,6 +1,6 @@
 <p>
     Optional chaining assignment has a <a target="_blank" href="https://github.com/tc39/proposal-optional-chaining-assignment">stage 1 proposal</a> and is even implemented in the <a target="_blank" href="https://babeljs.io">Babeljs transpiler</a>.
-    The next best thing is using the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing">nullish coalescing operator</a> to simulate the behavior.
+    In lieu of this, the next best thing is to use the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing">nullish coalescing operator</a> to simulate the behavior.
 </p>
 <style>
 [precode]{
@@ -19,7 +19,7 @@
 </div>
 <p>
     This works by creating a dummy stand-in object when the desired object is undefined.
-    It isn't very menory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
+    It isn't very memory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
 </p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
