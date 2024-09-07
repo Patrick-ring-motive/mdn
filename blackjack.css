@@ -13,6 +13,12 @@ div.highlight:has(pre.highlight){
   background-color:#f5f2f0;
 }
 
+[darkish="true"] div.highlight:has(pre.highlight),
+.dark div.highlight:has(pre.highlight){
+  background-color: rgb(200,200,225);
+}
+
+
 .top-banner,
 .auth-container,
 a[rel*="sponsored"],
