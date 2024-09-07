@@ -9,6 +9,9 @@
   color:rgb(0,0,0);
 }
 
+div.highlight:has(pre.highlight){
+  background-color:#f5f2f0;
+}
 
 .top-banner,
 .auth-container,
