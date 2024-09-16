@@ -5,7 +5,7 @@ void async function ArrayFindIndex(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
   
-  const opFunc = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/array/indexof/shiftbit.html?${globalThis.cache}`);
+  const opFunc = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/array/findindex/shiftbit.html?${globalThis.cache}`);
   const divOp = createElement('div');
   divOp.innerHTML = await opFunc;
   await waitExists('section[aria-labelledby="find_the_index_of_a_prime_number_in_an_array"]');
