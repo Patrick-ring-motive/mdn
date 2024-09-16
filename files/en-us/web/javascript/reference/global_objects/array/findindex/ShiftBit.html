@@ -1,0 +1,25 @@
+<h4>Shift To Boolean</h4>
+<p>
+    A useful trick to use on any method that returns -1 for index not found is to use the Bitwise NOT <code>~</code> to adapt to a boolean operation.
+    The following two statements are effectively equivalent.
+</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight">
+        <code>
+const arr = [];
+
+if(arr.some(x => x > 5)){
+  //...
+}
+
+if(~arr.findIndex(x => x > 5)){
+  //...
+}</code>
+    </pre>
+</div>
+</div>
+<p>
+  This works because all numbers are considered truthy values with the exception of <code>0</code> and <code>~-1 == 0</code>.
+  Though most environments support <code>[].findIndex</code>, this can be useful for older environments. 
+</p>
