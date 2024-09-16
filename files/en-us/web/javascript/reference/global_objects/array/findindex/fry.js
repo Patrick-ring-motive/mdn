@@ -9,7 +9,7 @@ void async function ArrayFindIndex(){
   const divOp = createElement('div');
   divOp.innerHTML = await opFunc;
   await waitExists('section[aria-labelledby="find_the_index_of_a_prime_number_in_an_array"]');
-  select('section[aria-labelledby="using_indexof"]').appendChild(divOp);
+  select('section[aria-labelledby="find_the_index_of_a_prime_number_in_an_array"]').appendChild(divOp);
   
   try {
       Prism?.highlightAll?.();
