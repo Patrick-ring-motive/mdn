@@ -1,4 +1,4 @@
-void async function OptionalChaining(){
+void async function ArrayIndexOf(){
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
   }catch{
