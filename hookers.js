@@ -68,8 +68,7 @@ void (async function Hookers() {
       el.updateAttribute("copy-button", "done");
       const copy = buildElement("button", {
         style: {
-          backgroundImage:
-            'url("https://raw.githubusercontent.com/Patrick-ring-motive/mdn/main/files/clippy.svg")',
+          backgroundImage: 'url("https://raw.githubusercontent.com/Patrick-ring-motive/mdn/main/files/clippy.svg")',
           backgroundRepeat: "no-repeat",
           backgroundSize: "1vmax",
           padding: "0.5vmax",
@@ -93,11 +92,13 @@ void (async function Hookers() {
         }
       });
       const tdn = copy.cloneNode(true);
-      tdn.style.float = 'left';
-      tdn.style.backgroundImage = 'url("/favicon.png")';
-      tdn.style.backgroundSize = "1vmax";
-      tdn.style.borderRadius = "0.5vmin";
-      tdn.style.cursor = 'help';
+      Object.assign(tdn.style,{
+        float : 'left',
+        backgroundImage : 'url("/favicon.png")',
+        backgroundSize : "1vmax",
+        borderRadius : "0.5vmin",
+        cursor : 'help'
+      }
       tdn.setAttribute('title','Extra Tidbit from TDN');
       tdn.onclick = ()=>{};
       el.prepend(copy);
