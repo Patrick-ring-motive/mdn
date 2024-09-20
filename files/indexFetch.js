@@ -12,6 +12,7 @@ if(!globalThis['&fetch']){
   objDefProp(globalThis,"&fetch",fetch);
   globalThis.fetch = function fetch(url){
     if(~String(arguments[0]).search(/index\.json($|\?.*|#.*)/i)){
+      console.log('redirecting index.json');
       url = new URL(`${document.querySelector('link[hreflang="en"]')?.getAttribute?.('href')}/index.json`);
       url.host = location.host;
       arguments[0] = url;
