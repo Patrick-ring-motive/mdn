@@ -98,7 +98,7 @@ void (async function Hookers() {
         backgroundSize : "1vmax",
         borderRadius : "0.5vmin",
         cursor : 'help'
-      }
+      });
       tdn.setAttribute('title','Extra Tidbit from TDN');
       tdn.onclick = ()=>{};
       el.prepend(copy);
