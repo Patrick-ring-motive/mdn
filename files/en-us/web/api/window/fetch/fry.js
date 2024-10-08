@@ -13,7 +13,7 @@ void async function OptionalChaining(){
     x.outerHTML = 
 `<div class="language-js highlighter-rouge">
 <div class="highlight">
-<pre class="highlight"><code>${x.innerHTML}</code></pre>
+<pre class="highlight" style="overflow: hidden;"><code>${x.innerHTML}</code></pre>
 </div>
 </div>`;
   });
