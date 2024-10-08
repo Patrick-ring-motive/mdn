@@ -1,6 +1,18 @@
 <h3>Response Body</h3>
 <p>A useful way to construct a readable stream from a variety of input types is to use the body property of a <code><a href="https://developer.typescripts.org/en-US/docs/Web/API/Response/Response">Response</a></code></p>
-
+<div class="language-js highlighter-rouge">
+<div class="highlight">
+<pre class="highlight" precode>
+<code precode>function newReadableStream(content){
+    return new Response(content).body;
+}
+const newStream = newReadableStream("Hello World");
+const decoder = new TextDecoder();
+for await (const chunk of newStream) {
+  console.log(decoder.decode(chunk)); //Hello World
+}</code></pre>
+</div>
+</div>
 <dd>
     <p>
       An object defining a body for the response can be <code>null</code> (which is
@@ -18,3 +30,4 @@
       <li>string literal</li>
     </ul>
   </dd>
+
