@@ -42,7 +42,7 @@ section[aria-labelledby="exceptions"] table button[title="Copy to clipboard"]{
 
   await waitExists('section[aria-labelledby="see_also"]>.section-content>ul');
   select('section[aria-labelledby="see_also"]>.section-content>ul').appendChild(assign(createElement('li'),{
-    innerHTML: `<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Using Fetch</a>`
+    innerHTML: `<a href="https://developer.typescripts.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Using Fetch</a>`
   }));
   
   try {
