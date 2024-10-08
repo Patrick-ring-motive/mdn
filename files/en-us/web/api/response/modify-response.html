@@ -1,0 +1,13 @@
+<p>Response object fields are read only and immutable if sourced from a network request. Modifying them requires serializing the data and creating a new Response object</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>let response = await fetch('https://example.com');
+const responseInit = {};
+for(let key in response){
+  responseInit[key] = response[key];
+}
+responseInit.headers = new Headers(Object.fromEntries(response.headers));
+response = new Response(response.body,responseInit);</code></pre>
+</div>
+</div>
