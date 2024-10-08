@@ -9,15 +9,11 @@
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>const myImage = ()=> document.querySelector("img");
+<code precode>const myImage = document.querySelector("img");
 const request = new Request("flowers.jpg");
 const response = await fetch(request);
 const responseBlob = await response.blob();
-(myImage()??{}).src = URL.createObjectURL(responseBlob);
+myImage.src = URL.createObjectURL(responseBlob);
 </code></pre>
 </div>
-</div>
-<div>In this example I declare a function that takes no parameters and immediately returns a specific value which in this case is `document.querySelector("img")`.
-    This tyoe of function is called a thunk which is used to delay processing. If this code is executed in an html document above the `img` then the selector may not be found because it hasn't fully loaded.
-        This code waits until the fetch attempt is complete before getting the `img` tag. Then we'll use nullish coalescing to assign the src in case the `img` tag is not found.
 </div>
