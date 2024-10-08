@@ -39,9 +39,12 @@ section[aria-labelledby="exceptions"] table button[title="Copy to clipboard"]{
 
   select('section[aria-labelledby="examples"]').appendChild(assign(createElement('div'),{innerHTML:(await fetchTextExample)}));
   select('section[aria-labelledby="examples"]').appendChild(assign(createElement('div'),{innerHTML:(await fetchErrorExample)}));
-
-  (await waitSelect('section[aria-labelledby="see_also"]>.section-content>ul')).appendChild(assign(createElement('li'),{
+  const seeAlso = await waitSelect('section[aria-labelledby="see_also"]>.section-content>ul');
+  seeAlso.appendChild(assign(createElement('li'),{
     innerHTML: `<a href="https://developer.typescripts.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">Using Fetch</a>`
+  }));
+  seeAlso.appendChild(assign(createElement('li'),{
+    innerHTML: `<a href="https://developer.typescripts.org/docs/latest/api/http.html?hostname=nodejs.org">NodeJS HTTP</a>`
   }));
   
   try {
