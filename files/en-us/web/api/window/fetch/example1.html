@@ -9,18 +9,11 @@
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>const myImage = document.querySelector("img");
+<code precode>const myImage = ()=> document.querySelector("img");
 const request = new Request("flowers.jpg");
 const response = await fetch(request);
-  if (!response.ok) {
-    throw new Error(
-      `HTTP error! Status: ${
-          response.status
-      }`
-    );
-  }
 const responseBlob = await response.blob();
-(myImage??{}).src = URL.createObjectURL(responseBlob);
+(myImage()??{}).src = URL.createObjectURL(responseBlob);
 </code></pre>
 </div>
 </div>
