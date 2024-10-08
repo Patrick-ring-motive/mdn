@@ -21,7 +21,14 @@ void async function OptionalChaining(){
   
   selectAll('section[aria-labelledby="exceptions"] table pre').forEach(x=>{
     x.outerHTML = 
-`<div class="language-js highlighter-rouge">
+`<style>
+section[aria-labelledby="exceptions"] table pre button[title="Extra Tidbit from TDN"],
+section[aria-labelledby="exceptions"] table pre button[title="Copy to clipboard"]{
+  display:none;
+  visibility:hidden;
+}
+</style>
+<div class="language-js highlighter-rouge">
 <div class="highlight">
 <pre class="highlight" style="overflow: hidden;"><code>${x.innerHTML}</code></pre>
 </div>
