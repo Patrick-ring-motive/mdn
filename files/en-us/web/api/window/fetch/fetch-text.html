@@ -1,0 +1,66 @@
+1. Fetching Multiple Sources Concurrently Using async/await
+
+Example: Fetch Wrapper for Concurrent Requests
+
+async function fetchText(){
+  return await (await fetch(...arguments)).text();
+}
+
+const resources = await Promise.all([
+  fetchText("https://example.com/1"),
+  fetchText("https://example.com/2"),
+  fetchText("https://example.com/3")
+]);
+
+Why This Is Better:
+
+	•	Cleaner Syntax: Using async/await makes the code much more readable than chaining .then() callbacks. For beginners, this is easier to understand, especially when multiple concurrent requests are involved.
+	•	Concurrent Fetching: The use of Promise.all() shows how to handle multiple concurrent fetches in a way that’s more efficient than sequentially waiting for each one. It’s a great opportunity to teach performance optimizations.
+
+Explanation:
+
+You can include this in your notes to explain why this approach is preferred:
+
+	•	fetchText: By wrapping the fetch() call inside a function (fetchText), you make it reusable and concise. The function resolves with the text of the response directly, simplifying the syntax for handling multiple responses.
+	•	Promise.all(): This is a common pattern when you need to fetch multiple resources concurrently. By passing an array of promises to Promise.all(), all the requests are fired off at once, and the function only proceeds when all promises resolve.
+
+2. Consistent Error Handling Strategies
+
+Example: Two Approaches to Handling Errors with Fetch
+
+Strategy 1: Throwing on HTTP Errors
+
+async function fetchThrow(){
+   const res = await fetch(...arguments);
+   if(!res.ok) throw new Error(res.statusText);
+   return res;
+}
+
+Strategy 2: Converting Runtime Errors to HTTP Responses
+
+async function tryFetchCatch(){
+    try {
+        return await fetch(...arguments);
+    } catch(e) {
+        return new Response(null, {status: 500, statusText: e.message});
+    }
+}
+
+Why This Is Better:
+
+	•	Error Handling in One Place: Both strategies ensure that error handling is done consistently, meaning the developer doesn’t have to repeat error handling logic for every single fetch() call. This leads to cleaner and more maintainable code.
+	•	Customization: By offering two distinct strategies, you’re teaching developers how to choose the one that best fits their use case:
+	•	Strategy 1 throws errors when the response isn’t ok (i.e., when the HTTP status is not in the 200–299 range). This keeps the error handling inside the fetch function and requires the calling code to handle the error using a try/catch block.
+	•	Strategy 2 catches all potential errors (including network errors) and returns a Response object with an HTTP 500 status. This approach allows the developer to handle both HTTP and network errors consistently.
+
+Explanation:
+
+You can explain the advantages of each approach:
+
+	•	Throwing on HTTP errors (Strategy 1) is often useful when you want to ensure that only successful requests (i.e., HTTP status 200–299) are processed. Any other response is treated as an error and thrown, forcing the calling code to handle it.
+	•	Returning a Response on error (Strategy 2) is useful when you want to catch runtime errors and handle them like HTTP errors. This keeps your error handling uniform and makes it easier to deal with errors in the same way, regardless of their origin (HTTP status or network issue).
+
+Practical Benefits:
+
+	•	Error Handling Consistency: Many developers end up writing error handling logic twice (once for HTTP errors and again for network/runtime errors). With these strategies, you can centralize error handling, making it easier to ensure all errors are properly dealt with.
+	•	Cleaner Code: Both strategies make code more concise and prevent repetitive if (res.ok) checks or catch blocks scattered throughout the application.
