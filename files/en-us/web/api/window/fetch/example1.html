@@ -10,13 +10,17 @@
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const myImage = document.querySelector("img");
-const myRequest = new Request("flowers.jpg");
-const response = await fetch(myRequest);
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+const request = new Request("flowers.jpg");
+const response = await fetch(request);
+  if (!response.ok) {
+    throw new Error(
+      `HTTP error! Status: ${
+          response.status
+      }`
+    );
+  }
 const responseBlob = await response.blob();
-myImage.src = URL.createObjectURL(response);
+(myImage??{}).src = URL.createObjectURL(responseBlob);
 </code></pre>
 </div>
 </div>
