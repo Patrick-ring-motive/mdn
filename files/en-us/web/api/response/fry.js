@@ -5,6 +5,7 @@ void async function ResponseApi(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
   const code1 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/response/example1.html?${globalThis.cache}`);
+  const modifyResponse = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/response/modify-response.html?${globalThis.cache}`);
   await waitExists('section[aria-labelledby="examples"]');
 
   
@@ -15,6 +16,9 @@ void async function ResponseApi(){
   }
 
   await replaceCode(select('section[aria-labelledby="fetching_an_image"] .code-example:not([overwritten])'),code1);
+  select('section[aria-labelledby="fetching_an_image"]').appendChild(assign(createElement('div'),{
+    innerHTML : (await modifyResponse)
+  }));
   
   try {
       Prism?.highlightAll?.();
