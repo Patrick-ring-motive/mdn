@@ -24,8 +24,8 @@ void async function WindowFetch(){
   selectAll('section[aria-labelledby="exceptions"] table pre').forEach(x=>{
     x.outerHTML = 
 `<style>
-section[aria-labelledby="exceptions"] table pre button[title="Extra Tidbit from TDN"],
-section[aria-labelledby="exceptions"] table pre button[title="Copy to clipboard"]{
+section[aria-labelledby="exceptions"] table button[title="Extra Tidbit from TDN"],
+section[aria-labelledby="exceptions"] table button[title="Copy to clipboard"]{
   display:none;
   visibility:hidden;
 }
