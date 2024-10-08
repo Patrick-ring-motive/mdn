@@ -11,9 +11,7 @@ void async function OptionalChaining(){
 
   
   async function replaceCode(exampleDiv,code){
-    const example = createElement('div');
-    example.innerHTML = await code;
-    exampleDiv.before(example);
+    exampleDiv.before(Object.assign(createElement('div'),{innerHTML:(await code)}));
     exampleDiv.style.display = 'none';
     exampleDiv.updateAttribute('overwritten',true);
   }
