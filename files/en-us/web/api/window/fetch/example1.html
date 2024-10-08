@@ -1,0 +1,23 @@
+
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>
+const myImage = document.querySelector("img");
+const myRequest = new Request("flowers.jpg");
+const response = await fetch(myRequest);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+const responseBlob = await response.blob();
+myImage.src = URL.createObjectURL(response);
+</code></pre>
+</div>
+</div>
