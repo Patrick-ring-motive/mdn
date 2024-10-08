@@ -7,11 +7,12 @@ void async function WindowFetch(){
   }
   const code1 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/example1.html?${globalThis.cache}`);
   const code2 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/example2.html?${globalThis.cache}`);
+  const fetchTextExample = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/fetch-text.html?${globalThis.cache}`);
   await waitExists('section[aria-labelledby="examples"]');
 
   
   async function replaceCode(exampleDiv,code){
-    exampleDiv.before(Object.assign(createElement('div'),{innerHTML:(await code)}));
+    exampleDiv.before(assign(createElement('div'),{innerHTML:(await code)}));
     exampleDiv.style.display = 'none';
     exampleDiv.updateAttribute('overwritten',true);
   }
@@ -34,6 +35,8 @@ section[aria-labelledby="exceptions"] table pre button[title="Copy to clipboard"
 </div>
 </div>`;
   });
+
+  select('section[aria-labelledby="examples"]').appendChild(assign(createElement('div'),{innerHTML:(await fetchTextExample)}));
   
   try {
       Prism?.highlightAll?.();
