@@ -1,5 +1,5 @@
 //(window?.document?.firstElementChild?.style??{}).filter = 'invert(1)';
-void async function OptionalChaining(){
+void async function WindowFetch(){
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
   }catch{
