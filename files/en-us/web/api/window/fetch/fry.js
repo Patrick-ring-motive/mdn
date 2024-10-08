@@ -10,14 +10,10 @@ void async function OptionalChaining(){
   example1.innerHTML = await code1;
   await waitExists('section[aria-labelledby="examples"]');
   selectAll('section[aria-labelledby="exceptions"] table pre').forEach(x=>{
-    x.className = 'highlight';
     x.outerHTML = 
 `<div class="language-js highlighter-rouge">
 <div class="highlight">
-<pre class="highlight" precode>
-<code precode>
-${x.innerHTML}
-</code></pre>
+<pre class="highlight"><code>${x.innerHTML}</code></pre>
 </div>
 </div>`;
   });
