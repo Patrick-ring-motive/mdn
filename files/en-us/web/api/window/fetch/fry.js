@@ -9,7 +9,7 @@ void async function OptionalChaining(){
   const example1 = createElement('div');
   example1.innerHTML = await code1;
   await waitExists('section[aria-labelledby="examples"]');
-  select('section[aria-labelledby="examples"]').appendChild(example1);
+  select('section[aria-labelledby="examples"]').querySelector('pre,code').parentElement.before(example1);
   
   
 
