@@ -39,13 +39,13 @@ void async function LinkResolver(){
         let hash = '';
         let char = '?';
         if(url.includes('#')){
-          hash = \`#\${url.split('#')[1]}\`;
+          hash = ${'`#${url.split("#")[1]}`'};
           url = url.split('#')[0];
         }
         if(url.includes('?')){
           char = '&';
         }
-        url = '\${url}\${char}hostname=${hostname}\${hash}';
+        url = ${'`${url}${char}'}hostname=${hostname}${'${hash}`'};
         el.updateAttribute('href',url);
         el.updateAttribute('href',String(url).replace(
           RegExp('https://${hostname}',"i"),
