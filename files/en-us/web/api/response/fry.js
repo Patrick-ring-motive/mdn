@@ -14,7 +14,7 @@ void async function ResponseApi(){
     exampleDiv.updateAttribute('overwritten',true);
   }
 
-  await replaceCode(select('section[aria-labelledby="examples"] .code-example:not([overwritten])'),code1);
+  await replaceCode(select('section[aria-labelledby="fetching_an_image"] .code-example:not([overwritten])'),code1);
   
   try {
       Prism?.highlightAll?.();
