@@ -6,9 +6,21 @@ void async function OptionalChaining(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
   const code1 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/example1.html?${globalThis.cache}`);
-  const example1 = createElement('div');
-  example1.innerHTML = await code1;
+  const code2 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/example2.html?${globalThis.cache}`);
   await waitExists('section[aria-labelledby="examples"]');
+
+  
+  async function replaceCode(exampleDiv,code){
+    const example = createElement('div');
+    example.innerHTML = await code;
+    exampleDiv.before(example);
+    exampleDiv.style.display = 'none';
+    exampleDiv.updateAttribute('overwritten',true);
+  }
+
+  await replaceCode(select('section[aria-labelledby="examples"] .code-example:not([overwritten])'),code1);
+  await replaceCode(select('section[aria-labelledby="examples"] .code-example:not([overwritten])'),code2);
+  
   selectAll('section[aria-labelledby="exceptions"] table pre').forEach(x=>{
     x.outerHTML = 
 `<div class="language-js highlighter-rouge">
@@ -17,9 +29,6 @@ void async function OptionalChaining(){
 </div>
 </div>`;
   });
-  const exampleDiv = select('section[aria-labelledby="examples"] .code-example');
-  exampleDiv.before(example1);
-  exampleDiv.style.display = 'none';
   
   try {
       Prism?.highlightAll?.();
