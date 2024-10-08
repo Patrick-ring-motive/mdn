@@ -13,12 +13,9 @@ void async function OptionalChaining(){
   divOp.innerHTML = await opFunc;
   divAss.innerHTML = await opAss;
   divShort.innerHTML = await opShort;
-  await waitExists('section[aria-labelledby="optional_chaining_with_function_calls"]');
-  select('section[aria-labelledby="optional_chaining_with_function_calls"]').appendChild(divOp);
-  await waitExists('section[aria-labelledby="invalid_optional_chaining"]');
-  select('section[aria-labelledby="invalid_optional_chaining"]').appendChild(divAss);
-  await waitExists('section[aria-labelledby="short-circuiting"]');
-  select('section[aria-labelledby="short-circuiting"]').appendChild(divShort);
+  (await waitSelect('section[aria-labelledby="optional_chaining_with_function_calls"]')).appendChild(divOp);
+  (await waitSelect('section[aria-labelledby="invalid_optional_chaining"]')).appendChild(divAss);
+  (await waitSelect('section[aria-labelledby="short-circuiting"]')).appendChild(divShort);
   
   
   /*await Promise.all([import('https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.js'),
