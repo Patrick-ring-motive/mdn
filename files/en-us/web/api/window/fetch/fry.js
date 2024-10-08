@@ -9,7 +9,10 @@ void async function OptionalChaining(){
   const example1 = createElement('div');
   example1.innerHTML = await code1;
   await waitExists('section[aria-labelledby="examples"]');
-  selectAll('section[aria-labelledby="exceptions"] table pre').forEach(x=>(x.innerHTML = `<code class="language-js highlighter-rouge">${x.innerHTML}</code>`));
+  selectAll('section[aria-labelledby="exceptions"] table pre').forEach(x=>{
+    x.className = 'highlight';
+    x.innerHTML = `<code class="highlight">${x.innerHTML}</code>`
+  });
   const exampleDiv = select('section[aria-labelledby="examples"] .code-example');
   exampleDiv.before(example1);
   exampleDiv.style.display = 'none';
