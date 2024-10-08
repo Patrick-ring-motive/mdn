@@ -8,6 +8,7 @@ void async function WindowFetch(){
   const code1 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/example1.html?${globalThis.cache}`);
   const code2 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/example2.html?${globalThis.cache}`);
   const fetchTextExample = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/fetch-text.html?${globalThis.cache}`);
+  const fetchErrorExample = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/api/window/fetch/fetch-error.html?${globalThis.cache}`);
   await waitExists('section[aria-labelledby="examples"]');
 
   
@@ -37,6 +38,7 @@ section[aria-labelledby="exceptions"] table pre button[title="Copy to clipboard"
   });
 
   select('section[aria-labelledby="examples"]').appendChild(assign(createElement('div'),{innerHTML:(await fetchTextExample)}));
+  select('section[aria-labelledby="examples"]').appendChild(assign(createElement('div'),{innerHTML:(await fetchErrorExample)}));
   
   try {
       Prism?.highlightAll?.();
