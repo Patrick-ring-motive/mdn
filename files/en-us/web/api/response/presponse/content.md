@@ -23,6 +23,8 @@ const presponse = Presponse("body content");
 console.log(presponse.constructor.name);//Promise
 const response = await presponse;
 console.log(response.constructor.name);//Response
+const text = await response.text();
+console.log(text);//body content
 ```
 
 ## Cache API
