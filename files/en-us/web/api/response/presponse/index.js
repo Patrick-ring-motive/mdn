@@ -60,8 +60,8 @@ void async function Presponse(){
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1])) + 
     `<link  href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet"></link>`;
   Q(()=>{
-    //select('article>div.section-content').innerHTML = content;
-    //select('article>div.section-content').setAttribute('written',true);
+    select('article>div.section-content').innerHTML = content;
+    select('article>div.section-content').setAttribute('written',true);
   });
 
   /*await waitExists('aside.toc .document-toc-item:has([href="#description"])');
