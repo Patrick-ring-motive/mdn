@@ -47,6 +47,7 @@ void async function Presponse(){
     swapTitle();
     swapTextBack('Response','Presponse');
     swapTextBack('response','presponse');
+    swapText('ppresponse','presponse');
   });
   declare(()=>{
     queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
