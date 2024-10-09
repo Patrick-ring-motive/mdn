@@ -1,44 +1,12 @@
 
-A **`Presponse`** object is a Promise that resolves to a [Response](/en-US/docs/Web/API/Response).
+A **`Presponse`** object is a [Promise](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to a [Response](/en-US/docs/Web/API/Response).
 
-## Description
+## Fetch
 
-The `Array Iterator` is returned by [`Array.prototype.values()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values), [`Array.prototype.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys), [`Array.prototype.entries()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries), [`Array.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator), [`TypedArray.prototype.values()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/values), [`TypedArray.prototype.keys()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/keys), [`TypedArray.prototype.entries()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries), [`TypedArray.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/Symbol.iterator), and [`arguments[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator). For [`Arrays`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array),  [`[Symbol.iterator]`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator) is equivalent to [`values`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values). 
+The `Presponse` is primarily obtained from calling fetch.
 
-Most [Array-Like](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#array-like_objects) objects such as [`NodeList`](/en-US/docs/Web/API/NodeList) return an `Array Iterator` from their respective methods `keys()`, `values()`, `entries()`, and `[Symbol.iterator]()`.
-  
-> **Note:** Some Array-Like objects such as [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) do not have a reference to an `Array Iterator` object.
-
-## Constructor
-
-_Inherits constructor from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_
-
-  Array Iterators are not instantiated via direct call of a constructor but from one of the associated [Array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) methods.
-
-## Instance properties
-
-_Also inherits instance properties from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_.
-
-## Instance methods
-
-_Inherits instance methods from its ancestor [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator)_.
-
-## Examples
-
-#### HTMLCollection Iterator
-Retrieve an `Array Iterator` from Array-Like objects with no iterator methods. This is possible through the use of [`Function.prototype.call()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) to call array methods on array-like objects.
 ```js
-// Create an HTMLCollection containing all elements in the document
-const collection = document.getElementsByTagName('*');
-// Call the array values method with collection as this
-const arrValues = [].values.call(collection);
-for (const value of arrValues) {
-  console.log(value);
-}
-// Also works with the other Array->Iterator methods
-const arrKeys = [].keys.call(collection);
-const arrEntries = [].entries.call(collection);
-const arrIter = [][Symbol.iterator].call(collection);
+const preponse = fetch('https://example.com');
 ```
 ⠀
 
