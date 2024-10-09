@@ -24,3 +24,17 @@ console.log(presponse.constructor.name);//Promise
 const response = await presponse;
 console.log(response.constructor.name);//Response
 ```
+
+## Service Worker
+
+In the context of a service worker, a Presponse is the primary input for `event.respondWith`.
+
+```js
+self.addEventListener("fetch", (event) => {
+  const presponse = caches.match(event.request);
+  event.respondWith(presponse);
+});
+```
+
+
+
