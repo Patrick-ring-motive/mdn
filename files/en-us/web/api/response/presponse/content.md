@@ -20,5 +20,7 @@ async function Presponse(){
   return new Response(...arguments);
 }
 const presponse = Presponse("body content");
-console.log(presponse.constructor.name);
+console.log(presponse.constructor.name);//Promise
+const response = await presponse;
+console.log(response.constructor.name);//Response
 ```
