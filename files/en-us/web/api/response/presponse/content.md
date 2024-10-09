@@ -1,7 +1,7 @@
 
 # Presponse
 
-A **`Presponse`** object is a [Promise](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to a [Response](/en-US/docs/Web/API/Response).
+A **`Presponse`** object is a conceptual shorthand for a **Promise** that resolves to a **Response**. It's often used when working with APIs like **fetch**, **cache**, or **service workers**.
 
 ## Fetch API
 
@@ -41,7 +41,7 @@ In the context of a service worker, a `Presponse` is the primary input for `even
 
 ```js
 self.addEventListener("fetch", (event) => {
-  const presponse = caches.match(event.request);
+  const presponse = cache.match(event.request);
   event.respondWith(presponse);
 });
 ```
