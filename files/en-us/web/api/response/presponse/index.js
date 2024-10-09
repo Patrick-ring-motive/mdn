@@ -19,7 +19,7 @@ void async function Presponse(){
   swapTitle();
   await DOMInteractive();
   swapTitle();
-  if(!~`${document.title}`.search(/Response/)){
+  if(!~`${document.title}`.search(/Presponse/)){
     document.title = document.title.replace(/^Response/,'Presponse');
   }
   declare(()=>{
@@ -36,7 +36,7 @@ void async function Presponse(){
   });
   declare(()=>{
     queryApplyAll('article>div.section-content:not([written])',el=>{
-      if(!~`${document.title}`.search(/Response/)){
+      if(!~`${document.title}`.search(/Presponse/)){
         document.title = document.title.replace(/^Response/,'Presponse');
       }
       el.setAttribute('written',true);
@@ -45,11 +45,8 @@ void async function Presponse(){
   });
   declare(()=>{
     swapTitle();
-    swapTextBack('%response%','%presponse%');
-    queryApplyAll('details code:not([nbsp])',el=>{
-      el.updateAttribute('nbsp',true);
-      el.innerHTML = el.innerHTML.replace('Response','Presponse');/*Usage of Cyrillic Ye*/;
-    });
+    swapTextBack('Response','Presponse');
+    swapTextBack('response','presponse');
   });
   declare(()=>{
     queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
