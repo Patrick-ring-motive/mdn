@@ -28,7 +28,9 @@
 <pre class="highlight" precode>
 <code precode>async function fetchThrow(){
    const res = await fetch(...arguments);
-   if(!res.ok) throw new Error(res.statusText);
+   if(!res.ok){
+     throw new Error(`${res.status} ${res.statusText}`.trim());
+   }
    return res;
 }</code></pre>
 </div>
