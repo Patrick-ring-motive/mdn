@@ -3,7 +3,7 @@
 
 A **`Presponse`** object is a [Promise](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to a [Response](/en-US/docs/Web/API/Response).
 
-## Fetch
+## Fetch API
 
 The `Presponse` is primarily obtained from calling fetch.
 
@@ -13,7 +13,7 @@ const response = await presponse;
 console.log(response.constructor.name);//Response
 ```
 ⠀
-You can also create a `Presponse` from scratch
+You can also create a `Presponse` from scratch.
 
 ```js
 async function Presponse(){
@@ -25,9 +25,19 @@ const response = await presponse;
 console.log(response.constructor.name);//Response
 ```
 
-## Service Worker
+## Cache API
 
-In the context of a service worker, a Presponse is the primary input for `event.respondWith`.
+A `Prespose` is returned by the `match` method of a `cache`.
+
+```js
+const cache = await caches.open("app-cache");
+const request = new Request("https://example.com");
+const presponse = cache.match(request);
+```
+
+## Service Workers
+
+In the context of a service worker, a `Presponse` is the primary input for `event.respondWith`.
 
 ```js
 self.addEventListener("fetch", (event) => {
