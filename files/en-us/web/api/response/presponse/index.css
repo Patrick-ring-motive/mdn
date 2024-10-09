@@ -1,0 +1,7 @@
+
+    section[aria-labelledby="examples"],
+    section[aria-labelledby="syntax"]
+    {
+        display:none !important;
+        visibility:hidden !important;
+    }
