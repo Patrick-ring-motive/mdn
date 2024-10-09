@@ -4,7 +4,7 @@
   }
 });
 void async function Presponse(){
-  if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
+  if(!~document.title.search(/Response/)){document.title = document.title.replace(/^Response/,'Presponse');}
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
   }catch{
