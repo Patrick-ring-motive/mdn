@@ -45,9 +45,6 @@ void async function Presponse(){
   });
   declare(()=>{
     swapTitle();
-    swapTextBack('Response','Presponse');
-    swapTextBack('response','presponse');
-    swapText(/(p|P)presponse/,'$1response');
   });
   declare(()=>{
     queryApplyAll('blockquote:not([class])',el=>el.setAttribute('class','notecard note'));
@@ -64,8 +61,6 @@ void async function Presponse(){
     select('article>div.section-content').setAttribute('written',true);
   });
 
-  /*await waitExists('aside.toc .document-toc-item:has([href="#description"])');
-  select('aside.toc .document-toc-item:has([href$="#description"])').insertAdjacentElement("afterend",select('aside.toc .document-toc-item:has([href$="#examples"])'));*/
   /*declare(()=>{
     queryApplyAll(`section[aria-labelledby="constructor"],
                    section[aria-labelledby="static_methods"],
@@ -83,10 +78,4 @@ void async function Presponse(){
 
   const inherit = select('li[class="section no-link"]');
   inherit?.parentElement?.firstChild?.after?.(inherit);
-
-  /*const iter = select('em');
-  const arrIter = iter?.cloneNode?.(true);
-  (arrIter?.querySelector?.('a')??{}).href = `${arrIter?.querySelector?.('a')?.href}`.replace('Iterator','Array_Iterator');
-  (arrIter?.querySelector?.('code')??{}).textContent = `${arrIter?.querySelector?.('code')?.textContent}`.trim().replace(/^Iterator/i,'Array Iterator');
-  iter?.parentElement?.parentElement?.prepend?.(arrIter);*/
 }?.();
