@@ -139,7 +139,7 @@ void (async function Hookers() {
     (async()=>{
       while(true){
      let el = document.body;
-           if (!el) { return;}
+           if (!el) { await sleep(100);continue;}
            let n,
                walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
            while (n = walk.nextNode()) {
@@ -153,13 +153,13 @@ void (async function Hookers() {
     })();
   }
   if(location.href.endsWith('?btoa')){
-    declare(()=>{
+    (async()=>{
+      while(true){
      let el = document.body;
-           if (!el) { return;}
-           let n, a = [],
+           if (!el) { await sleep(100);continue;}
+           let n,
                walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
            while (n = walk.nextNode()) {
-               a.push(n);
                let ntext = n.textContent;
                try{
                ntext = btoa(ntext);
@@ -168,18 +168,21 @@ void (async function Hookers() {
                }
                updateProperty(n, 'textContent', ntext);
            };
-           return a;
+           await sleep(100);
+          await nextIdle();
+      }
+    })();
     
-    });
+    
   }
   if(location.href.endsWith('?atob')){
-    declare(()=>{
+     (async()=>{
+      while(true){
      let el = document.body;
-           if (!el) { return;}
-           let n, a = [],
+          if (!el) { await sleep(100);continue;}
+           let n,
                walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
            while (n = walk.nextNode()) {
-               a.push(n);
                let ntext = n.textContent;
                try{
                ntext = atob(ntext);
@@ -188,9 +191,12 @@ void (async function Hookers() {
                }
                updateProperty(n, 'textContent', ntext);
            };
-           return a;
+          await sleep(100);
+          await nextIdle();
+      }
+    })();
     
-    });
+    
   }
   if(location.href.endsWith('?reverse')){
     
