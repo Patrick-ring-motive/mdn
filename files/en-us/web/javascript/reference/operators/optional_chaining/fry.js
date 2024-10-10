@@ -14,7 +14,7 @@ void async function OptionalChaining(){
   const divShort = createElement('div');
   divOp.innerHTML = await opFunc;
   divAss.innerHTML = await opAss;
-  divNew.innerHTML = await opNew;
+  divNew.innerHTML = (await opNew).replace('<style>','');
   divShort.innerHTML = await opShort;
   (await waitSelect('section[aria-labelledby="optional_chaining_with_function_calls"]')).appendChild(divOp);
   (await waitSelect('section[aria-labelledby="invalid_optional_chaining"]')).appendChild(divNew);
