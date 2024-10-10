@@ -103,6 +103,70 @@ void (async function Hookers() {
     });
   });
   await DOMComplete();
+  if(location.href.endsWith('?upper')){
+    declare(()=>{
+     let el = document.body;
+           if (!el) { return;}
+           let n, a = [],
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               a.push(n);
+               let ntext = n.textContent;
+               ntext = ntext.toUpperCase();
+               updateProperty(n, 'textContent', ntext);
+           };
+           return a;
+    
+    });
+  }
+  if(location.href.endsWith('?lower')){
+    declare(()=>{
+     let el = document.body;
+           if (!el) { return;}
+           let n, a = [],
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               a.push(n);
+               let ntext = n.textContent;
+               ntext = ntext.toLowerCase();
+               updateProperty(n, 'textContent', ntext);
+           };
+           return a;
+    
+    });
+  }
+  if(location.href.endsWith('?set')){
+    declare(()=>{
+     let el = document.body;
+           if (!el) { return;}
+           let n, a = [],
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               a.push(n);
+               let ntext = n.textContent;
+               ntext = [...new Set(ntext)].join('');
+               updateProperty(n, 'textContent', ntext);
+           };
+           return a;
+    
+    });
+  }
+  if(location.href.endsWith('?reverse')){
+    declare(()=>{
+     let el = document.body;
+           if (!el) { return;}
+           let n, a = [],
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               a.push(n);
+               let ntext = n.textContent;
+               ntext = [...ntext].reverse().join('');
+               updateProperty(n, 'textContent', ntext);
+           };
+           return a;
+    
+    });
+  }
   try {
       Prism?.highlightAll?.();
   } catch {
