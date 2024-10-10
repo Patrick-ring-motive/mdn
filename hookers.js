@@ -166,6 +166,7 @@ void (async function Hookers() {
                  updateProperty(n, 'textContent', ntext);
               }
            };
+          queryApplyAll('a[href]:not([href*="marklar"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?marklar'));
           await sleep(100);
           await nextIdle();
       }
