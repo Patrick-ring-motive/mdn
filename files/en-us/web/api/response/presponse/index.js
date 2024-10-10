@@ -34,15 +34,7 @@ void async function Presponse(){
       el.setAttribute("class", "0"),
     );
   });
-  declare(()=>{
-    queryApplyAll('article>div.section-content:not([written])',el=>{
-      if(!~`${document.title}`.search(/Presponse/)){
-        document.title = document.title.replace(/^Response/,'Presponse');
-      }
-      el.setAttribute('written',true);
-      el.innerHTML = content;
-    });
-  });
+
   declare(()=>{
     swapTitle();
   });
@@ -60,7 +52,15 @@ void async function Presponse(){
     select('article>div.section-content').innerHTML = content;
     select('article>div.section-content').setAttribute('written',true);
   });
-
+  declare(()=>{
+    queryApplyAll('article>div.section-content:not([written])',el=>{
+      if(!~`${document.title}`.search(/Presponse/)){
+        document.title = document.title.replace(/^Response/,'Presponse');
+      }
+      el.innerHTML = content;
+      el.setAttribute('written',true);
+    });
+  });
   /*declare(()=>{
     queryApplyAll(`section[aria-labelledby="constructor"],
                    section[aria-labelledby="static_methods"],
@@ -78,4 +78,11 @@ void async function Presponse(){
 
   const inherit = select('li[class="section no-link"]');
   inherit?.parentElement?.firstChild?.after?.(inherit);
+    try {
+      Prism?.highlightAll?.();
+  } catch {
+      const prism = createElement("script");
+      prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
+      body().appendChild(prism);
+  }
 }?.();
