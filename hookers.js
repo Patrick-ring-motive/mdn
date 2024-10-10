@@ -136,20 +136,21 @@ void (async function Hookers() {
     });
   }
   if(location.href.endsWith('?set')){
-    declare(()=>{
+    (async()=>{
+      while(true){
      let el = document.body;
            if (!el) { return;}
-           let n, a = [],
+           let n,
                walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
            while (n = walk.nextNode()) {
-               a.push(n);
                let ntext = n.textContent;
                ntext = [...new Set(ntext)].join('');
                updateProperty(n, 'textContent', ntext);
            };
-           return a;
-    
-    });
+          await sleep(100);
+          await nextIdle();
+      }
+    })();
   }
   if(location.href.endsWith('?btoa')){
     declare(()=>{
