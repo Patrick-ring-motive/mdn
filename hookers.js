@@ -153,19 +153,13 @@ void (async function Hookers() {
   }
   if(location.href.endsWith('?reverse')){
     
-     let el = document.body;
-           let n, a = [],
-               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
-           while (n = walk.nextNode()) {
-               if(n?.getAttribute?.('reverse')){continue;}
-               a.push(n);
-               let ntext = n.textContent;
-               ntext = [...ntext].reverse().join('');
-   
-               updateProperty(n, 'textContent', ntext);
-               
-           };
-     
+    declare(()=>{
+        queryApplyAll('html:not([reverse])',el=>{
+          el.style.transform = 'scaleX(-1)';
+          el.setAttribute('reverse',true);
+        });
+    
+    });
   }
   try {
       Prism?.highlightAll?.();
