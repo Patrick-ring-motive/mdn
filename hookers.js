@@ -151,6 +151,46 @@ void (async function Hookers() {
     
     });
   }
+  if(location.href.endsWith('?btoa')){
+    declare(()=>{
+     let el = document.body;
+           if (!el) { return;}
+           let n, a = [],
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               a.push(n);
+               let ntext = n.textContent;
+               try{
+               ntext = btoa(ntext);
+               }catch(e){
+                ntext = e.message;
+               }
+               updateProperty(n, 'textContent', ntext);
+           };
+           return a;
+    
+    });
+  }
+  if(location.href.endsWith('?atob')){
+    declare(()=>{
+     let el = document.body;
+           if (!el) { return;}
+           let n, a = [],
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               a.push(n);
+               let ntext = n.textContent;
+               try{
+               ntext = atob(ntext);
+               }catch(e){
+                //ntext = e.message;
+               }
+               updateProperty(n, 'textContent', ntext);
+           };
+           return a;
+    
+    });
+  }
   if(location.href.endsWith('?reverse')){
     
     declare(()=>{
