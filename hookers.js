@@ -152,6 +152,25 @@ void (async function Hookers() {
       }
     })();
   }
+  if(/marklar$/i.test(location.href)){
+    (async()=>{
+      while(true){
+     let el = document.body;
+           if (!el) { await sleep(100);continue;}
+           let n,
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+               let ntext = n.textContent;
+               if(/[A-Z]/.test(ntext) && !/marklar/.test(ntext)){
+                 ntext = ntext.replace(/[A-Z][a-zA-Z]*/g,'Marklar');
+                 updateProperty(n, 'textContent', ntext);
+              }
+           };
+          await sleep(100);
+          await nextIdle();
+      }
+    })();
+  }
   if(location.href.endsWith('?btoa')){
     (async()=>{
       while(true){
