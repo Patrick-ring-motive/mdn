@@ -1,4 +1,4 @@
-void (async function Hookers() {
+ void (async function Hookers() {
   try {
     globalThis.declare ?? (await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`));
   } catch {
@@ -115,6 +115,7 @@ void (async function Hookers() {
                ntext = ntext.toUpperCase();
                updateProperty(n, 'textContent', ntext);
            };
+          queryApplyAll('a[href]:not([href*="lower"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?lower'));
            return a;
     
     });
@@ -131,6 +132,7 @@ void (async function Hookers() {
                ntext = ntext.toLowerCase();
                updateProperty(n, 'textContent', ntext);
            };
+          queryApplyAll('a[href]:not([href*="?lower"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?lower'));
            return a;
     
     });
@@ -147,6 +149,7 @@ void (async function Hookers() {
                ntext = [...new Set(ntext)].join('');
                updateProperty(n, 'textContent', ntext);
            };
+          queryApplyAll('a[href]:not([href*="?set"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?set'));
           await sleep(100);
           await nextIdle();
       }
@@ -188,6 +191,7 @@ void (async function Hookers() {
                }
                updateProperty(n, 'textContent', ntext);
            };
+          queryApplyAll('a[href]:not([href*="?btoa"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?btoa'));
            await sleep(100);
           await nextIdle();
       }
@@ -211,6 +215,7 @@ void (async function Hookers() {
                }
                updateProperty(n, 'textContent', ntext);
            };
+          queryApplyAll('a[href]:not([href*="?atob"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?atob'));
           await sleep(100);
           await nextIdle();
       }
@@ -227,6 +232,7 @@ void (async function Hookers() {
         });
     
     });
+    queryApplyAll('a[href]:not([href*="?reverse"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?reverse'));
   }
   try {
       Prism?.highlightAll?.();
