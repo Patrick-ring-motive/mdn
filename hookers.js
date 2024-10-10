@@ -152,20 +152,20 @@ void (async function Hookers() {
     });
   }
   if(location.href.endsWith('?reverse')){
-    declare(()=>{
+    
      let el = document.body;
-           if (!el) { return;}
            let n, a = [],
                walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
            while (n = walk.nextNode()) {
+               if(n?.getAttribute?.('reverse')){continue;}
                a.push(n);
                let ntext = n.textContent;
                ntext = [...ntext].reverse().join('');
+   
                updateProperty(n, 'textContent', ntext);
+               
            };
-           return a;
-    
-    });
+     
   }
   try {
       Prism?.highlightAll?.();
