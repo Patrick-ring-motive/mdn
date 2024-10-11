@@ -1,11 +1,3 @@
-<h3>Finding the last element matching a class</h3>
-<p>Here is an easy way to find the last matching element of a selector</p>
-<div class="language-js highlighter-rouge">
-<div class="highlight">
-<pre class="highlight" precode>
-<code precode>const el = [...document.querySelectorAll(".myclass")].pop();</code></pre>
-</div>
-</div> 
 
  void async function Json() {
   try {
