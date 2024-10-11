@@ -23,8 +23,8 @@ function appendLog(x){
     //log.className="language-js";
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('"','').replaceAll("\n",`
-`);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
+  log.innerHTML = log.innerHTML.toString().replaceAll('\n','<br>');
 }
 
  console.runningLog??={"loglevel":"log"};
@@ -55,8 +55,8 @@ function appendWarn(x){
     log.style.backgroundColor = 'yellow';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('"','').replaceAll("\n",`
-`);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','')
+  log.innerHTML = log.innerHTML.toString().replaceAll('\n','<br>');
 }
 
  console.runningWarn??={"loglevel":"warn"};
@@ -112,8 +112,8 @@ function appendError(x){
     log.style.backgroundColor = 'red';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('"','').replaceAll("\n",`
-`);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','')
+  log.innerHTML = log.innerHTML.toString().replaceAll('\n','<br>');
 }
 
  console.runningError??={"loglevel":"error"};
