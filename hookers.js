@@ -1,3 +1,42 @@
+
+if(/loglevel=(log|all)/.test(location.href)){
+function appendLog(x){
+  let log = document.querySelector('[loglevel="log"]');
+  if(!log){
+    log = document.createElement('pre');
+    log.setAttribute('loglevel','log');
+    log.style.width = '100vw';
+    document.body?.appendChild?.(log);
+  }
+  log.innerText = JSON.stringify(x,null,2);
+}
+
+function inspect(x){
+   let info = '\n'
+   info += `${String(x)}\n`;
+   try{info += `${JSON.stringify(x,null,2)}\n`;}catch{}
+   for(const k in x){try{
+    info += `${String(k)} : ${String(x[k])}\n`;
+   }catch{}}
+    info += `prototype : ${String(x?.prototype)}\n`;
+    info += `__proto__ : ${String(x?.__proto__)}\n`;
+    info += `constructor : ${String(x?.constructor)}\n`;
+    return info;
+ }
+ console.runningLog??={};
+  if(console.log && console['&log']){
+    console['&log'] = console.log;
+    console.log = function log(){
+      try{
+        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        console.runningLog[txt]=(console.runningLog[txt]??0)+1;
+        appendLog(runningLog);
+      }catch{}
+      return console['&log'](...arguments);
+    };
+  }
+}
+
  void (async function Hookers() {
   try {
     globalThis.declare ?? (await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`));
