@@ -54,7 +54,8 @@ function appendWarn(x){
     log.style.backgroundColor = 'yellow';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','').replaceAll("\n",`
+`);
 }
 
  console.runningWarn??={"loglevel":"warn"};
