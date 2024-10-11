@@ -30,7 +30,7 @@ function appendLog(x){
     console['&log'] = console.log;
     console.log = function log(){
       try{
-        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        const txt = [...arguments].map(x=>inspect(x)).join('\n').replaceAll('\n','__n');
         console.runningLog[txt]=(console.runningLog[txt]??0)+1;
         appendLog(console.runningLog);
       }catch{}
