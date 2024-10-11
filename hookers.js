@@ -67,6 +67,31 @@ function appendWarn(x){
   }
 }
 
+if(/loglevel=(onerror|all)/.test(location.href)){
+function appendOnerror(x){
+  let log = document.querySelector('[loglevel="onerror"]');
+  if(!log){
+    log = document.createElement('pre');
+    log.setAttribute('loglevel','onerror');
+    log.style.width = '100vw';
+    log.style.minHeight = '50vmin';
+    log.style.backgroundColor = 'orange';
+    document.body?.appendChild?.(log);
+  }
+  log.innerText = JSON.stringify(x,null,2);
+}
+
+ console.runningOnerror??={"loglevel":"onerror"};
+   window.onerror = function onerror(){
+      try{
+        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        console.runningOnerror[txt]=(console.runningOnerror[txt]??0)+1;
+        appendOnerror(console.runningOnerror);
+      }catch{}
+    };
+  }
+}
+
 if(/loglevel=(error|all)/.test(location.href)){
 function appendError(x){
   let log = document.querySelector('[loglevel="error"]');
@@ -202,6 +227,7 @@ function appendError(x){
   await DOMComplete();
   try{appendLog?.(console?.runningLog);}catch{}
   try{appendWarn?.(console?.runningWarn);}catch{}
+  try{appendOnerror?.(console?.runningOnerror);}catch{}
   try{appendError?.(console?.runningError);}catch{}
   if(location.href.endsWith('?upper')){
     declare(()=>{
