@@ -424,13 +424,8 @@ function appendReject(x){
     });
     queryApplyAll('a[href]:not([href*="?reverse"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?reverse'));
   }
-  try {
-      Prism?.highlightAll?.();
-  } catch {
-      const prism = createElement("script");
-      prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
-      body().appendChild(prism);
-  }
+    
+doPrism();
 
 })?.();
 
