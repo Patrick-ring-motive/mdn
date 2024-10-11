@@ -144,6 +144,7 @@ function inspect(x){
     });
   });
   await DOMComplete();
+  appendLog(console.runningLog);
   if(location.href.endsWith('?upper')){
     declare(()=>{
      let el = document.body;
@@ -284,6 +285,7 @@ function inspect(x){
       prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
       body().appendChild(prism);
   }
+
 })?.();
 
 void async function(){
