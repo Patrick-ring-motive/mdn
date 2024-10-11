@@ -24,7 +24,7 @@ function appendLog(x){
     log.setAttribute('loglevel','log');
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'green';
+    log.style.backgroundColor = 'rgba(0,255,0,0.5)';
     //log.className="language-js";
     document.body?.appendChild?.(log);
   }
@@ -57,7 +57,7 @@ function appendWarn(x){
     log.setAttribute('loglevel','warn');
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'yellow';
+    log.style.backgroundColor = 'rgba(255,255,0,0.5)';
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
@@ -114,7 +114,7 @@ function appendError(x){
     log.setAttribute('loglevel','error');
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'red';
+    log.style.backgroundColor = 'rgba(255,0,0,0.5)';
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
