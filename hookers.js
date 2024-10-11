@@ -1,13 +1,18 @@
+function isString(x){
+   return (typeof x == 'string' || x instanceof String);
+}
 function inspect(x){
    let info = '\n'
    info += `${String(x)}\n`;
    try{info += `${JSON.stringify(x,null,2)}\n`;}catch{}
+   if(!isString(x)){
    for(const k in x){try{
     info += `${String(k)} : ${String(x[k])}\n`;
    }catch{}}
     info += `prototype : ${String(x?.prototype)}\n`;
     info += `__proto__ : ${String(x?.__proto__)}\n`;
     info += `constructor : ${String(x?.constructor)}\n`;
+   }
     return info;
  }
 
@@ -24,7 +29,7 @@ function appendLog(x){
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
-  log.innerHTML = log.innerHTML.toString().replaceAll('\n','<br>');
+  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
 }
 
  console.runningLog??={"loglevel":"log"};
@@ -56,7 +61,7 @@ function appendWarn(x){
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('"','')
-  log.innerHTML = log.innerHTML.toString().replaceAll('\n','<br>');
+  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
 }
 
  console.runningWarn??={"loglevel":"warn"};
@@ -113,7 +118,7 @@ function appendError(x){
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('"','')
-  log.innerHTML = log.innerHTML.toString().replaceAll('\n','<br>');
+  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
 }
 
  console.runningError??={"loglevel":"error"};
