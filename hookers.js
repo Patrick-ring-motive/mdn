@@ -1,3 +1,12 @@
+async function doPrism(){
+   try {
+      Prism?.highlightAll?.();
+  } catch {
+      const prism = createElement("script");
+      prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
+      body().appendChild(prism);
+  }
+}
 function isString(x){
    return (typeof x == 'string' || x instanceof String);
 }
@@ -15,21 +24,33 @@ function inspect(x){
    }
     return info;
  }
-
-if(/loglevel=(log|all)/.test(location.href)){
-function appendLog(x){
-  let log = document.querySelector('[loglevel="log"]');
+function appendLogger(x,s){
+  let log = document.querySelector(`[loglevel="${s}"]`);
   if(!log){
-    log = document.createElement('pre');
-    log.setAttribute('loglevel','log');
+     const outerDiv = createElement('div');
+     outerDiv.setAttribute('class','language-js highlighter-rouge');
+     const innerDiv = createElement('div');
+     innerDiv.setAttribute('class','highlight');
+     const pre = document.createElement('pre');
+     const code = createElement('code');
+     outerDiv.appendChild(innerDiv);
+     innerDiv.appendChild(pre);
+    log = document.createElement('code');
+    log.setAttribute('loglevel',s);
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
     log.style.backgroundColor = 'rgba(0,255,0,0.5)';
+     pre.appendChild(log);
     //log.className="language-js";
-    document.body?.appendChild?.(log);
+    document.body?.appendChild?.(outerDiv);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
   log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
+}
+if(/loglevel=(log|all)/.test(location.href)){
+function appendLog(x){
+   appendLogger(x,"log");
+   doPrism();
 }
 
  console.runningLog??={"loglevel":"log"};
