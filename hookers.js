@@ -32,20 +32,19 @@ function appendLogger(x,s){
      const innerDiv = createElement('div');
      innerDiv.setAttribute('class','highlight');
      const pre = document.createElement('pre');
-     const code = createElement('code');
      outerDiv.appendChild(innerDiv);
      innerDiv.appendChild(pre);
     log = document.createElement('code');
     log.setAttribute('loglevel',s);
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'rgba(0,255,0,0.5)';
+    pre.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
      pre.appendChild(log);
     //log.className="language-js";
     document.body?.appendChild?.(outerDiv);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
-  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
+  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','\n');
 }
 if(/loglevel=(log|all)/.test(location.href)){
 function appendLog(x){
