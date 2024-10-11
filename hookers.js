@@ -66,7 +66,7 @@ function appendWarn(x){
     };
   }
 }
-
+/*
 if(/loglevel=(onerror|all)/.test(location.href)){
 function appendOnerror(x){
   let log = document.querySelector('[loglevel="onerror"]');
@@ -91,7 +91,7 @@ function appendOnerror(x){
     };
   }
 }
-
+*/
 if(/loglevel=(error|all)/.test(location.href)){
 function appendError(x){
   let log = document.querySelector('[loglevel="error"]');
