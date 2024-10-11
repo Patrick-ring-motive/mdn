@@ -18,7 +18,7 @@ function appendLog(x){
     log = document.createElement('pre');
     log.setAttribute('loglevel','log');
     log.style.width = '100vw';
-    log.style.minHeight = '100vmin';
+    log.style.minHeight = '50vmin';
     log.style.backgroundColor = 'green';
     document.body?.appendChild?.(log);
   }
@@ -46,7 +46,7 @@ function appendWarn(x){
     log = document.createElement('pre');
     log.setAttribute('loglevel','warn');
     log.style.width = '100vw';
-    log.style.minHeight = '100vmin';
+    log.style.minHeight = '50vmin';
     log.style.backgroundColor = 'yellow';
     document.body?.appendChild?.(log);
   }
