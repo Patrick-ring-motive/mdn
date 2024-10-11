@@ -291,7 +291,7 @@ function appendError(x){
            while (n = walk.nextNode()) {
                let ntext = n.textContent;
                if(/[A-Z]/.test(ntext) && !/marklar/.test(ntext)){
-                 ntext = ntext.replace(/[A-Z][a-zA-Z]*/g,'Marklar');
+                 ntext = ntext.replace(/[A-Z][a-zA-Z]*/g,'Marklar').replaceAll('tdn','marklar');
                  updateProperty(n, 'textContent', ntext);
               }
            };
