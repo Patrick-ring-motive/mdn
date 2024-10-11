@@ -27,7 +27,7 @@ function appendLog(x){
 }
 
  console.runningLog??={"loglevel":"log"};
-  if(console.log && console['&log']){
+  if(console.log && !console['&log']){
     console['&log'] = console.log;
     console.log = function log(){
       try{
@@ -58,7 +58,7 @@ function appendWarn(x){
 }
 
  console.runningWarn??={"loglevel":"warn"};
-  if(console.warn && console['&warn']){
+  if(console.warn && !console['&warn']){
     console['&warn'] = console.warn;
     console.warn = function warn(){
       try{
@@ -114,7 +114,7 @@ function appendError(x){
 }
 
  console.runningError??={"loglevel":"error"};
-  if(console.error && console['&error']){
+  if(console.error && !console['&error']){
     console['&error'] = console.error;
     console.error = function error(){
       try{
