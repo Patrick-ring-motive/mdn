@@ -25,14 +25,14 @@ function inspect(x){
     info += `constructor : ${String(x?.constructor)}\n`;
     return info;
  }
- console.runningLog??={};
+ console.runningLog??={"loglevel":"log"};
   if(console.log && console['&log']){
     console['&log'] = console.log;
     console.log = function log(){
       try{
         const txt = [...arguments].map(x=>inspect(x)).join('\n');
         console.runningLog[txt]=(console.runningLog[txt]??0)+1;
-        appendLog(runningLog);
+        appendLog(console.runningLog);
       }catch{}
       return console['&log'](...arguments);
     };
