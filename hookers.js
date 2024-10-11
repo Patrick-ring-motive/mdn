@@ -6,6 +6,8 @@ function appendLog(x){
     log = document.createElement('pre');
     log.setAttribute('loglevel','log');
     log.style.width = '100vw';
+    log.style.minHeight = '100vh';
+    log.style.backgroundColor = 'green';
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2);
