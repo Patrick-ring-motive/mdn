@@ -67,6 +67,34 @@ function appendWarn(x){
   }
 }
 
+if(/loglevel=(error|all)/.test(location.href)){
+function appendError(x){
+  let log = document.querySelector('[loglevel="error"]');
+  if(!log){
+    log = document.createElement('pre');
+    log.setAttribute('loglevel','error');
+    log.style.width = '100vw';
+    log.style.minHeight = '50vmin';
+    log.style.backgroundColor = 'red';
+    document.body?.appendChild?.(log);
+  }
+  log.innerText = JSON.stringify(x,null,2);
+}
+
+ console.runningError??={"loglevel":"error"};
+  if(console.error && console['&error']){
+    console['&error'] = console.error;
+    console.error = function error(){
+      try{
+        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        console.runningError[txt]=(console.runningError[txt]??0)+1;
+        appendError(console.runningError);
+      }catch{}
+      return console['&Error'](...arguments);
+    };
+  }
+}
+
  void (async function Hookers() {
   try {
     globalThis.declare ?? (await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`));
@@ -174,6 +202,7 @@ function appendWarn(x){
   await DOMComplete();
   try{appendLog?.(console?.runningLog);}catch{}
   try{appendWarn?.(console?.runningWarn);}catch{}
+  try{appendError?.(console?.runningError);}catch{}
   if(location.href.endsWith('?upper')){
     declare(()=>{
      let el = document.body;
