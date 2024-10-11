@@ -20,7 +20,7 @@ function appendLog(x){
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
     log.style.backgroundColor = 'green';
-    log.className="language-js";
+    //log.className="language-js";
     document.body?.appendChild?.(log);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
