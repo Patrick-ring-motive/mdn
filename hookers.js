@@ -127,6 +127,31 @@ function appendError(x){
   }
 }
 
+if(/loglevel=(reject|all)/.test(location.href)){
+function appendReject(x){
+  let log = document.querySelector('[loglevel="reject"]');
+  if(!log){
+    log = document.createElement('pre');
+    log.setAttribute('loglevel','reject');
+    log.style.width = '100vw';
+    log.style.minHeight = '50vmin';
+    log.style.backgroundColor = 'pink';
+    document.body?.appendChild?.(log);
+  }
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
+}
+
+ console.runningReject??={"loglevel":"reject"};
+   window.addEventListener('unhandledrejection', (event) => {
+      try{
+        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        console.runningReject[txt]=(console.runningReject[txt]??0)+1;
+        appendReject(console.runningReject);
+      }catch{}
+    };
+}
+
+
  void (async function Hookers() {
   try {
     globalThis.declare ?? (await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`));
@@ -236,6 +261,7 @@ function appendError(x){
   try{appendWarn?.(console?.runningWarn);}catch{}
   try{appendOnerror?.(console?.runningOnerror);}catch{}
   try{appendError?.(console?.runningError);}catch{}
+  try{appendReject?.(console?.runningReject);}catch{}
   if(location.href.endsWith('?upper')){
     declare(()=>{
      let el = document.body;
