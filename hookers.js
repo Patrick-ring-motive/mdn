@@ -212,6 +212,7 @@
                try{
                ntext = atob(ntext);
                }catch(e){
+                if(/invalid/i.test(e.message)){continue;}
                 ntext = e.message;
                }
                updateProperty(n, 'textContent', ntext);
