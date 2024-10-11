@@ -1,3 +1,15 @@
+function inspect(x){
+   let info = '\n'
+   info += `${String(x)}\n`;
+   try{info += `${JSON.stringify(x,null,2)}\n`;}catch{}
+   for(const k in x){try{
+    info += `${String(k)} : ${String(x[k])}\n`;
+   }catch{}}
+    info += `prototype : ${String(x?.prototype)}\n`;
+    info += `__proto__ : ${String(x?.__proto__)}\n`;
+    info += `constructor : ${String(x?.constructor)}\n`;
+    return info;
+ }
 
 if(/loglevel=(log|all)/.test(location.href)){
 function appendLog(x){
@@ -13,18 +25,6 @@ function appendLog(x){
   log.innerText = JSON.stringify(x,null,2);
 }
 
-function inspect(x){
-   let info = '\n'
-   info += `${String(x)}\n`;
-   try{info += `${JSON.stringify(x,null,2)}\n`;}catch{}
-   for(const k in x){try{
-    info += `${String(k)} : ${String(x[k])}\n`;
-   }catch{}}
-    info += `prototype : ${String(x?.prototype)}\n`;
-    info += `__proto__ : ${String(x?.__proto__)}\n`;
-    info += `constructor : ${String(x?.constructor)}\n`;
-    return info;
- }
  console.runningLog??={"loglevel":"log"};
   if(console.log && console['&log']){
     console['&log'] = console.log;
@@ -35,6 +35,34 @@ function inspect(x){
         appendLog(console.runningLog);
       }catch{}
       return console['&log'](...arguments);
+    };
+  }
+}
+
+if(/loglevel=(warn|all)/.test(location.href)){
+function appendWarn(x){
+  let log = document.querySelector('[loglevel="warn"]');
+  if(!log){
+    log = document.createElement('pre');
+    log.setAttribute('loglevel','warn');
+    log.style.width = '100vw';
+    log.style.minHeight = '100vmin';
+    log.style.backgroundColor = 'yellow';
+    document.body?.appendChild?.(log);
+  }
+  log.innerText = JSON.stringify(x,null,2);
+}
+
+ console.runningWarn??={"loglevel":"warn"};
+  if(console.warn && console['&warn']){
+    console['&warn'] = console.warn;
+    console.warn = function warn(){
+      try{
+        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        console.runningWarn[txt]=(console.runningWarn[txt]??0)+1;
+        appendWarn(console.runningWarn);
+      }catch{}
+      return console['&warn'](...arguments);
     };
   }
 }
@@ -144,7 +172,8 @@ function inspect(x){
     });
   });
   await DOMComplete();
-  appendLog(console.runningLog);
+  try{appendLog?.(console?.runningLog);}catch{}
+  try{appendWarn?.(console?.runningWarn);}catch{}
   if(location.href.endsWith('?upper')){
     declare(()=>{
      let el = document.body;
