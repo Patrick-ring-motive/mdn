@@ -22,7 +22,7 @@ function appendLog(x){
     log.style.backgroundColor = 'green';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
 }
 
  console.runningLog??={"loglevel":"log"};
@@ -53,7 +53,7 @@ function appendWarn(x){
     log.style.backgroundColor = 'yellow';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
 }
 
  console.runningWarn??={"loglevel":"warn"};
@@ -83,7 +83,7 @@ function appendOnerror(x){
     log.style.backgroundColor = 'orange';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
 }
 
  console.runningOnerror??={"loglevel":"onerror"};
@@ -109,7 +109,7 @@ function appendError(x){
     log.style.backgroundColor = 'red';
     document.body?.appendChild?.(log);
   }
-  log.innerText = JSON.stringify(x,null,2);
+  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
 }
 
  console.runningError??={"loglevel":"error"};
