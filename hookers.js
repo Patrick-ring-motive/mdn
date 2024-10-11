@@ -208,10 +208,11 @@
                walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
            while (n = walk.nextNode()) {
                let ntext = n.textContent;
+              if(/error/i.test(ntext)){continue;}
                try{
                ntext = atob(ntext);
                }catch(e){
-                //ntext = e.message;
+                ntext = e.message;
                }
                updateProperty(n, 'textContent', ntext);
            };
