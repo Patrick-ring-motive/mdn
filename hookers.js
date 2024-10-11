@@ -33,7 +33,10 @@ function appendLog(x){
         const txt = [...arguments].map(x=>inspect(x)).join('\n').replaceAll('\n','__n');
         console.runningLog[txt]=(console.runningLog[txt]??0)+1;
         appendLog(console.runningLog);
-      }catch(e){alert(e.message);}
+      }catch(e){
+        console.runningLog[e.message]=e.stack;
+        appendLog(console.runningLog);
+      }
       return console['&log'](...arguments);
     };
   }
