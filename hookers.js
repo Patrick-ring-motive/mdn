@@ -127,7 +127,7 @@ function appendError(x){
   }
 }
 
-if(/loglevel=(reject|all)/.test(location.href)){
+/*if(/loglevel=(reject|all)/.test(location.href)){
 function appendReject(x){
   let log = document.querySelector('[loglevel="reject"]');
   if(!log){
@@ -149,7 +149,7 @@ function appendReject(x){
         appendReject(console.runningReject);
       }catch{}
     };
-}
+}*/
 
 
  void (async function Hookers() {
