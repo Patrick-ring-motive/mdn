@@ -139,7 +139,6 @@ function appendOnerror(x){
         appendOnerror(console.runningOnerror);
       }catch{}
     };
-  }
 }`);
 }catch(e){console.log(e);}
 
