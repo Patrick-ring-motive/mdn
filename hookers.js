@@ -30,18 +30,6 @@ function appendLogger(x,s){
      const outerDiv = document.createElement('div');
      outerDiv.setAttribute('class','language-js highlighter-rouge');
      outerDiv.setAttribute('loglevel',s);
-     const logStyle = document.createElement('style');
-     logStyle.innerHTML = `
-      [loglevel="${s}"],
-      [loglevel="${s}"]>span,
-      [loglevel="${s}"] span,
-      [loglevel="${s}"]>*,
-      [loglevel="${s}"] *{
-        background-color: rgba(0,255,0,0.5) !important;
-        accent-color: rgba(0,255,0,0.5) !important;
-      }
-    `;
-     document?.body?.appendChild?.(logStyle);
      const innerDiv = document.createElement('div');
      innerDiv.setAttribute('class','highlight');
      innerDiv.setAttribute('loglevel',s);
@@ -59,6 +47,18 @@ function appendLogger(x,s){
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
   log.innerHTML = log.innerHTML.toString().replaceAll('\\n','\n');
+       const logStyle = document.createElement('style');
+     logStyle.innerHTML = `
+      [loglevel="${s}"],
+      [loglevel="${s}"]>span,
+      [loglevel="${s}"] span,
+      [loglevel="${s}"]>*,
+      [loglevel="${s}"] *{
+        background-color: rgba(0,255,0,0.5) !important;
+        accent-color: rgba(0,255,0,0.5) !important;
+      }
+    `;
+     document?.body?.appendChild?.(logStyle);
 }
 if(/loglevel=(log|all)/.test(location.href)){
 function appendLog(x){
