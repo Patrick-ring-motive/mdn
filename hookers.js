@@ -25,7 +25,7 @@ function inspect(x){
     return info;
  }
 function appendLogger(x,s){
-  let log = document.querySelector(`[loglevel="${s}"]`);
+  let log = document.querySelector(`code[loglevel="${s}"]`);
   if(!log){
      const outerDiv = document.createElement('div');
      outerDiv.setAttribute('class','language-js highlighter-rouge');
