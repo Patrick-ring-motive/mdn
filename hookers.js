@@ -99,7 +99,7 @@ function appendWarn(x){
   log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
 }
 function appendWarn(x){
-   appendLogger(x,"log","rgba(255,255,0,0.5)");
+   appendLogger(x,"warn","rgba(255,255,0,0.5)");
    doPrism();
 }
 
