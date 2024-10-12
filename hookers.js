@@ -25,6 +25,15 @@ function inspect(x){
     info += `__proto__ : ${String(x?.__proto__)}\n`;
     info += `constructor : ${String(x?.constructor)}\n`;
    }
+   if(x?.name){
+    info += `${String(x.name)}\n`;
+   }
+   if(x?.cause){
+    info += `${String(x.cause)}\n`;
+   }
+   if(x?.message){
+    info += `${String(x.message)}\n`;
+   }
    if(x?.stack){
     info += `${String(x.stack)}\n`;
    }
