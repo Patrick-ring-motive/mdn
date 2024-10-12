@@ -298,7 +298,12 @@ function appendReject(x){
     });
   });
   await DOMComplete();
-  try{appendLog?.(console?.runningLog);}catch{}
+  try{
+    appendLog?.(console?.runningLog);
+    declare(()=>{
+      queryApplyAll('[loglevel="log"] :not([loglevel="log"])',el=>el.setAttribute('loglevel','log'));
+    });
+  }catch{}
   try{appendWarn?.(console?.runningWarn);}catch{}
   try{appendOnerror?.(console?.runningOnerror);}catch{}
   try{appendError?.(console?.runningError);}catch{}
