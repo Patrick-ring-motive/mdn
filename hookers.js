@@ -33,6 +33,9 @@ function appendLogger(x,s){
      const logStyle = document.createElement('style');
      logStyle.innerHTML = `
       [loglevel="${s}"],
+      [loglevel="${s}"]>span,
+      [loglevel="${s}"] span,
+      [loglevel="${s}"]>*,
       [loglevel="${s}"] *{
         background-color: rgba(0,255,0,0.5) !important;
       }
@@ -48,9 +51,7 @@ function appendLogger(x,s){
     log.setAttribute('loglevel',s);
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
-    innerDiv.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
     pre.setAttribute('loglevel',s);
-     log.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
      pre.appendChild(log);
      log.className="language-js";
     document.body?.appendChild?.(outerDiv);
