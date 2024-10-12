@@ -86,7 +86,7 @@ function appendLog(x){
 
 if(/loglevel=(warn|all)/.test(location.href)){
 function appendWarn(x){
-   appendLogger(x,"warn","rgba(255,255,0,0.5)");
+   appendLogger(x,"warn","rgb(191, 181, 92)");
    doPrism();
 }
 
