@@ -116,6 +116,10 @@ a[aria-label="MDN homepage"]::before{
     html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code{
         color:rgb(0,0,0);
     }
+    
+    html[window-location*="hostname=nodejs.org"] [name="outer-div"]{
+      filter: invert(1) hue-rotate(180deg);
+    }
 
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad),
     html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad),
