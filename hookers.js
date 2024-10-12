@@ -24,7 +24,7 @@ function inspect(x){
    }
     return info;
  }
-function appendLogger(x,s){
+function appendLogger(x,s,color){
   let log = document.querySelector(`code[loglevel="${s}"]`);
   if(!log){
      const outerDiv = document.createElement('div');
@@ -38,13 +38,11 @@ function appendLogger(x,s){
      innerDiv.appendChild(pre);
     log = document.createElement('code');
     log.setAttribute('loglevel',s);
-    log.style.width = '100vw';
-    log.style.minHeight = '50vmin';
     pre.setAttribute('loglevel',s);
-     pre.setAttribute('style',"background:rgba(0,255,0,0.5) !important");
+     pre.setAttribute('style',`${color} !important`);
      pre.appendChild(log);
      log.className="language-js";
-     log.setAttribute('style',"width: 100vw; min-height: 50vmin;background:rgba(0,255,0,0.5) !important");
+     log.setAttribute('style',`width: 100vw; min-height: 50vmin;background:${color} !important`);
     document.body?.appendChild?.(outerDiv);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
@@ -56,16 +54,16 @@ function appendLogger(x,s){
       [loglevel="${s}"] span,
       [loglevel="${s}"]>*,
       [loglevel="${s}"] *{
-        background-color: rgba(0,255,0,0.5) !important;
-        accent-color: rgba(0,255,0,0.5) !important;
-        background: rgba(0,255,0,0.5) !important;
+        background-color: ${color} !important;
+        accent-color: ${color} !important;
+        background: ${color} !important;
       }
     `;
      document?.body?.appendChild?.(logStyle);
 }
 if(/loglevel=(log|all)/.test(location.href)){
 function appendLog(x){
-   appendLogger(x,"log");
+   appendLogger(x,"log","rgba(0,255,0,0.5)");
    doPrism();
 }
 
