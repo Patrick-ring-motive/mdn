@@ -49,7 +49,7 @@ function appendLogger(x,s){
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
     innerDiv.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
-    pre.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
+    pre.setAttribute('loglevel',s);
      log.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
      pre.appendChild(log);
      log.className="language-js";
