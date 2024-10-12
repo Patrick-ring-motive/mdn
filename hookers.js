@@ -15,9 +15,7 @@ function inspect(x){
    info += `${String(x)}\n`;
    try{
     const json = `${JSON.stringify(x,null,2)}`;
-    if(json.trim() != info.trim()){
-      info += `${json}\n`;
-    }
+    info += `${json}\n`.replace(String(x),'');
   }catch{}
    if(!isString(x)){
    for(const k in x){try{
