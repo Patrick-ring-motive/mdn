@@ -45,7 +45,7 @@ function appendLogger(x,s,color){
      log.setAttribute('style',`width: 100vw; min-height: 50vmin;background:${color} !important`);
     document.body?.appendChild?.(outerDiv);
   }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','').replace(/^[ ]+/g,' ');
+  log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','').replace(/[ ]+/g,' ');
   log.innerHTML = log.innerHTML.toString().replaceAll('\\n','\n').replaceAll('\\','').replace(/^[ ]+/g,' ');
        const logStyle = document.createElement('style');
      logStyle.innerHTML = `
