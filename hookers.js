@@ -13,7 +13,12 @@ function isString(x){
 function inspect(x){
    let info = '\n'
    info += `${String(x)}\n`;
-   try{info += `${JSON.stringify(x,null,2)}\n`;}catch{}
+   try{
+    const json = `${JSON.stringify(x,null,2)}`;
+    if(json.trim() != info.trim()){
+      info += `${json}\n`;
+    }
+  }catch{}
    if(!isString(x)){
    for(const k in x){try{
     info += `${String(k)} : ${String(x[k])}\n`;
@@ -21,6 +26,9 @@ function inspect(x){
     info += `prototype : ${String(x?.prototype)}\n`;
     info += `__proto__ : ${String(x?.__proto__)}\n`;
     info += `constructor : ${String(x?.constructor)}\n`;
+   }
+   if(x?.stack){
+    info += `${String(x.stack}\n`;
    }
     return info;
  }
