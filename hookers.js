@@ -134,7 +134,7 @@ function appendOnerror(x){
 
 if(/loglevel=(error|all)/.test(location.href)){
 function appendWarn(x){
-   appendLogger(x,"error",'rgba(255,0,0,0.5)');
+   appendLogger(x,"error",'rgb(140,0,0)');
    doPrism();
 }
  console.runningError??={"loglevel":"error"};
