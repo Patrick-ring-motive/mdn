@@ -98,6 +98,10 @@ function appendWarn(x){
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
   log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
 }
+function appendWarn(x){
+   appendLogger(x,"log","rgba(255,255,0,0.5)");
+   doPrism();
+}
 
  console.runningWarn??={"loglevel":"warn"};
   if(console.warn && !console['&warn']){
