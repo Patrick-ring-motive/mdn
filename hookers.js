@@ -133,8 +133,8 @@ function appendOnerror(x){
 }catch(e){console.log(e);}
 
 if(/loglevel=(error|all)/.test(location.href)){
-function appendWarn(x){
-   appendLogger(x,"error",'rgb(140,0,0)');
+function appendError(x){
+   appendLogger(x,"error",'rgb(255, 120, 120)');
    doPrism();
 }
  console.runningError??={"loglevel":"error"};
