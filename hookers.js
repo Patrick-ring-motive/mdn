@@ -57,7 +57,7 @@ function appendLogger(x,s,color){
   .replaceAll('\\n','\n')
   .replaceAll('\\','')
   .replace(/^[ ]+/g,' ')
-  .replace(/^[\n]+/g,'\n')
+  .replaceAll('\n\n','\n');
        const logStyle = document.createElement('style');
      logStyle.innerHTML = `
       [loglevel="${s}"],
