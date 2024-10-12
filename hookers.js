@@ -34,10 +34,10 @@ function appendLogger(x,s){
      logStyle.innerHTML = `
       [loglevel="${s}"],
       [loglevel="${s}"] *{
-      background-color: rgba(0,255,0,0.5) !important;
+        background-color: rgba(0,255,0,0.5) !important;
       }
     `;
-     outerDiv.appendChild(logStyle);
+     document?.body?.appendChild?.(logStyle);
      const innerDiv = document.createElement('div');
      innerDiv.setAttribute('class','highlight');
      const pre = document.createElement('pre');
