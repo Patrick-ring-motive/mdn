@@ -40,6 +40,7 @@ function appendLogger(x,s){
      document?.body?.appendChild?.(logStyle);
      const innerDiv = document.createElement('div');
      innerDiv.setAttribute('class','highlight');
+     innerDiv.setAttribute('loglevel',s);
      const pre = document.createElement('pre');
      outerDiv.appendChild(innerDiv);
      innerDiv.appendChild(pre);
