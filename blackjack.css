@@ -21,7 +21,7 @@ div.highlight:has(pre.highlight){
 }
 
 [darkish="true"] div.highlight:has(pre.highlight),
-.dark div.highlight:has(pre.highlight){
+.dark div.highlight:has(pre.highlight):not([loglevel]){
   background-color: rgb(200,200,225);
 }
 
@@ -117,15 +117,15 @@ a[aria-label="MDN homepage"]::before{
         color:rgb(0,0,0);
     }
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad),
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad),
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge,
-    .dark .highlighter-rouge{
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad):not([loglevel]),
+    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad):not([loglevel]),
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge:not([loglevel]),
+    .dark .highlighter-rouge:not([loglevel]){
       filter: invert(1) hue-rotate(180deg);
       background-color:rgb(200,200,225) !important;
       color:rgb(0,0,0);
     }
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js,
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js:not([loglevel]),
     .dark .language-js{
       background-color:rgb(200,200,225) !important;
     }
