@@ -29,6 +29,15 @@ function appendLogger(x,s){
   if(!log){
      const outerDiv = document.createElement('div');
      outerDiv.setAttribute('class','language-js highlighter-rouge');
+     outerDiv.setAttribute('loglevel',s);
+     const logStyle = document.createElement('style');
+     logStyle.innerHTML = `
+      [loglevel="${s}"],
+      [loglevel="${s}"] *{
+      background-color: rgba(0,255,0,0.5) !important;
+      }
+    `;
+     outerDiv.appendChild(logStyle);
      const innerDiv = document.createElement('div');
      innerDiv.setAttribute('class','highlight');
      const pre = document.createElement('pre');
