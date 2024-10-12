@@ -63,7 +63,7 @@ function appendLogger(x,s,color){
 }
 if(/loglevel=(log|all)/.test(location.href)){
 function appendLog(x){
-   appendLogger(x,"log","rgb(19, 133, 43)");
+   appendLogger(x,"log","rgb(163, 255, 120)");
    doPrism();
 }
 
