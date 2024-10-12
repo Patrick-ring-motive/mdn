@@ -39,7 +39,7 @@ function appendLogger(x,s,color){
     log = document.createElement('code');
     log.setAttribute('loglevel',s);
     pre.setAttribute('loglevel',s);
-     pre.setAttribute('style',`${color} !important`);
+     pre.setAttribute('style',`background:${color} !important`);
      pre.appendChild(log);
      log.className="language-js";
      log.setAttribute('style',`width: 100vw; min-height: 50vmin;background:${color} !important`);
