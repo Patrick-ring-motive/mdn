@@ -38,6 +38,7 @@ function appendLogger(x,s,color){
      const outerDiv = document.createElement('div');
      outerDiv.setAttribute('class','language-js highlighter-rouge');
      outerDiv.setAttribute('loglevel',s);
+     outerDiv.setAttribute('name','outer-div');
      const innerDiv = document.createElement('div');
      innerDiv.setAttribute('class','highlight');
      innerDiv.setAttribute('loglevel',s);
