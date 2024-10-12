@@ -41,10 +41,10 @@ function appendLogger(x,s){
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
     pre.setAttribute('loglevel',s);
-     pre.style.background = 'rgba(0,255,0,0.5) !important';
+     pre.setAttribute('style',"width: 100vw; min-height: 50vmin;background:rgba(0,255,0,0.5) !important");
      pre.appendChild(log);
      log.className="language-js";
-     log.style.background = 'rgba(0,255,0,0.5) !important';
+     log.setAttribute('style',"width: 100vw; min-height: 50vmin;background:rgba(0,255,0,0.5) !important");
     document.body?.appendChild?.(outerDiv);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
