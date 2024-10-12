@@ -28,7 +28,7 @@ function inspect(x){
     info += `constructor : ${String(x?.constructor)}\n`;
    }
    if(x?.stack){
-    info += `${String(x.stack}\n`;
+    info += `${String(x.stack)}\n`;
    }
     return info;
  }
