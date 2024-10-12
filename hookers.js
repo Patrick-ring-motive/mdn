@@ -53,7 +53,11 @@ function appendLogger(x,s,color){
     document.body?.appendChild?.(outerDiv);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','').replace(/[ ]+/g,' ');
-  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','\n').replaceAll('\\','').replace(/^[ ]+/g,' ');
+  log.innerHTML = log.innerHTML.toString()
+  .replaceAll('\\n','\n')
+  .replaceAll('\\','')
+  .replace(/^[ ]+/g,' ')
+  .replace(/^[\n]+/g,'\n')
        const logStyle = document.createElement('style');
      logStyle.innerHTML = `
       [loglevel="${s}"],
