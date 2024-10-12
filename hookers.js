@@ -56,6 +56,7 @@ function appendLogger(x,s){
       [loglevel="${s}"] *{
         background-color: rgba(0,255,0,0.5) !important;
         accent-color: rgba(0,255,0,0.5) !important;
+        background: rgba(0,255,0,0.5) !important;
       }
     `;
      document?.body?.appendChild?.(logStyle);
