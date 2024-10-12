@@ -86,19 +86,6 @@ function appendLog(x){
 
 if(/loglevel=(warn|all)/.test(location.href)){
 function appendWarn(x){
-  let log = document.querySelector('[loglevel="warn"]');
-  if(!log){
-    log = document.createElement('pre');
-    log.setAttribute('loglevel','warn');
-    log.style.width = '100vw';
-    log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'rgba(255,255,0,0.5)';
-    document.body?.appendChild?.(log);
-  }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
-  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
-}
-function appendWarn(x){
    appendLogger(x,"warn","rgba(255,255,0,0.5)");
    doPrism();
 }
@@ -146,20 +133,10 @@ function appendOnerror(x){
 }catch(e){console.log(e);}
 
 if(/loglevel=(error|all)/.test(location.href)){
-function appendError(x){
-  let log = document.querySelector('[loglevel="error"]');
-  if(!log){
-    log = document.createElement('pre');
-    log.setAttribute('loglevel','error');
-    log.style.width = '100vw';
-    log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'rgba(255,0,0,0.5)';
-    document.body?.appendChild?.(log);
-  }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
-  log.innerHTML = log.innerHTML.toString().replaceAll('\\n','<br>');
+function appendWarn(x){
+   appendLogger(x,"error",'rgba(255,0,0,0.5)');
+   doPrism();
 }
-
  console.runningError??={"loglevel":"error"};
   if(console.error && !console['&error']){
     console['&error'] = console.error;
