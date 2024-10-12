@@ -51,7 +51,7 @@ function appendLogger(x,s){
     pre.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
      log.style.backgroundColor = 'rgba(0,255,0,0.5) !important';
      pre.appendChild(log);
-    //log.className="language-js";
+     log.className="language-js";
     document.body?.appendChild?.(outerDiv);
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','');
