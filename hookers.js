@@ -196,7 +196,7 @@ function appendReject(x){
 }*/
 
 fetch.prototype ??= fetch;
-console.log(Object.create(fetch.prototype),Object.create(fetch));
+console.warn(Object.create(fetch));
 
  void (async function Hookers() {
   try {
