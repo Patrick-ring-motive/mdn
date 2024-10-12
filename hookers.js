@@ -41,7 +41,7 @@ function appendLogger(x,s){
     log.style.width = '100vw';
     log.style.minHeight = '50vmin';
     pre.setAttribute('loglevel',s);
-     pre.setAttribute('style',"width: 100vw; min-height: 50vmin;background:rgba(0,255,0,0.5) !important");
+     pre.setAttribute('style',"background:rgba(0,255,0,0.5) !important");
      pre.appendChild(log);
      log.className="language-js";
      log.setAttribute('style',"width: 100vw; min-height: 50vmin;background:rgba(0,255,0,0.5) !important");
