@@ -6,8 +6,8 @@ void async function PromiseAll(){
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
   const dir=(loc)=>`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/promise/all/${loc}?${globalThis.cache}`;
-  const code1 = zfetchText(dir('example1.html');
-  const code1 = zfetchText(dir('example2.html');
+  const code1 = zfetchText(dir('example1.html'));
+  const code1 = zfetchText(dir('example2.html'));
   await waitExists('section[aria-labelledby="examples"]');
 
   
