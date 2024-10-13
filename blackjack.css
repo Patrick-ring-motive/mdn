@@ -70,6 +70,12 @@ a[aria-label="MDN homepage"]::before{
   color: cadetblue !important;
 }
 
+html[window-location*="marklar"i] a[aria-label="Home"]::before,
+html[window-location*="marklar"i] a[title="Go back to the home page"],
+html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
+  content:"marklar";
+}
+
 .dark-mode a[aria-label="Home"]::before,
 .dark-mode a[title="Go back to the home page"],
 .dark a[aria-label="MDN homepage"]::before,
