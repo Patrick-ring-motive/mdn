@@ -8,6 +8,7 @@ void async function ResponseApi(){
   
   const code1 = zfetchText(dir('example1.html'));
   const modifyResponse = zfetchText(dir('modify-response.html'));
+  const modifyText = zfetchText(dir('modify-text.html'));
   await waitExists('section[aria-labelledby="examples"]');
 
   
@@ -20,6 +21,9 @@ void async function ResponseApi(){
   await replaceCode(select('section[aria-labelledby="fetching_an_image"] .code-example:not([overwritten])'),code1);
   select('section[aria-labelledby="fetching_an_image"]').appendChild(assign(createElement('div'),{
     innerHTML : (await modifyResponse)
+  }));
+  select('section[aria-labelledby="fetching_an_image"]').appendChild(assign(createElement('div'),{
+    innerHTML : (await modifyText)
   }));
   
   try {
