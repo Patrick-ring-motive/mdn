@@ -6,9 +6,13 @@ void async function PromiseAllSettled(){
   }
 
     
-  const code1 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/promise/allsettled/example2.html?${globalThis.cache}`);
+  const code1 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/promise/allsettled/example1.html?${globalThis.cache}`);
+  const code2 = zfetchText(`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/promise/allsettled/example2.html?${globalThis.cache}`);
   (await waitSelect('section[aria-labelledby="using_promise.allsettled"]')).appendChild(assign(createElement('div'),{
     innerHTML : (await code1)
+  }));
+  (await waitSelect('section[aria-labelledby="using_promise.allsettled"]')).appendChild(assign(createElement('div'),{
+    innerHTML : (await code2)
   }));
 
 
