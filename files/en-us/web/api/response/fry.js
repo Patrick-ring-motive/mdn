@@ -1,3 +1,4 @@
+if(/cache=false/.test(location.href)){globalThis.cache = new Date().getTime();}
 void async function ResponseApi(){
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
