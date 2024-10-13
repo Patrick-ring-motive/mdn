@@ -12,6 +12,6 @@ if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
   let responseText = await response.text(); // This consumes the body and it cannont be read again.
   responseText = [...responseText].reverse().join``; // This reverses the text
   response = new Response(responseText,response); // Use the modified text body to create a new response object.
-}
+}</code></pre>
 </div>
 </div>
