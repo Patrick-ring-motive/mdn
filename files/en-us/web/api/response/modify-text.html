@@ -1,0 +1,20 @@
+<h3>Modifying a text body</h3>
+<p>If you know that the reslonse contains text, you can read it using the <code>.text()</code> method.
+reading the response body using any of the methods available, will consume the <code>ReadableStream</code> and you won't be able to access the body in the same way again.
+Be sure to store the text into a variable if you need it later.
+</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>let response = await fetch('https://example.com');
+    
+if(....
+    
+
+//create a new response using the constructor
+response = new Response(responseText,response);
+
+//the response can now be modified
+response.headers.set('Content-Type','text/plain');</code></pre>
+</div>
+</div>
