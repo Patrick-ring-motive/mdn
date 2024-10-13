@@ -1,4 +1,5 @@
 # tdn
+https://developer.typescripts.org
 ## with blackjack and hookers
 This project has essentially become my personal notes on JavaScript overlain on top of mdn.
 
