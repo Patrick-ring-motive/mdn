@@ -16,10 +16,8 @@ void async function PromiseAll(){
     exampleDiv.updateAttribute('overwritten',true);
   }
 
-  await replaceCode(select('section[aria-labelledby="fetching_an_image"] .code-example:not([overwritten])'),code1);
-  select('section[aria-labelledby="fetching_an_image"]').appendChild(assign(createElement('div'),{
-    innerHTML : (await modifyResponse)
-  }));
+  await replaceCode(select('section[aria-labelledby="using_promise.all"] .code-example:not([overwritten])'),code1);
+  await replaceCode(select('section[aria-labelledby="using_promise.all"] .code-example:not([overwritten])'),code2);
   
   try {
       Prism?.highlightAll?.();
