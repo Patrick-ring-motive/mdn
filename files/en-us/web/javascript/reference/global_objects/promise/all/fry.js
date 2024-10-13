@@ -8,6 +8,7 @@ void async function PromiseAll(){
   const dir=(loc)=>`https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/global_objects/promise/all/${loc}?${globalThis.cache}`;
   const code1 = zfetchText(dir('example1.html'));
   const code2 = zfetchText(dir('example2.html'));
+  const code3 = zfetchText(dir('example3.html'));
   await waitExists('section[aria-labelledby="examples"]');
 
   
@@ -19,7 +20,7 @@ void async function PromiseAll(){
 
   await replaceCode(select('section[aria-labelledby="using_promise.all"] .code-example:not([overwritten])'),code1);
   await replaceCode(select('section[aria-labelledby="promise.all_fail-fast_behavior"] .code-example:not([overwritten])'),code2);
-  
+  await replaceCode(select('section[aria-labelledby="promise.all_fail-fast_behavior"] .code-example:not([overwritten])'),code3);
   try {
       Prism?.highlightAll?.();
   } catch {
