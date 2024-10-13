@@ -8,13 +8,10 @@ Be sure to store the text into a variable if you need it later.
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
     
-if(....
-    
-
-//create a new response using the constructor
-response = new Response(responseText,response);
-
-//the response can now be modified
-response.headers.set('Content-Type','text/plain');</code></pre>
+if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
+  let responseText = await response.text(); // This consumes the body and it cannont be read again.
+  responseText = [...responseText].reverse().join``; // This reverses the text
+  response = new Response(responseText,response); // Use the modified text body to create a new response object.
+}
 </div>
 </div>
