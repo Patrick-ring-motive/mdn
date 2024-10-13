@@ -13,11 +13,7 @@
 <div class="highlight">
 <pre class="highlight" precode>
 <code precode>async function fetchText(){
-  try{
-    return await (await fetch(...arguments)).text();
-  }catch(e){
-    return e.message;
-  }
+  return await (await fetch(...arguments)).text();
 }
 
 const resources = await Promise.all([
