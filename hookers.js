@@ -1,3 +1,6 @@
+if(/cache=false/.test(location.href)){
+   globalThis.cache = new Date().getTime();
+}
 async function doPrism(){
    try {
       Prism?.highlightAll?.();
