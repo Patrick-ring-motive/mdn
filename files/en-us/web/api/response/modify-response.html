@@ -1,3 +1,4 @@
+<h3>Mutating the response</h3>
 <p>Response object fields are read only and immutable if sourced from a network request. Modifying them requires serializing the data and creating a new Response object</p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
@@ -7,7 +8,7 @@ let response = await fetch('https://example.com');
     
 //create a new object and copy over fields from the response
 const responseInit = {};
-for(let key in response){
+for(const key in response){
   responseInit[key] = response[key];
 }
     
