@@ -18,7 +18,7 @@ void async function OptionalChaining(){
   divShort.innerHTML = await opShort;
   (await waitSelect('section[aria-labelledby="optional_chaining_with_function_calls"]')).appendChild(divOp);
   (await waitSelect('section[aria-labelledby="invalid_optional_chaining"]')).appendChild(divNew);
-  (await waitSelect('section[aria-labelledby="invalid_optional_chaining"]')).appendChild(divAss);
+  (await waitSelect('section[aria-labelledby="invalid_optional_chaining"] div.code-example')).after(divAss);
   (await waitSelect('section[aria-labelledby="short-circuiting"]')).appendChild(divShort);
   
   
