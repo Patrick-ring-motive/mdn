@@ -16,6 +16,11 @@ if(!globalThis['&fetch']){
       url = new URL(`${document.querySelector('link[hreflang="en"]')?.getAttribute?.('href')}/index.json`);
       url.host = location.host;
       arguments[0] = url;
+    }else if(String(arguments[0]).split('/')[2]=='developer.mozilla.org'){
+      console.log('redirecting mozilla fetch');
+      url = String(arguments[0]).split('/');
+      url[2] = location.host;
+      arguments[0] = url.join('/');
     }
     return globalThis['&fetch'].call(this,...arguments);
   }
