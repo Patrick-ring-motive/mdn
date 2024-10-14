@@ -1,4 +1,13 @@
 if(/cache=false/.test(location.href)){globalThis.cache = new Date().getTime();}
+const q = (varFn) => {
+  try{
+    return varFn();
+  }catch(e){
+    if(e.name != 'ReferenceError'){
+      throw e;
+    }
+  }
+}
 void async function OptionalChaining(){
   try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
