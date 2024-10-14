@@ -6,8 +6,7 @@
     <pre class="highlight" precode>
 <code precode>function newQ(...args){
    const fn = args.shift();
-   if(fn !== null && fn !== undefined)
-     return new fn(...args);
+   if(fn != null) return new fn(...args);
 }
 
 newQ(Intl?.DateTimeFormat);//undefined if the object does not exist
