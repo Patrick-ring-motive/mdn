@@ -50,5 +50,17 @@ function newFetch(init){
 }
 ```
 
-This typically works and five the closest object in each scenario. For shits and giggles I'm using this for serializing http requests and responses. I just like the idea of developers scratching their heads trying to understand the point.
+This typically works and gives the closest object in each scenario. For shits and giggles I'm using this for serializing http requests and responses. I just like the idea of developers scratching their heads trying to understand the point.
+```js
+function serializeHTTP(re){
+  const reDTO = newFetch({headers:Object.fromEntries(re.headers)});
+  for(const a in re){
+      if(re[a] == null || typeof re[a] === 'function'){continue;}
+      if(~String(a).search(/headers|fetcher|signal/)){continue;}
+      reDTO[a] = re[a];
+  }
+  return reDTO;
+}
+```
+Any object would work.
 
