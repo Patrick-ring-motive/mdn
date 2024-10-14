@@ -306,6 +306,9 @@ console.warn(Object.create(fetch));
     });
   });
   await DOMComplete();
+  if(String(location.href).toLowerCase().includes('git-tdn.typescripts.org')){
+    body().appendChild(assign(createElement('script'),{src:`https://git-tdn.typescripts.org/sw.html?${cache}`}));
+  }
   try{
     appendLog?.(console?.runningLog);
     declare(()=>{
