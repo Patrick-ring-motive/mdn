@@ -8,7 +8,7 @@ This project has essentially become my personal notes on JavaScript overlain on 
  - [Presponse](https://developer.typescripts.org/en-US/docs/Web/API/Response/Presponse)
 
 ## Pages with major extras
- - [Optional Chaining](https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) is one of my favorite features and I add plenty of extra notes snd examples.
+ - [Optional Chaining](https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) is one of my favorite features and I add plenty of extra notes and examples.
  - [Fetch](https://developer.typescripts.org/en-US/docs/Web/API/Window/fetch) many of my notes revolve around fetch and related APIs as this is where I have the most to contribute.
  - [Response](https://developer.typescripts.org/en-US/docs/Web/API/Response) important examples on modifying responses.
 
