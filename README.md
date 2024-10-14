@@ -1,7 +1,7 @@
 # tdn
 https://developer.typescripts.org
 ## with blackjack and hookers
-This project has essentially become my personal notes on JavaScript overlain on top of mdn.
+This project has essentially become my personal notes on JavaScript overlaid on top of mdn.
 
 ## Additional pages
  - The article that started it all. mdn said it was too good for [Array Iterator](https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array_Iterator)
