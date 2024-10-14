@@ -12,9 +12,9 @@
 newq(Intl?.DateTimeFormat);//undefined if the object does not exist
 
 const entries = [["Content-Type","text/html"]];
-const headers = newq(q(()=>Headers),entries)
-              ?? newq(q(()=>Map,entries)
-              ?? entries.reduce((y, x) => ((y[x[0]] = x[1]), y), {}));</code></pre>
+const headers = newq(Headers,entries)
+             ?? newq(Map,entries)
+             ?? entries.reduce((y, x) => ((y[x[0]] = x[1]), y), {}));</code></pre>
 </div>
 </div>
 <br>
