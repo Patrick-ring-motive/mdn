@@ -1,9 +1,9 @@
 <p>
-  To workaround a variable that may or may not have been declared, we use the function <code>Q</code> that wraps the variable in a try/catch. I like to use 'Q' in related helper functions to signify 'Question mark' to remind me of the ? in optional chaining.</p>
+  To workaround a variable that may or may not have been declared, we use the function <code>q</code> that wraps the variable in a try/catch. I like to use 'q' in related helper functions to signify 'question mark' to remind me of the ? in optional chaining.</p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>function Q(varFn){
+<code precode>function q(varFn){
   try{
     return varFn();
   }catch(e){
@@ -15,7 +15,7 @@
   }
 }
 
-Q(()=>undeclaredVar)?.prop; //undefined</code></pre>
+(()=>undeclaredVar)?.prop; //undefined</code></pre>
 </div>
 </div>
 <br>
