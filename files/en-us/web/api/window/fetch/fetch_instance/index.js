@@ -1,3 +1,4 @@
+if(/cache=false/.test(location.href)){globalThis.cache = new Date().getTime();}
 [...document.querySelectorAll('h1')||[]].forEach(x=>{
   if(x?.innerText?.trim?.() == 'Window: fetch() method'){
     x.innerText = 'fetch Instance';
