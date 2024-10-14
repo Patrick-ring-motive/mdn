@@ -10,6 +10,7 @@ void async function FetchInstance(){
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
+  (select('.main-page-content>header')?.style??{}).display='none';
   const swapTitle = () => queryApplyAll('h1',el=>{
     if(el?.textContent?.trim?.() == 'Window: fetch() method'){
       (el??{}).textContent = 'fetch Instance';
@@ -42,6 +43,7 @@ void async function FetchInstance(){
   await DOMComplete();
   swapTitle();
   console.log('DOMComplete');
+  (select('.main-page-content>header')?.style??{}).display='none';
   const resources = Q(()=>JSON.parse(select('script[type="resources"]').innerHTML))??[];
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1])) + 
     `<link  href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet"></link>`;
