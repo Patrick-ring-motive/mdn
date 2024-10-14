@@ -8,9 +8,15 @@ Be sure to store the text into a variable if you need it later.
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
 if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
-  let responseText = await response.text(); // This consumes the body and it cannont be read again.
-  responseText = [...responseText].reverse().join``; // This reverses the text
-  response = new Response(responseText,response); // Use the modified text body to create a new response object.
+
+  // This consumes the body and it cannont be read again.
+  let responseText = await response.text();
+  
+  // This reverses the text
+  responseText = [...responseText].reverse().join``;
+  
+  // Use the modified text body to create a new response object.
+  response = new Response(responseText,response); 
 }</code></pre>
 </div>
 </div>
@@ -19,14 +25,26 @@ if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
-let responseArrayBuffer = await response.arrayBuffer(); // This consumes the body and it cannont be read again.
+  
+// This consumes the body and it cannont be read again.
+let responseArrayBuffer = await response.arrayBuffer();
 try{
-  let responseText = new TextDecoder().decode(arrayBuffer); //convert the body bytes to text
-  responsText = [...responseText].reverse().join``; // This reverses the text
-  responseArrayBuffer = new TextEncoder().encode(responseText); //convert the text back to bytes
+
+  // convert the body bytes to text
+  let responseText = new TextDecoder().decode(arrayBuffer);
+  
+  // This reverses the text
+  responsText = [...responseText].reverse().join``;
+  
+  // convert the text back to bytes
+  responseArrayBuffer = new TextEncoder().encode(responseText);
 }catch(e){
-  console.log(e); // if there is an encoding problem then an error will be logged
+
+  // if there is an encoding problem then an error will be logged
+  console.log(e); 
 }
-response = new Response(responseText,response); // Use the modified text body to create a new response object.</code></pre>
+
+// Use the modified array buffer body to create a new response object.
+response = new Response(responseArrayBuffer,response);</code></pre>
 </div>
 </div>
