@@ -3,7 +3,7 @@
     x.innerText = 'fetch Instance';
   }
 });
-void async function FetchInstancw(){
+void async function FetchInstance(){
    try{
     globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
   }catch{
