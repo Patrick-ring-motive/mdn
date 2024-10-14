@@ -7,7 +7,6 @@ Be sure to store the text into a variable if you need it later.
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
-    
 if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
   let responseText = await response.text(); // This consumes the body and it cannont be read again.
   responseText = [...responseText].reverse().join``; // This reverses the text
