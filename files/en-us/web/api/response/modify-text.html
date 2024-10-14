@@ -20,19 +20,19 @@ if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const decoder = new TextDecoder();
-  const decode = (bytes) => decoder.decode(bytes);
-  const encoder = new TextEncoder;
-  const encode = (text) => encoder.encode(text);
+const decode = (bytes) => decoder.decode(bytes);
+const encoder = new TextEncoder;
+const encode = (text) => encoder.encode(text);
   
-  let response = await fetch('https://example.com');
-  let responseArrayBuffer = await response.arrayBuffer(); // This consumes the body and it cannont be read again.
-  try{
-    let responseText = decode(arrayBuffer); //convert the body bytes to text
-    responsText = [...responseText].reverse().join``; // This reverses the text
-    responseArrayBuffer = encode(responseText); //convert the text back to bytes
-  }catch(e){
-    console.log(e); // if there is an encoding problem then an error will be logged
-  }
-  response = new Response(responseText,response); // Use the modified text body to create a new response object.</code></pre>
+let response = await fetch('https://example.com');
+let responseArrayBuffer = await response.arrayBuffer(); // This consumes the body and it cannont be read again.
+try{
+  let responseText = decode(arrayBuffer); //convert the body bytes to text
+  responsText = [...responseText].reverse().join``; // This reverses the text
+  responseArrayBuffer = encode(responseText); //convert the text back to bytes
+}catch(e){
+  console.log(e); // if there is an encoding problem then an error will be logged
+}
+response = new Response(responseText,response); // Use the modified text body to create a new response object.</code></pre>
 </div>
 </div>
