@@ -22,7 +22,7 @@ console.log(response);//typical response object
 A fun workaround for instantiating an object is to directly create from it's prototype. Again, on browsers, fetch has no prototype unlike most functions. NodeJS being the exception does.
 ```js
 //in nodejs mostly
-const fetchInstance = Object.create(fetch);
+const fetchInstance = Object.create(fetch.prototype);
 console.log(fetchInstance); /**/ fetch{} /**/
 ```
 This is the only actual instantiation of fetch.
@@ -30,4 +30,25 @@ This is the only actual instantiation of fetch.
 
 ## `Object.create(fetch)`
 
+Inheriting an object is not the same as inheriting the prototype. It onlybinherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works.
+```js
+const staticFetch = Object.create(fetch);
+console.log(staticFetch); /**/ Function{} /**/
+```
+
+
+## `newFetch(init)`
+
+This is what I do to bring it all together(for no reason other than because I can)
+```js
+fetch.prototype ??= fetch;
+function newFetch(init){
+  return Object.assign(
+    Object.create(fetch.prototype),
+    init
+  );
+}
+```
+
+This typically works and five the closest object in each scenario. For shits and giggles I'm using this for serializing http requests and responses. I just like the idea of developers scratching their heads trying to understand the point.
 
