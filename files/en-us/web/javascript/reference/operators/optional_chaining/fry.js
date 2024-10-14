@@ -8,8 +8,8 @@ void async function OptionalChaining(){
   const opFunc = zfetchText(dir('optional-functions'));
   const opNew =  zfetchText(dir('optional-new'));
   const opAss =  zfetchText(dir('optional-assignments'));
-  const opShort =  zfetchText('short-circuit');
-  const opUndeclare =  zfetchText('undeclared');
+  const opShort =  zfetchText(dir('short-circuit'));
+  const opUndeclare =  zfetchText(dir('undeclared'));
   const divOp = createElement('div');
   const divNew = createElement('div');
   const divAss = createElement('div');
