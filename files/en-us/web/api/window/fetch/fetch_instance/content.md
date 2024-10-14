@@ -6,7 +6,7 @@
 
 This article documents my experiments in trying to instantiate the 'fetch' function as if it were a constructor even though according to spec it is not.
 
-## `new fetch()`
+## new fetch()
 
 In most cases it is not possible to call `fetch` with the `new` keyword without getting an exception. The one exception that I have found is NodeJS which treats `new fetch` the same as a regular fetch call.
 ```js
@@ -17,7 +17,7 @@ console.log(response);//typical response object
 ```
 ⠀
 
-## `Object.create(fetch.prototype)`
+## Object.create(fetch.prototype)
 
 A fun workaround for instantiating an object is to directly create from it's prototype. Again, on browsers, fetch has no prototype unlike most functions. NodeJS being the exception does.
 ```js
@@ -28,7 +28,7 @@ console.log(fetchInstance); /**/ fetch{} /**/
 This is the only actual instantiation of fetch.
 
 
-## `Object.create(fetch)`
+## Object.create(fetch)
 
 Inheriting an object is not the same as inheriting the prototype. It onlybinherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works.
 ```js
@@ -37,7 +37,7 @@ console.log(staticFetch); /**/ Function{} /**/
 ```
 
 
-## `newFetch(init)`
+## newFetch(init)
 
 This is what I do to bring it all together(for no reason other than because I can)
 ```js
