@@ -44,6 +44,7 @@ void async function FetchInstance(){
   swapTitle();
   console.log('DOMComplete');
   (select('.main-page-content>header')?.style??{}).display='none';
+  selectAll('section[aria-labelledby]').forEach(x=>(x?.style??{}).display='none');
   const resources = Q(()=>JSON.parse(select('script[type="resources"]').innerHTML))??[];
   const content = decodeURIComponent(atob(resources.find(x=>~x[0].search(/content$/))[1])) + 
     `<link  href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet"></link>`;
