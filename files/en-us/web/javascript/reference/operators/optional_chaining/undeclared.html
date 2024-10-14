@@ -1,1 +1,21 @@
-
+<p>
+  To workaround a variable that may or may not have been declared, we use the function <code>Q</code> that wraps the variable in a try catch.
+</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>function Q(varFn){
+  try{
+    return varFn();
+  }catch(e){
+    if(e.name == 'ReferenceError'){
+      return undefined;
+    }else{
+      return throw e;
+    }
+  }
+}
+</code></pre>
+</div>
+</div>
+<br>
