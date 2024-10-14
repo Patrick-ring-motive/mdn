@@ -7,6 +7,7 @@ Be sure to store the text into a variable if you need it later.
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
+  
 if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
 
   // This consumes the body and it cannont be read again.
@@ -17,6 +18,7 @@ if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
   
   // Use the modified text body to create a new response object.
   response = new Response(responseText,response); 
+  
 }</code></pre>
 </div>
 </div>
@@ -28,6 +30,7 @@ if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
   
 // This consumes the body and it cannont be read again.
 let responseArrayBuffer = await response.arrayBuffer();
+
 try{
 
   // convert the body bytes to text
@@ -38,10 +41,13 @@ try{
   
   // convert the text back to bytes
   responseArrayBuffer = new TextEncoder().encode(responseText);
+  
 }catch(e){
 
   // if there is an encoding problem then an error will be logged
   console.log(e); 
+  
+  
 }
 
 // Use the modified array buffer body to create a new response object.
