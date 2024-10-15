@@ -4,8 +4,13 @@ void async function LinkResolver(){
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
+ globalThis.addA = function addA(css){
+    if(!location.href.includes('path=')){
+      return ('a'+css).replace('aa[','a[');
+    }
+  }
   declare(()=>{
-    queryApplyAll('a[href]:not([href^="http"i],[href^="blob"i]):not([marked])',el => {
+    queryApplyAll(addA('a[href]:not([href^="http"i],[href^="blob"i]):not([marked])'),el => {
       el.updateAttribute('marked',true);
       el.updateAttribute('href',String(el.href));
     });
@@ -13,7 +18,7 @@ void async function LinkResolver(){
   declare(()=>{
     if(~location.href.search(/hostname=/i)){
       const hostname = location.href.split(/hostname=/i)[1].split(/\?|#|&/)[0];
-      queryApplyAll('a[href]:not([href*="hostname="i])',el => {
+      queryApplyAll(addA('a[href]:not([href*="hostname="i])'),el => {
         let url = String(el.getAttribute('href'));
         let hash = '';
         let char = '?';
@@ -34,7 +39,7 @@ void async function LinkResolver(){
    "developer.mozilla.org"
   ].forEach(hostname=>{
    eval(`declare(()=>{
-      queryApplyAll('a[href^="https://${hostname}"i]',el => {
+      queryApplyAll(addA('a[href^="https://${hostname}"i]'),el => {
         let url = String(el.getAttribute('href'));
         let hash = '';
         let char = '?';
