@@ -2,6 +2,13 @@ if(/cache=false/.test(location.href)){
    globalThis.cache = new Date().getTime();
 }
 async function Pathinator() {
+
+    const loc = new URL(`${location.href}`);
+    const path = loc?.searchParams?.get?.('path');
+    if (!path) {
+        return
+    }
+
    [...document.querySelectorAll('[href]:not([pather])')].forEach(x=>{
       x.setAttribute('href',x.href);
       x.setAttribute('pather','pather');
@@ -10,11 +17,7 @@ async function Pathinator() {
       x.setAttribute('src',x.src);
       x.setAttribute('pather','pather');
    });
-    const loc = new URL(`${location.href}`);
-    const path = loc?.searchParams?.get?.('path');
-    if (!path) {
-        return
-    }
+   
     [...document.querySelectorAll('[href*="developer.typescripts.org"]:not([href*="path="])')].forEach(x => {
         try {
             const url = new URL(`${x.href ?? x.getAttribute('href')}`);
