@@ -1,0 +1,9 @@
+const str = 'Hello world!';
+
+// Using match and join with optional chaining
+const result = str.match(/./)?.join('');
+console.log(result); // "Hello world!"
+
+// If the regular expression doesn't match anything:
+const noMatch = str.match(/z+/)?.join('');
+console.log(noMatch); // undefined
