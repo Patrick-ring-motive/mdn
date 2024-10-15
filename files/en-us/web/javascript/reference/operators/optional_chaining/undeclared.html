@@ -23,7 +23,7 @@ q(()=>undeclaredVar)?.prop; //undefined</code></pre>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>const globalObject = q(() => global) ?? q(() => globalThis);
+<code precode>const globalObject = q(()=>global) ?? q(()=>globalThis);
 globalObject.global = globalObject;
 globalObject.globalThis = globalObject;</code></pre>
 </div>
@@ -41,7 +41,7 @@ In asynchronous code, there are situations where a variable may not be defined y
     <pre class="highlight" precode>
 <code precode>async function fetchData() {
   await someAsyncOperation();
-  const value = q(() => someVariable) ?? 'default value';
+  const value = q(()=>someVariable) ?? 'default value';
   console.log(value);
 }</code></pre>
 </div>
