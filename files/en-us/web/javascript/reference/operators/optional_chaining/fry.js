@@ -20,19 +20,23 @@ void async function OptionalChaining(){
   const opAss =  zfetchText(dir('optional-assignments'));
   const opShort =  zfetchText(dir('short-circuit'));
   const opUndeclare =  zfetchText(dir('undeclared'));
+  const opTemp =  zfetchText(dir('template-literal'));
   const divOp = createElement('div');
   const divNew = createElement('div');
   const divAss = createElement('div');
   const divShort = createElement('div');
   const divUndeclare = createElement('div');
+  const divTemp = createElement('div');
   divOp.innerHTML = await opFunc;
   divAss.innerHTML = await opAss;
   divNew.innerHTML = (await opNew).replace('<style>','');
   divShort.innerHTML = await opShort;
   divUndeclare.innerHTML = await opUndeclare;
+  divTemp.innerHTML = await opTemp;
   (await waitSelect('section[aria-labelledby="optional_chaining_with_function_calls"]')).appendChild(divOp);
   (await waitSelect('section[aria-labelledby="invalid_optional_chaining"]')).appendChild(divNew);
   (await waitSelect('section[aria-labelledby="invalid_optional_chaining"] div.code-example')).after(divAss);
+  selectAll('section[aria-labelledby="invalid_optional_chaining"] div.code-example')?.[1]?.after?.(divTemp);
   (await waitSelect('section[aria-labelledby="short-circuiting"]')).appendChild(divShort);
   (await waitSelect('section[aria-labelledby="optional_chaining_with_function_calls"]')).before(divUndeclare);
   
@@ -46,13 +50,12 @@ void async function OptionalChaining(){
   }*/
 
 
-  try {
-      Prism?.highlightAll?.();
-  } catch {
+  
+  (q(()=>Prism?.highlightAll) ?? (() => {
       const prism = createElement("script");
       prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
       body().appendChild(prism);
-  }
+  }))();
 }?.()
 
 
