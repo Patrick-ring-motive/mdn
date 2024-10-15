@@ -2,6 +2,10 @@ if(/cache=false/.test(location.href)){
    globalThis.cache = new Date().getTime();
 }
 async function Pathinator() {
+   [...document.querySelectorAll('[href]:not([pather])')].forEach(x=>{
+      x.setAttribute('href',x.href);
+      x.setAttribute('pather','pather');
+   });
     const loc = new URL(`${location.href}`);
     const path = loc?.searchParams?.get?.('path');
     if (!path) {
