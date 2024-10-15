@@ -1,19 +1,19 @@
 <p>
-  To emulate using optional chaining with the <code>new</code> operator we can use this function <code>newq</code>
+  To emulate using optional chaining with the <code>new</code> operator we can use this function <code>newQ</code>
 </p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>function newq(...args){
+<code precode>function newQ(...args){
    const fn = args.shift();
    if(fn != null) return new fn(...args);
 }
 
-newq(Intl?.DateTimeFormat);//undefined if the object does not exist
+newQ(Intl?.DateTimeFormat);//undefined if the object does not exist
 
 const entries = [["Content-Type","text/html"]];
-const headers = newq(Headers,entries)
-             ?? newq(Map,entries)
+const headers = newQ(Headers,entries)
+             ?? newQ(Map,entries)
              ?? entries.reduce((y, x) => ((y[x[0]] = x[1]), y), {}));</code></pre>
 </div>
 </div>
