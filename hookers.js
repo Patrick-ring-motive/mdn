@@ -15,7 +15,7 @@ async function Pathinator() {
     if (!path) {
         return
     }
-    [...document.querySelectorAll('[href*="developer.typescripts.org"]:not([href*="path="]),[href]:not([href*=":"]):not([href*="path="])')].forEach(x => {
+    [...document.querySelectorAll('[href*="developer.typescripts.org"]:not([href*="path="])')].forEach(x => {
         try {
             const url = new URL(`${x.href ?? x.getAttribute('href')}`);
             url.searchParams.set('path', encodeURIComponent(`${url.pathname}`));
@@ -25,7 +25,7 @@ async function Pathinator() {
             console.log(e,x);
         }
     });
-    [...document.querySelectorAll('[src*="developer.typescripts.org"]:not([src*="path="],script),[src]:not([src*=":"]):not([src*="path="],script)')].forEach(x => {
+    [...document.querySelectorAll('[src*="developer.typescripts.org"]:not([src*="path="],script)')].forEach(x => {
         try {
             const url = new URL(`${x.src ?? x.getAttribute('src')}`);
             url.searchParams.set('path', encodeURIComponent(`${url.pathname}`));
@@ -35,7 +35,7 @@ async function Pathinator() {
             console.log(e,x);
         }
     });
-    [...document.querySelectorAll('script[src*="developer.typescripts.org"]:not([src*="path="]),script[src]:not([src*=":"]):not([src*="path="])')].forEach(x => {
+    [...document.querySelectorAll('script[src*="developer.typescripts.org"]:not([src*="path="])')].forEach(x => {
         try {
             const url = new URL(`${x.src ?? x.getAttribute('src')}`);
             url.searchParams.set('path', encodeURIComponent(`${url.pathname}`));
