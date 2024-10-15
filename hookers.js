@@ -6,6 +6,10 @@ async function Pathinator() {
       x.setAttribute('href',x.href);
       x.setAttribute('pather','pather');
    });
+   [...document.querySelectorAll('[src]:not([pather])')].forEach(x=>{
+      x.setAttribute('src',x.src);
+      x.setAttribute('pather','pather');
+   });
     const loc = new URL(`${location.href}`);
     const path = loc?.searchParams?.get?.('path');
     if (!path) {
