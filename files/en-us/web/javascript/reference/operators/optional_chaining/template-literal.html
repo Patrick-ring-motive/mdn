@@ -1,5 +1,5 @@
 <p>
-    <code>String.raw</code> is an exceptional case because it only allows template literals as inputs. Most functions that can take template literals can also be 
+    <code>String.raw</code> is an exceptional case because it only allows template literals as inputs. Most functions that can take template literals can also be executed with regular function calls.
 </p>
 <style>
 [precode]{
@@ -8,6 +8,14 @@
     border-left-width:0 !important;
 }
 </style>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>arr?.join``; // invalid syntax
+arr?.join(); // valid syntax</code></pre>
+</div>
+</div>
+<p>This comes in quite handy for methods that potentiallly return <code>undefined</code> like <code>String.prototype.match</code>.
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
@@ -22,7 +30,18 @@ const noMatch = str.match(/z+/)?.join('');
 console.log(noMatch); // undefined</code></pre>
 </div>
 </div>
-<p>
-    This works by creating a dummy stand-in object when the desired object is undefined.
-    It isn't very memory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
-</p>
+<p>Before optional chaining we had to write code like this.</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>const str = 'Hello world!';
+
+// Old way: Fallback to empty array if no match
+const oldResult = (str.match(/./)||[]).join('');
+console.log(oldResult); // "Hello world!"
+
+// If no match is found:
+const oldNoMatch = (str.match(/z+/)||[]).join('');
+console.log(oldNoMatch); // ""</code></pre>
+</div>
+</div>
