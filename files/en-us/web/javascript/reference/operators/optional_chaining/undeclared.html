@@ -16,4 +16,38 @@
 q(()=>undeclaredVar)?.prop; //undefined</code></pre>
 </div>
 </div>
-<br>
+<p>The <code>q</code> function is a simple but powerful utility for handling situations where optional chaining alone isn't enough. It shines in scenarios where variables might not be declared, and you need a safe way to access them without throwing errors. Here are two key use cases for <code>q</code>:</p>
+<h4>Handling Global Object Differences and References</h4>
+<p>Different JavaScript environments use different global objects (e.g., global in Node.js, globalThis in browsers). With <code>q</code>, you can safely reference the appropriate global object in any environment</p>
+
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>const globalObject = q(() => global) ?? q(() => globalThis);
+globalObject.global = globalObject;
+globalObject.globalThis = globalObject;</code></pre>
+</div>
+</div>
+<p>
+This ensures you have a consistent global object reference across environments, making your code more portable and robust.
+</p>
+<h4>Async Race Conditions</h4>
+<p>
+In asynchronous code, there are situations where a variable may not be defined yet due to race conditions. The q function helps safely check for the variable’s existence without throwing a runtime error:
+</p>
+
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>async function fetchData() {
+  await someAsyncOperation();
+  const value = q(() => someVariable) ?? 'default value';
+  console.log(value);
+}</code></pre>
+</div>
+</div>
+
+<p>
+This pattern ensures you can safely access variables even in race conditions, providing a fallback value if the variable isn’t available yet.
+</p>
+<br/>
