@@ -4,10 +4,10 @@
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>function newQ(...args){
-   const fn = args.shift();
-   if(fn != null) return new fn(...args);
-}
+<code precode>const newQ = (...args) => {
+   const fn = args?.shift?.();
+   return fn && new fn(...args);
+};
 
 newQ(Intl?.DateTimeFormat);//undefined if the object does not exist
 
