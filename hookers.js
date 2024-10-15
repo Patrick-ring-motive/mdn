@@ -146,7 +146,7 @@ function appendOnerror(x){
  console.runningOnerror??={"loglevel":"onerror"};
    window.onerror = function onerror(){
       try{
-        const txt = [...arguments].map(x=>inspect(x)).join('\n');
+        const txt = [...arguments].map(x=>inspect(x)).join('\\n');
         console.runningOnerror[txt]=(console.runningOnerror[txt]??0)+1;
         appendOnerror(console.runningOnerror);
       }catch{}
