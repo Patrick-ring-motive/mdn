@@ -1,4 +1,17 @@
-const str = 'Hello world!';
+<p>
+    <code>String.raw</code> is an exceptional case because it only allows template literals as inputs. Most functions that can take template literals can also be 
+</p>
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>const str = 'Hello world!';
 
 // Using match and join with optional chaining
 const result = str.match(/./)?.join('');
@@ -6,4 +19,10 @@ console.log(result); // "Hello world!"
 
 // If the regular expression doesn't match anything:
 const noMatch = str.match(/z+/)?.join('');
-console.log(noMatch); // undefined
+console.log(noMatch); // undefined</code></pre>
+</div>
+</div>
+<p>
+    This works by creating a dummy stand-in object when the desired object is undefined.
+    It isn't very memory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
+</p>
