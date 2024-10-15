@@ -1,6 +1,63 @@
 if(/cache=false/.test(location.href)){
    globalThis.cache = new Date().getTime();
 }
+async function Pathinator(){
+
+                const loc = new URL(`${location.href}`);
+
+                const path = loc?.searchParams?.get?.('path');
+
+                if(!path){return}
+
+               
+
+                [...document.querySelectorAll('[href*="developer.typescripts.org"]:not([href*="path="])')].forEach(x=>{try{
+
+                                const url = new URL(`${x.href ?? x.getAttribute('href')}`);
+
+                                url.searchParams.set('path',encodeURIComponent(`${url.pathname}`));
+
+                                url.pathname = '/';
+
+                                x.setAttribute('href',url);
+
+                }catch(e){console.log(e);}});
+
+                [...document.querySelectorAll('[src*="developer.typescripts.org"]:not([src*="path="],script)')].forEach(x=>{try{
+
+                                const url = new URL(`${x.src ?? x.getAttribute('src')}`);
+
+                                url.searchParams.set('path',encodeURIComponent(`${url.pathname}`));
+
+                                url.pathname = '/';
+
+                                x.setAttribute('src',url);
+
+                }catch(e){console.log(e);}});
+
+                [...document.querySelectorAll('script[src*="developer.typescripts.org"]:not([src*="path="])')].forEach(x=>{try{
+
+                                const url = new URL(`${x.src ?? x.getAttribute('src')}`);
+
+                                url.searchParams.set('path',encodeURIComponent(`${url.pathname}`));
+
+                                url.pathname = '/';
+
+                                x.setAttribute('src',url);
+
+                                const script = document.createElement('script');
+
+                                if(x.hasAttribute('type')){script.setAttribute('type',x.getAttribute('type'));}
+
+                                script.src = url;
+
+                                document.body.appendChild(script);
+
+                }catch(e){console.log(e);}});
+
+}
+
+
 async function doPrism(){
    try {
       Prism?.highlightAll?.();
