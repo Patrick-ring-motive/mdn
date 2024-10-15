@@ -1,7 +1,7 @@
 if(/cache=false/.test(location.href)){globalThis.cache = new Date().getTime();}
-const q = (varFn) => {
+globalThis.q = (varFn) => {
   try{
-    return varFn();
+    return varFn?.();
   }catch(e){
     if(e.name != 'ReferenceError'){
       throw e;
