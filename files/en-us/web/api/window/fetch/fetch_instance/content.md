@@ -30,10 +30,14 @@ This is the only actual instantiation of fetch.
 
 ## Object.create(fetch)
 
-Inheriting an object is not the same as inheriting the prototype. It only inherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works.
+Inheriting an object is not the same as inheriting the prototype. It only inherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works. The log prints `Function{}` if you inherit this way unless you set the `fetch.constructor` to `fetch` in which case you get `fetch{}` as above which seems to be what nodejs is doing.
 ```js
 const staticFetch = Object.create(fetch);
 console.log(staticFetch); /**/ Function{} /**/
+
+fetch.constructor = fetch;
+const constructFetch = Object.create(fetch);
+console.log(staticFetch); /**/ fetch{} /**/
 ```
 
 
@@ -41,7 +45,7 @@ console.log(staticFetch); /**/ Function{} /**/
 
 This is what I do to bring it all together(for no reason other than because I can)
 ```js
-fetch.prototype ??= fetch;
+fetch.prototype ??= (fetch.constructor = fetch);
 function newFetch(init){
   return Object.assign(
     Object.create(fetch.prototype),
