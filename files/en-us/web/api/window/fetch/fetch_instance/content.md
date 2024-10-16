@@ -30,7 +30,7 @@ This is the only actual instantiation of fetch.
 
 ## Object.create(fetch)
 
-Inheriting an object is not the same as inheriting the prototype. It onlybinherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works.
+Inheriting an object is not the same as inheriting the prototype. It only inherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works.
 ```js
 const staticFetch = Object.create(fetch);
 console.log(staticFetch); /**/ Function{} /**/
