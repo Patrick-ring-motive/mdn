@@ -7,6 +7,8 @@ void async function LinkResolver(){
  globalThis.addA = function addA(css){
     if(!location.href.includes('path=')){
       return ('a'+css).replace('aa[','a[');
+    }else{
+      return css;
     }
   }
   declare(()=>{
