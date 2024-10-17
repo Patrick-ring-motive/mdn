@@ -517,6 +517,7 @@ console.warn(Object.create(fetch));
                updateProperty(n, 'textContent', ntext);
               }
            };
+         queryApplyAll('a[href]:not([href*="mode=rawdog"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?mode=rawdog'));
           await sleep(100);
           await nextIdle();
       }
