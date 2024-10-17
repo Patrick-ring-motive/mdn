@@ -522,6 +522,23 @@ console.warn(Object.create(fetch));
     });
     queryApplyAll('a[href]:not([href*="?reverse"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?reverse'));
   }
+
+declare(()=>{
+  queryApplyAll('pre[class="brush: plain notranslate"]:not([paint-anyway])',pre=>{
+        const outerDiv = createElement('div');
+        outerDiv.setAttribute('class','language-js highlighter-rouge');
+        const innerDiv = createElement('div');
+        innerDiv.setAttribute('class','highlight');
+        pre.setAttribute('paint-anyway',true);
+        const code = createElement('code');
+        code.innerHTML = pre.innerHTML;
+        pre.innerHTML = '';
+        pre.before(outerDiv);
+        outerDiv.appendChild(innerDiv);
+        innerDiv.appendChild(pre);
+        pre.appendChild(code);
+  });
+});
     
 doPrism();
 
