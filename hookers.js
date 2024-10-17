@@ -537,6 +537,7 @@ declare(()=>{
         outerDiv.appendChild(innerDiv);
         innerDiv.appendChild(pre);
         pre.appendChild(code);
+        doPrism();
   });
 });
     
