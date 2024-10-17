@@ -254,6 +254,7 @@ function appendReject(x){
 }*/
 
 fetch.prototype ??= fetch;
+fetch.constructor = fetch;
 console.warn(Object.create(fetch));
 
  void (async function Hookers() {
