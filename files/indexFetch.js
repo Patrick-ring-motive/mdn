@@ -25,6 +25,7 @@ if(!globalThis['&fetch']){
       }
       return globalThis['&fetch'].call(this,...arguments);
     }catch(e){
+      console.log(e,...arguments);
       return new Response(e.message+'\n'+e.stack,{status:500,headers:{"Content-Type":"text/html","Access-Control-Allow-Origin":"*"}});
    }
   }
