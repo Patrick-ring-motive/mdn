@@ -499,31 +499,16 @@ console.warn(Object.create(fetch));
   }
 
   if(location.href.toLowerCase().includes('mode=rawdog')){
-     function uncode(txt){
-      	const box = document.createElement('span');
-      	box.innerHTML=txt;
-      	return box.innerText;
-      }
-     (async()=>{
-      while(true){
-           let el = document.body;
-          if (!el) { await sleep(100);continue;}
-           let n,
-               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
-           while (n = walk.nextNode()) {
-              let ntext = n.textContent;
-              if(/&[#a-z0-9]+;/i.test(ntext)){
-               ntext = uncode(ntext);
-               updateProperty(n, 'innerHTML', ntext);
-              }
-           };
+    declare(()=>{
+         queryApplyAll(`:not(script,style,[children],[rawdog])`,el=>{
+            if(el?.childElementCount > 0){
+               return el.updateAttribute('children',el.childElementCount);
+            }
+            el.updateAttribute('rawdog',el.textContent);
+            el.innerHTML = el.textContent;
+         });
          queryApplyAll('a[href]:not([href*="mode=rawdog"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?mode=rawdog'));
-          await sleep(100);
-          await nextIdle();
-      }
-    })();
-    
-    
+    });
   }
   if(location.href.endsWith('?reverse')){
     
