@@ -46,12 +46,13 @@ console.log(staticFetch); /**/ fetch{} /**/
 This is what I do to bring it all together(for no reason other than because I can)
 ```js
 fetch.prototype ??= (fetch.constructor = fetch);
-function newFetch(init){
-  return Object.assign(
-    Object.create(fetch.prototype),
-    init
-  );
+globalThis.newFetch = function newFetch(init) {
+  const fech = Object.assign(Object.create(fetch.prototype), init);
+  fech.constructor = fetch;
+  return fech;
 }
+
+console.log(newFetch() instanceof fetch); //true
 ```
 
 This typically works and gives the closest object in each scenario. For shits and giggles I'm using this for serializing http requests and responses. I just like the idea of developers scratching their heads trying to understand the point.
