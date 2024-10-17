@@ -497,6 +497,33 @@ console.warn(Object.create(fetch));
     
     
   }
+
+  if(location.href.toLowerCase().includes('mode=rawdog')){
+     function uncode(txt){
+      	const box = document.createElement('span');
+      	box.innerHTML=txt;
+      	return box.innerText;
+      }
+     (async()=>{
+      while(true){
+           let el = document.body;
+          if (!el) { await sleep(100);continue;}
+           let n,
+               walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+           while (n = walk.nextNode()) {
+              let ntext = n.textContent;
+              if(/&[#a-z0-9]+;/i.test(ntext)){
+               ntext = uncode(ntext);
+               updateProperty(n, 'textContent', ntext);
+              }
+           };
+          await sleep(100);
+          await nextIdle();
+      }
+    })();
+    
+    
+  }
   if(location.href.endsWith('?reverse')){
     
     declare(()=>{
