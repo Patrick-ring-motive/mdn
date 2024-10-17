@@ -253,8 +253,12 @@ function appendReject(x){
     };
 }*/
 
-fetch.prototype ??= fetch;
-fetch.constructor = fetch;
+fetch.prototype ??= (fetch.constructor = fetch);
+globalThis.newFetch = function newFetch(init) {
+  const fech = Object.assign(Object.create(fetch.prototype), init);
+  fech.constructor = fetch;
+  return fech;
+}
 console.warn(Object.create(fetch));
 
  void (async function Hookers() {
