@@ -514,7 +514,7 @@ console.warn(Object.create(fetch));
               let ntext = n.textContent;
               if(/&[#a-z0-9]+;/i.test(ntext)){
                ntext = uncode(ntext);
-               updateProperty(n, 'textContent', ntext);
+               updateProperty(n, 'innerHTML', ntext);
               }
            };
          queryApplyAll('a[href]:not([href*="mode=rawdog"i])',el=>el.updateAttribute('href',el.getAttribute('href')+'?mode=rawdog'));
