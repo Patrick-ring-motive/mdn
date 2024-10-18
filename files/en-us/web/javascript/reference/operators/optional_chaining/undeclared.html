@@ -23,7 +23,9 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>const globalObject = q(()=>global) ?? q(()=>globalThis);
+<code precode>const globalObject = q(()=>global) 
+                                ?? q(()=>globalThis)
+                                 ?? q(()=>self);
 globalObject.global = globalObject;
 globalObject.globalThis = globalObject;</code></pre>
 </div>
