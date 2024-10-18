@@ -9,7 +9,7 @@
    return fn && new fn(...args);
 };
 
-newQ(Intl?.DateTimeFormat);//undefined if the object does not exist
+newQ(Intl?.DateTimeFormat);/**/undefined if the object does not exist
 
 const entries = [["Content-Type","text/html"]];
 const headers = newQ(Headers,entries)
