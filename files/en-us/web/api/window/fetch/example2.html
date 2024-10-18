@@ -11,14 +11,14 @@
 <code precode>const myImage = document.querySelector("img");
 const reqHeaders = new Headers();
 
-// A cached response is okay unless it's more than a week old
+/**/ A cached response is okay unless it's more than a week old
 reqHeaders.set("Cache-Control", "max-age=604800");
 
 const options = {
   headers: reqHeaders,
 };
 
-// Pass init as an "options" object with our headers.
+/**/ Pass init as an "options" object with our headers.
 const req = new Request("flowers.jpg", options);
 
 const response = await fetch(req);
