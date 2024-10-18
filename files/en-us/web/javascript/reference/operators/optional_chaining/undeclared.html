@@ -24,10 +24,11 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const globalObject = q(()=>globalThis) // works in most modern runtimes
-                                ?? q(()=>self) // also works in most modern runtimes
-                                ?? q(()=>global) // fallback for older nodejs
-                                ?? q(()=>window) // fallback for older browsers
-                                ?? this ?? {}; // fallbacks for edge cases.
+                  ?? q(()=>self) // also works in most modern runtimes
+                  ?? q(()=>global) // fallback for older nodejs
+                  ?? q(()=>window) // fallback for older browsers
+                  ?? this ?? {}; // fallbacks for edge cases.
+                  
 for(let x of ['globalThis','self','global']){
   globalObject[x] = globalObject;
 }</code></pre>
