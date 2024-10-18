@@ -30,12 +30,7 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
                                 ?? this ?? {}; // fallbacks for edge cases.
 for(let x of ['globalThis','self','global']){
   globalObject[x] = globalObject;
-}
-Object.assign(globalObject,{
-  globalThis : globalObject,
-  self : globalObject,
-  global : globalObject,
-});</code></pre>
+}</code></pre>
 </div>
 </div>
 <p>
