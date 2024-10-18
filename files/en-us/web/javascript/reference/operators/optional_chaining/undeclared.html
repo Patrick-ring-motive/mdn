@@ -36,7 +36,7 @@ for(let x of ['globalThis','self','global']){
 </div>
 </div>
 <p>
-This ensures you have a consistent global object reference across environments, making your code more portable and robust. You would need to transpile for edge cases because older contexts that don't support <code>globalThis</code> probably don't support <code>??</code>.
+This ensures you have a consistent global object reference across environments, making your code more portable and robust. You would need to transpile for edge cases because older contexts that don't support <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis"><code>globalThis</code></a> probably don't support <code>??</code>.
 </p>
 <h4>Async Race Conditions</h4>
 <p>
