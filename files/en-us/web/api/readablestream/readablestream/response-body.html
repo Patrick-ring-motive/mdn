@@ -9,7 +9,7 @@
 const newStream = newReadableStream("Hello World");
 const decoder = new TextDecoder();
 for await (const chunk of newStream) {
-  console.log(decoder.decode(chunk)); //Hello World
+  console.log(decoder.decode(chunk)); /**/Hello World
 }</code></pre>
 </div>
 </div>
