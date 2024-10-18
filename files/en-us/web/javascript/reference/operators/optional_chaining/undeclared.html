@@ -23,15 +23,17 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>const globalObject = q(()=>global) 
-                                ?? q(()=>globalThis)
-                                 ?? q(()=>self);
+<code precode>const globalObject = q(()=>globalThis) // works in most modern runtimes
+                                ?? q(()=>self) // also works in most modern runtimes
+                                ?? q(()=>global) // fallback for older nodejs
+                                ?? q(()=>window) // fallback for older browsers
+                                ?? this ?? {}; // fallbacks for edge cases.
 globalObject.global = globalObject;
 globalObject.globalThis = globalObject;</code></pre>
 </div>
 </div>
 <p>
-This ensures you have a consistent global object reference across environments, making your code more portable and robust.
+This ensures you have a consistent global object reference across environments, making your code more portable and robust. You would need to transpile for edge cases because older contexts that don't support <code>globalThis</code> probably don't support <code>??</code>.
 </p>
 <h4>Async Race Conditions</h4>
 <p>
