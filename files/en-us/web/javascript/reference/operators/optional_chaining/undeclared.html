@@ -28,8 +28,11 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
                                 ?? q(()=>global) // fallback for older nodejs
                                 ?? q(()=>window) // fallback for older browsers
                                 ?? this ?? {}; // fallbacks for edge cases.
-globalObject.global = globalObject;
-globalObject.globalThis = globalObject;</code></pre>
+Object.assign(globalObject,{
+  globalThis : globalObject,
+  self : globalObject,
+  global : globalObject,
+});</code></pre>
 </div>
 </div>
 <p>
