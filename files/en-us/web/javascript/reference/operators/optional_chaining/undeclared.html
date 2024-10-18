@@ -28,6 +28,9 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
                                 ?? q(()=>global) // fallback for older nodejs
                                 ?? q(()=>window) // fallback for older browsers
                                 ?? this ?? {}; // fallbacks for edge cases.
+for(let x of ['globalThis','self','global']){
+  globalObject[x] = globalObject;
+}
 Object.assign(globalObject,{
   globalThis : globalObject,
   self : globalObject,
