@@ -278,6 +278,7 @@ console.warn(Object.create(fetch));
     if (~document.title.search(/mdn/i)) {
       document.title = document.title.replace(/mdn/gi, "TDN");
     }
+    swapTextBack("/**/", "//");
     swapTextBack("MDN", "TDN");
     swapTextBack("mdn", "tdn");
     swapTextBack("mozilla", "typescripts");
