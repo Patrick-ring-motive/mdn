@@ -10,10 +10,10 @@ This article documents my experiments in trying to instantiate the 'fetch' funct
 
 In most cases it is not possible to call `fetch` with the `new` keyword without getting an exception. The one exception that I have found is NodeJS which treats `new fetch` the same as a regular fetch call.
 ```js
-//in nodejs only
+/**/in nodejs only
 const presponse = new fetch('https://example.com');
 const response = await presponse;
-console.log(response);//typical response object
+console.log(response);/**/typical response object
 ```
 ⠀
 
@@ -33,11 +33,11 @@ This is the only actual instantiation of fetch.
 Inheriting an object is not the same as inheriting the prototype. It only inherits the static methods and properties but `fetch` doesn't have any it makes little difference. On a positive note, this usually works. The log prints `Function{}` if you inherit this way unless you set the `fetch.constructor` to `fetch` in which case you get `fetch{}` as above which seems to be what nodejs is doing.
 ```js
 const staticFetch = Object.create(fetch);
-console.log(staticFetch); /**/ Function{} /**/
+console.log(staticFetch); /**/ Function{} 
 
 fetch.constructor = fetch;
 const constructFetch = Object.create(fetch);
-console.log(staticFetch); /**/ fetch{} /**/
+console.log(staticFetch); /**/ fetch{} 
 ```
 
 
@@ -52,7 +52,7 @@ globalThis.newFetch = function newFetch(init) {
   return fech;
 }
 
-console.log(newFetch() instanceof fetch); //true
+console.log(newFetch() instanceof fetch); /**/ true
 ```
 
 This typically works and gives the closest object in each scenario. For shits and giggles I'm using this for serializing http requests and responses. I just like the idea of developers scratching their heads trying to understand the point.
