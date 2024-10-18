@@ -11,8 +11,8 @@
 <div class="language-js highlighter-rouge">
     <div class="highlight">
     <pre class="highlight" precode>
-<code precode>arr?.join``; // invalid syntax
-arr?.join(''); // valid syntax</code></pre>
+<code precode>arr?.join``; /**/ invalid syntax
+arr?.join(''); /**/ valid syntax</code></pre>
 </div>
 </div>
 <p>This comes in quite handy for methods that potentiallly return <code>undefined</code> like <code>String.prototype.match</code>.
@@ -21,13 +21,13 @@ arr?.join(''); // valid syntax</code></pre>
     <pre class="highlight" precode>
 <code precode>const str = 'Hello world!';
 
-// Using match and join with optional chaining
+/**/ Using match and join with optional chaining
 const result = str.match(/./)?.join('');
-console.log(result); // "Hello world!"
+console.log(result); /**/ "Hello world!"
 
-// If the regular expression doesn't match anything:
+/**/ If the regular expression doesn't match anything:
 const noMatch = str.match(/z+/)?.join('');
-console.log(noMatch); // undefined</code></pre>
+console.log(noMatch); /**/ undefined</code></pre>
 </div>
 </div>
 <br/>
@@ -37,13 +37,13 @@ console.log(noMatch); // undefined</code></pre>
     <pre class="highlight" precode>
 <code precode>const str = 'Hello world!';
 
-// Old way: Fallback to empty array if no match
+/**/ Old way: Fallback to empty array if no match
 const oldResult = (str.match(/./)||[]).join('');
-console.log(oldResult); // "Hello world!"
+console.log(oldResult); /**/ "Hello world!"
 
-// If no match is found:
+/**/ If no match is found:
 const oldNoMatch = (str.match(/z+/)||[]).join('');
-console.log(oldNoMatch); // ""</code></pre>
+console.log(oldNoMatch); /**/ ""</code></pre>
 </div>
 </div>
 <br/>
