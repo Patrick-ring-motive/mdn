@@ -21,11 +21,11 @@ arr?.join(''); /**/ valid syntax</code></pre>
     <pre class="highlight" precode>
 <code precode>const str = 'Hello world!';
 
-/**/ Using match and join with optional chaining
+// Using match and join with optional chaining
 const result = str.match(/./)?.join('');
 console.log(result); /**/ "Hello world!"
 
-/**/ If the regular expression doesn't match anything:
+// If the regular expression doesn't match anything:
 const noMatch = str.match(/z+/)?.join('');
 console.log(noMatch); /**/ undefined</code></pre>
 </div>
@@ -37,11 +37,11 @@ console.log(noMatch); /**/ undefined</code></pre>
     <pre class="highlight" precode>
 <code precode>const str = 'Hello world!';
 
-/**/ Old way: Fallback to empty array if no match
+// Old way: Fallback to empty array if no match
 const oldResult = (str.match(/./)||[]).join('');
 console.log(oldResult); /**/ "Hello world!"
 
-/**/ If no match is found:
+// If no match is found:
 const oldNoMatch = (str.match(/z+/)||[]).join('');
 console.log(oldNoMatch); /**/ ""</code></pre>
 </div>
