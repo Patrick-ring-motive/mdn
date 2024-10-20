@@ -1,4 +1,4 @@
-const objDoProp = function (obj, prop, def, enm, mut) {
+globalThis.objDoProp = function (obj, prop, def, enm, mut) {
   return Object.defineProperty(obj, prop, {
     value: def,
     writable: mut,
