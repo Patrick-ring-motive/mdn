@@ -236,6 +236,11 @@ html[window-location*="hostname=nodejs.org"] pre[class*=language-] {
   background-color: cadetblue !important;
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
   color: blue;
+  border-radius:1vmax;
+}
+html[window-location*="hostname=nodejs.org"][user-agent*="mobile"i] :not(pre)>code[class*=language-], 
+html[window-location*="hostname=nodejs.org"][user-agent*="mobile"i] pre[class*=language-] {
+  border-radius:1vmin;
 }
 html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] code, 
 html[window-location*="hostname=nodejs.org"] pre[class*=language-] code{
