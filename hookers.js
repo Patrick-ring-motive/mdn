@@ -259,7 +259,7 @@ globalThis.newFetch = function newFetch(init) {
   fech.constructor = fetch;
   return fech;
 }
-console.warn(Object.create(fetch));
+//console.warn(Object.create(fetch));
 
  void (async function Hookers() {
   try {
