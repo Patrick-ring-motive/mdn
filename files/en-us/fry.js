@@ -20,8 +20,9 @@ void async function FrontPage(){
       await sleep(100);
       await nextIdle();
     }else{
-      (await waitSelect('.featured-articles>h2')).after(Object.assign(createElement('div'),{
-        "tdn-feature" : true,
+      let div = createElement('div');
+      div.setAttribute('tdn-feature',true);
+      (await waitSelect('.featured-articles>h2')).after(Object.assign(div,{
         style : "width: 100%;  width: -webkit-fill-available; ",
         innerHTML : `<div class="article-tile">
         <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining?cache=false" class="tile-tag" data-glean="homepage: article_tag 1">Optional Chaining</a>
