@@ -231,14 +231,23 @@ html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
         1px -1px 0 rgb(0,0,0);
 }
 
-html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pre[class*=language-] {
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-], 
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] {
   background-color: cadetblue !important;
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
+  color: blue;
+}
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] code, 
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] code{
   color: aqua;
 }
-html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pre[class*=language-] .token.parameter{
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] .token.parameter{
   color: chartreuse;
 }
-html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pre[class*=language-] *{
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] .token.parameter {
+  color: cornflowerblue;
+}
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] *,
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] *{
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
 }
