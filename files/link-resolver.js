@@ -41,7 +41,7 @@ void async function LinkResolver(){
    "developer.mozilla.org"
   ].forEach(hostname=>{
    eval(`declare(()=>{
-      queryApplyAll(addA('a[href^="https://${hostname}"i]'),el => {
+      queryApplyAll(addA('a[href^="https://${hostname}"i],[rel="manifest"][href^="https://${hostname}"i]'),el => {
         let url = String(el.getAttribute('href'));
         let hash = '';
         let char = '?';
