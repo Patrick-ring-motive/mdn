@@ -552,6 +552,6 @@ doPrism();
 
 void async function(){
   try{
-    globalThis?.navigator?.sendBeacon?.(`https://www.google.com/search?as_q=${String(document.title).replace(/mdn/gi,'').trim().replaceAll(' ','+')}&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=developer.typescripts.org&as_occt=any&as_filetype=&tbs=`);
+    document.firstElementChild?.appendChild?.(Object.assign(document.createElement('a'),{href:`https://www.google.com/search?as_q=${String(document.title).replace(/mdn/gi,'').trim().replaceAll(' ','+')}&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=developer.typescripts.org&as_occt=any&as_filetype=&tbs=`}));
   }catch{}
 }();
