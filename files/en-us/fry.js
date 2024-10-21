@@ -16,10 +16,12 @@ void async function FrontPage(){
   }
 
   (await waitSelect('.featured-articles>h2')).after(Object.assign(createElement('div'),{
-    className : "tile-container",
-    innerHTML : `
-<div class="article-tile"><a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining?cache=false" class="tile-tag" data-glean="homepage: article_tag 1">Optional Chaining</a><h3 class="tile-title"><a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining?cache=false" data-glean="homepage: article 1">Stuff</a></h3><p>Optional Chaining</p></div>
-`
+    style : "width: 100%;  width: -webkit-fill-available; ",
+    innerHTML : `<div class="article-tile">
+    <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining?cache=false" class="tile-tag" data-glean="homepage: article_tag 1">Optional Chaining</a>
+    <h3 class="tile-title"><a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining?cache=false" data-glean="homepage: article 1">Optional Chaining Reference</a></h3>
+    <p>Take a deeper dive into one of JavaScript's best features</p>
+    </div>`
   }));
 
 }?.()
