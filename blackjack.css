@@ -231,3 +231,9 @@ html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
         1px -1px 0 rgb(0,0,0);
 }
 
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pre[class*=language-] {
+  background-color: cadetblue !important;
+  text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
+  color: aqua;
+}
+
