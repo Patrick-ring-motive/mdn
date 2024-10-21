@@ -236,6 +236,9 @@ html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pr
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
   color: aqua;
 }
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pre[class*=language-] .token.parameter{
+  color: chartreuse;
+}
 html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],pre[class*=language-] *{
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
 }
