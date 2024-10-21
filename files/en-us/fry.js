@@ -16,7 +16,7 @@ void async function FrontPage(){
   }
 
   while(true){
-    if(select('dive[tdn-feature]')){
+    if(select('div[tdn-feature]')){
       await sleep(100);
       await nextIdle();
     }else{
