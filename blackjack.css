@@ -136,8 +136,19 @@ html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
       color:rgb(0,0,0);
     }
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js,
-    .dark .language-js{
+    html:not([window-location*="hostname=nodejs.org"]) .dark .language-js{
       background-color:rgb(200,200,225) !important;
+    }
+
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .example-header>.language-js,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .example-header>.language-js{
+      background-color:rgba(200,200,225,0) !important;
+    }
+
+    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .example-header>button.copy-icon,
+    html:not([window-location*="hostname=nodejs.org"]) .dark .example-header>button.copy-icon{
+      position:absolute !important;
+      right:1vmax;
     }
 
     html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
