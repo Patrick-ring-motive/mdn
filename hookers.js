@@ -545,12 +545,12 @@ declare(()=>{
         doPrism();
   });
 });
-declare(()=>{
+/*declare(()=>{
    queryApplyAll('[class*="language-"]:not([class*="language-javascript"i],[class*="language-js"i]',el=>{
       el.className = 'language-js';
       doPrism();
    });
-});
+});*/
     
 doPrism();
 
