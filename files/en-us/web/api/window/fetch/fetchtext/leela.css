@@ -1,3 +1,6 @@
 section[aria-labelledby]{
   display: none !important;
 }
+.main-page-content>header{
+  display:none;
+}
