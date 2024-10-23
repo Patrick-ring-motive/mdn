@@ -26,7 +26,7 @@ This converts to an arrayBuffer first and then decodes it to text.
 async function fetchDecodeText(){
   const response = await fetch(...arguments);
   const arrayBuffer = await response.arrayBuffer();
-  const text = nee TextDecoder().decode(arrayBuffer);
+  const text = new TextDecoder().decode(arrayBuffer);
   return text;
 }
 ```
@@ -36,7 +36,7 @@ This converts to an arrayBuffer first and then decodes it to text.
 async function fetchBlobText(){
   const response = await fetch(...arguments);
   cobst arrayBuffer = await response.arrayBuffer();
-  const text = nee TextDecoder().decode(arrayBuffer);
+  const text = new TextDecoder().decode(arrayBuffer);
   return text;
 }
 ```
