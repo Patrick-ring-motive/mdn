@@ -184,7 +184,7 @@ function appendWarn(x){
 }
 
 try{
-eval(`0||(()=>{
+(()=>{
 if(/loglevel=(onerror|all)/.test(location.href)){
 function appendOnerror(x){
   let log = document.querySelector('[loglevel="onerror"]');
@@ -198,17 +198,16 @@ function appendOnerror(x){
   }
   log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
 }
-
  console.runningOnerror??={"loglevel":"onerror"};
    window.onerror = function onerror(){
       try{
-        const txt = [...arguments].map(x=>inspect(x)).join('\\n');
+        const txt = [...arguments].map(x=>inspect(x)).join('\n');
         console.runningOnerror[txt]=(console.runningOnerror[txt]??0)+1;
         appendOnerror(console.runningOnerror);
       }catch{}
     };
 }
-})()`);
+})()
 }catch(e){console.log(e);}
 
 if(/loglevel=(error|all)/.test(location.href)){
