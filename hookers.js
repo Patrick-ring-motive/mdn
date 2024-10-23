@@ -187,16 +187,8 @@ try{
 (()=>{
 if(/loglevel=(onerror|all)/.test(location.href)){
 function appendOnerror(x){
-  let log = document.querySelector('[loglevel="onerror"]');
-  if(!log){
-    log = document.createElement('pre');
-    log.setAttribute('loglevel','onerror');
-    log.style.width = '100vw';
-    log.style.minHeight = '50vmin';
-    log.style.backgroundColor = 'orange';
-    document.body?.appendChild?.(log);
-  }
-  log.innerText = JSON.stringify(x,null,2).replaceAll('"','');
+   appendLogger(x,"onerror","rgb(173, 87, 12)");
+   doPrism();
 }
  console.runningOnerror??={"loglevel":"onerror"};
    window.onerror = function onerror(){
