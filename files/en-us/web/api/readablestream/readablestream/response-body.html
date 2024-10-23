@@ -6,6 +6,7 @@
 <code precode>function newReadableStream(content){
     return new Response(content).body;
 }
+
 const newStream = newReadableStream("Hello World");
 const decoder = new TextDecoder();
 for await (const chunk of newStream) {
