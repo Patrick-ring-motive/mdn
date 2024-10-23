@@ -122,6 +122,7 @@ function appendLogger(x,s,color){
   log.innerText = JSON.stringify(x,null,2).replaceAll('\"','').replaceAll('"','').replace(/[ ]+/g,' ');
   log.innerHTML = log.innerHTML.toString()
   .replaceAll('\\n','\n')
+  .replace(/\\n/g,'\n')
   .replaceAll('\\','')
   .replace(/^[ ]+/g,' ')
   .replaceAll('\n\n','\n');
