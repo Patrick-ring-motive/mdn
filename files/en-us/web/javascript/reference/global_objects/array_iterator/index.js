@@ -6,7 +6,10 @@
 void async function ArrayIterators(){
   if(!~document.title.search(/Array/)){document.title = document.title.replace(/^Iterator/,'Array Iterator');}
   try{
-    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
+    globalThis.declare??(await Promise.any([
+      import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`),
+      import(`https://cdn.jsdelivr.net/npm/javaxscript/framework.js?${globalThis.cache}`)
+    ]));
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
