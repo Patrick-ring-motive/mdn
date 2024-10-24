@@ -5,8 +5,11 @@ if(/cache=false/.test(location.href)){globalThis.cache = new Date().getTime();}
   }
 });
 void async function FetchInstance(){
-   try{
-    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
+  try{
+    globalThis.declare??(await Promise.any([
+      import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`),
+      import(`https://cdn.jsdelivr.net/npm/javaxscript/framework.js?${globalThis.cache}`)
+    ]));
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
