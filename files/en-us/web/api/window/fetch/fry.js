@@ -1,7 +1,10 @@
 //(window?.document?.firstElementChild?.style??{}).filter = 'invert(1)';
 void async function WindowFetch(){
   try{
-    globalThis.declare??await import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`);
+    globalThis.declare??(await Promise.any([
+      import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`),
+      import(`https://cdn.jsdelivr.net/npm/javaxscript/framework.js?${globalThis.cache}`)
+    ]));
   }catch{
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
