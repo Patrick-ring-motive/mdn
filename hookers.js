@@ -62,6 +62,7 @@ async function doPrism(){
   } catch {
       const prism = createElement("script");
       prism.src = "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js";
+      prism.onload = ()=>doPrism();
       body().appendChild(prism);
   }
 }
