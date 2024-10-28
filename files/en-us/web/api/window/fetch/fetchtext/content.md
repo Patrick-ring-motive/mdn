@@ -35,8 +35,24 @@ This converts to an arrayBuffer first and then decodes it to text.
 ```js
 async function fetchBlobText(){
   const response = await fetch(...arguments);
-  cobst arrayBuffer = await response.arrayBuffer();
+  const arrayBuffer = await response.arrayBuffer();
   const text = new TextDecoder().decode(arrayBuffer);
+  return text;
+}
+```
+
+This converts the ReadableStream chunk by chunk
+
+```js
+async function fetchStreamText(){
+  const decoder = new TextDecoder();
+  const decode = x => decoder.decode(x);
+  const response = await fetch(...arguments);
+  const stream = response.body;
+  let text = '';
+  for await (const chunk of stream){
+      text += decode(chunk);
+  }
   return text;
 }
 ```
