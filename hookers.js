@@ -25,7 +25,7 @@ async function Pathinator() {
             url.pathname = '/';
             x.setAttribute('href', url);
         } catch (e) {
-            console.log(e,x);
+            console.warn(e,x);
         }
     });
     [...document.querySelectorAll('[src*="developer.typescripts.org"]:not([src*="path="],script)')].forEach(x => {
@@ -35,7 +35,7 @@ async function Pathinator() {
             url.pathname = '/';
             x.setAttribute('src', url);
         } catch (e) {
-            console.log(e,x);
+            console.warn(e,x);
         }
     });
     [...document.querySelectorAll('script[src*="developer.typescripts.org"]:not([src*="path="])')].forEach(x => {
@@ -51,7 +51,7 @@ async function Pathinator() {
             script.src = url;
             document.body.appendChild(script);
         } catch (e) {
-            console.log(e,x);
+            console.warn(e,x);
         }
     });
 }
@@ -201,7 +201,7 @@ function appendOnerror(x){
     };
 }
 })()
-}catch(e){console.log(e);}
+}catch(e){console.warn(e);}
 
 if(/loglevel=(error|all)/.test(location.href)){
 function appendError(x){
