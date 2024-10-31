@@ -122,3 +122,33 @@ console.log([...arrIter]);//[1,2,3,4]
 console.log([...arrIterCopy]);//[1,2,3,4]
 ```
 This method works on `Array Iterators` that are finite but this is very inefficient both in terms of speed and memory. To copy infinite or very large iterators, use a [generator function](/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction).
+
+If an in an async environment, `Array Iterators` can be converted into a `ReadableStream` from which you can `tee` which produces 2 `ReadableStreams` that can be read independently. 
+```js
+const arrIterToStream = function arrIterToStream(arrIter) {
+   return new ReadableStream({
+    pull : function pull(controller) {
+      const chunk = arrIter.next();
+      if (chunk) {
+        controller.enqueue(chunk.value);
+      }
+      if (chunk?.done ?? !chunk) {
+        controller.close();
+      }
+    }
+  });
+}
+
+const arr = [1,2,3,4];
+const arrIter = arr.values();
+const arrStream = arrIterToStream(arrIter);
+const arrStreamTee = arrStream.tee();
+
+for await(const x of arrStreamTee[0]){
+	console.log(x); // 1 2 3 4
+}
+
+for await(const x of arrStreamTee[1]){
+	console.log(x); //1 2 3 4
+}
+```
