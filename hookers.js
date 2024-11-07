@@ -525,7 +525,7 @@ globalThis.newFetch = function newFetch(init) {
   }
 
 declare(()=>{
-  queryApplyAll('pre[class="brush: plain notranslate"]:not([paint-anyway]),pre[class="brush: js notranslate"]:not([paint-anyway])',pre=>{
+  queryApplyAll('pre[class="brush: plain notranslate"]:not([paint-anyway])',pre=>{
         const outerDiv = createElement('div');
         outerDiv.setAttribute('class','language-js highlighter-rouge');
         const innerDiv = createElement('div');
