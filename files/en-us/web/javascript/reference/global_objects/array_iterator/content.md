@@ -152,3 +152,40 @@ for await(const x of arrStreamTee[1]){
 	console.log(x); //1 2 3 4
 }
 ```
+
+There is no built in method to synchronously tee an iterator but this is how youbcan write one.
+```
+function tee(iterable = [], n = 2) {
+  n = Math.max(n, 2);
+  if (!iterable.next) {
+    iterable =
+      iterable[Symbol.iterator]() ??
+      iterable[Symbol.asyncIterator]() ??
+      [][Symbol.iterator].call(iterable);
+  }
+  const iterators = [];
+  const values = [];
+
+  for (let i = 0; i !== n; i++) {
+    iterators.push(
+      (function* iterator() {
+        const values_length = values.length;
+        for (let x = 0; x !== values_length; x++) {
+          yield values[x];
+        }
+
+        let result;
+        do {
+          result = iterable.next();
+          if (result?.done === false) {
+            values.push(result.value);
+            yield result.value;
+          }
+        } while (result?.done === false);
+      })(),
+    );
+  }
+  return iterators;
+}
+
+```
