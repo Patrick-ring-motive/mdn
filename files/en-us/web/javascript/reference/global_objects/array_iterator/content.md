@@ -123,7 +123,7 @@ console.log([...arrIterCopy]);//[1,2,3,4]
 ```
 This method works on `Array Iterators` that are finite but this is very inefficient both in terms of speed and memory. To copy infinite or very large iterators, use a [generator function](/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction).
 
-If an in an async environment, `Array Iterators` can be converted into a `ReadableStream` from which you can `tee` which produces 2 `ReadableStreams` that can be read independently. 
+If in an async environment, `Array Iterators` can be converted into a `ReadableStream` from which you can `tee` which produces 2 `ReadableStreams` that can be read independently. 
 ```js
 const arrIterToStream = function arrIterToStream(arrIter) {
    return new ReadableStream({
