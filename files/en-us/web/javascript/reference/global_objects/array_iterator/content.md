@@ -154,7 +154,7 @@ for await(const x of arrStreamTee[1]){
 ```
 
 There is no built in method to synchronously tee an iterator but this is how youbcan write one.
-```
+```js
 function tee(iterable = [], n = 2) {
   n = Math.max(n, 2);
   if (!iterable.next) {
