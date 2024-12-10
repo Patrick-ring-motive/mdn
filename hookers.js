@@ -1,3 +1,4 @@
+globalThis.innerHTML = document?.firstElementChild?.innerHTML;
 if(/cache=false/.test(location.href)){
    globalThis.cache = new Date().getTime();
 }
@@ -265,7 +266,7 @@ globalThis.newFetch = function newFetch(init) {
   }
    globalThis.select ??= (function select(){return document.querySelector(...arguments);});
    globalThis.page_html ??= select('html');
-	 globalThis.innerHTML ??= page_html.innerHTML;
+globalThis.innerHTML = page_html.innerHTML;
     globalThis.swapTextBack ??= function(startText, endText) {
          let el = document.body;
 	 let textTime = String(new Date().getTime());
