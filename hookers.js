@@ -263,6 +263,24 @@ globalThis.newFetch = function newFetch(init) {
   } catch {
     await import(`https://git-tdn.typescripts.org/Patrick-ring-motive/framework/main/framework.js?${globalThis.cache}`);
   }
+   globalThis.select ??= (function select(){return document.querySelector(...arguments);});
+   globalThis.page_html ??= select('html');
+    globalThis.swapTextBack ??= function(startText, endText) {
+         let el = document.body;
+	 let textTime = String(new Date().getTime());
+         if (!el) { return;}
+         let n, a = [],
+             walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+         while (n = walk.nextNode()) {
+             a.push(n);
+             let ntext = n.textContent;
+	     ntext = ntext.replace(endText,textTime);
+	     ntext = ntext.replace(startText, endText);
+	     ntext = ntext.replace(textTime,endText); 
+             updateProperty(n, 'textContent', ntext);
+         };
+         return a;
+     };
   declare(Pathinator);
   declare(() => {
     const logoLink = select('a[title="Go back to the home page"]');
