@@ -1,0 +1,17 @@
+const newQ = (...args) => {
+        const fn = args?.shift?.();
+        return fn && new fn(...args);
+    };
+
+    const serializer = newQ(globalThis.XMLSerializer);
+    const serializeXML = (node) => serializer?.serializeToString?.(node);
+    const bytes = (buff) => new Uint8Array(buff);
+    const encoder = newQ(globalThis.TextEncoder);
+    const encode = (s) =>
+        encoder?.encode?.(s) ?? bytes(s.split``.map((x) => x.charCodeAt()));
+    const buffer = (s) => encode(s).buffer;
+    const decoder = newQ(globalThis.TextDecoder);
+    const decode = (byte) =>
+        decoder?.decode?.(byte) ?? String.fromCharCode(...byte);
+    const text = (buff) => decode(bytes(buff));
+    const blob = (buff) => new Blob([buff]);
