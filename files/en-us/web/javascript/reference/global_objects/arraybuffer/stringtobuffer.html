@@ -6,7 +6,7 @@
     <div class="highlight">
     <pre class="highlight">
         <code>
-const stringToBuffer = (str) => new TextEncoder().encode(str).buffer;
+const stringToBuffer = str => new TextEncoder().encode(str).buffer;
 </code>
     </pre>
 </div>
@@ -19,7 +19,7 @@ const stringToBuffer = (str) => new TextEncoder().encode(str).buffer;
     <div class="highlight">
     <pre class="highlight">
         <code>
-const bufferToString = (buff) => new TextDecoder().decode(new Uint8Array(buff));
+const bufferToString = buff => new TextDecoder().decode(new Uint8Array(buff));
 </code>
     </pre>
 </div>
