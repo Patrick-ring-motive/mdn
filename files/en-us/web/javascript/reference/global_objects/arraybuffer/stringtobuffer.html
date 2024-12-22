@@ -1,17 +1,26 @@
-const newQ = (...args) => {
-        const fn = args?.shift?.();
-        return fn && new fn(...args);
-    };
-
-    const serializer = newQ(globalThis.XMLSerializer);
-    const serializeXML = (node) => serializer?.serializeToString?.(node);
-    const bytes = (buff) => new Uint8Array(buff);
-    const encoder = newQ(globalThis.TextEncoder);
-    const encode = (s) =>
-        encoder?.encode?.(s) ?? bytes(s.split``.map((x) => x.charCodeAt()));
-    const buffer = (s) => encode(s).buffer;
-    const decoder = newQ(globalThis.TextDecoder);
-    const decode = (byte) =>
-        decoder?.decode?.(byte) ?? String.fromCharCode(...byte);
-    const text = (buff) => decode(bytes(buff));
-    const blob = (buff) => new Blob([buff]);
+<h4>String To ArrayBuffer</h4>
+<p>
+    Here is a simple way to synchronously convert a `String` to an `ArrayBuffer` using UTF-8 encoding.
+</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight">
+        <code>
+const stringToBuffer = (str) => new TextEncoder().encode(str).buffer;
+</code>
+    </pre>
+</div>
+</div>
+<h4>ArrayBuffer To String</h4>
+<p>
+    Here is the reverse operation to convert an `ArrayBuffer` a `String` using UTF-8 encoding.
+</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight">
+        <code>
+const bufferToString = (buff) => new TextDecoder().decode(new Uint8Array(buff));
+</code>
+    </pre>
+</div>
+</div>
