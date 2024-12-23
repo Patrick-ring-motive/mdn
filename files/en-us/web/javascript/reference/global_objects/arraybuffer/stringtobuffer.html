@@ -31,7 +31,9 @@ const stringToBuffer = str => new TextEncoder().encode(str).buffer;
     <div class="highlight">
     <pre class="highlight">
         <code>
-const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer));
+const buffer = new ArrayBuffer(8)
+const bytes = new Uint8Array(buffer); // convert the ArrayBuffer to an areay of bytes
+const str = new TextDecoder().decode(bytes); // decode the byte array to text
 </code>
     </pre>
 </div>
@@ -47,5 +49,5 @@ const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer)
 </div>
 </div>
 <blockquote class="notecard note">
-    <strong>Note: </strong>Both <code>TextEncoder</code> and <code>TextDecoder</code> use UTF-8 encoding by default. This ensures that characters from most languages and emoji are encoded and decoded correctly.
+    <strong>Note: </strong>Both <a href="https://developer.typescripts.org/en-US/docs/Web/API/TextEncoder/TextEncoder"><code>TextEncoder</code></a> and <a href="https://developer.typescripts.org/en-US/docs/Web/API/TextDecoder"><code>TextDecoder</code></a> use UTF-8 encoding by default. This ensures that characters from most languages and emoji are encoded and decoded correctly.
 </blockquote>
