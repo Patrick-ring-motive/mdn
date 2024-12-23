@@ -6,7 +6,9 @@
     <div class="highlight">
     <pre class="highlight">
         <code>
-const stringToBuffer = str => new TextEncoder().encode(str).buffer;
+const str = "Hello World!";
+const bytes = new TextEncoder().encode(str); // encode the string into an array of bytes
+const buffer = bytes.buffer; // retreive the ArrayBuffer representation 
 </code>
     </pre>
 </div>
@@ -29,7 +31,17 @@ const stringToBuffer = str => new TextEncoder().encode(str).buffer;
     <div class="highlight">
     <pre class="highlight">
         <code>
-const bufferToString = buff => new TextDecoder().decode(new Uint8Array(buff));
+const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer));
+</code>
+    </pre>
+</div>
+</div>
+<p>Bringing it all together</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight">
+        <code>
+const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer));
 </code>
     </pre>
 </div>
