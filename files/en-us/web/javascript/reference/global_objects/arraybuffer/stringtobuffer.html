@@ -32,7 +32,7 @@ const stringToBuffer = str => new TextEncoder().encode(str).buffer;
     <pre class="highlight">
         <code>
 const buffer = new ArrayBuffer(8)
-const bytes = new Uint8Array(buffer); // convert the ArrayBuffer to an areay of bytes
+const bytes = new Uint8Array(buffer); // convert the ArrayBuffer to an array of bytes
 const str = new TextDecoder().decode(bytes); // decode the byte array to text
 </code>
     </pre>
