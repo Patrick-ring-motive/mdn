@@ -1,0 +1,23 @@
+<p>
+    Since many data types can be represented as either primitive or in object form, both forms must be checked for to be thorough. Use these handy helper functions.
+</p>
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>const isNullish = x => x === undefined || x === null;
+const isBoolean = x => typeof x === 'boolean' || x instanceof Boolean;
+const isNumber = x => typeof x === 'number' || x instanceof Number;
+const isBigInt = x => typeof x === 'bigint' || x instanceof BigInt;
+const isString = x => typeof x === 'strgin' || x instanceof String;
+const isSymbol = x => typeof x === 'symbol' || x instanceof Symbol;
+const isArray = x => Array.isArray(x) || x instanceof Array;</code></pre>
+</div>
+</div>
+<br/>
