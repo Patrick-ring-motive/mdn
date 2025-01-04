@@ -1,6 +1,6 @@
-h4>Safer `instanceOf`</h4>
+h4>Safer <code>instanceOf</code></h4>
 <p>
-    The easiest way to safely call `instanceof` is to wrap it in a try/catch like so.
+    The easiest way to safely call <code>instanceof</code> is to wrap it in a <code>try/catch</code> like so.
 </p>
 <style>
 [precode]{
@@ -13,12 +13,12 @@ h4>Safer `instanceOf`</h4>
     <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const instanceOf = (x,y) => {
-      try{
-        return x instanceof y;
-      }catch{
-        return false;
-      }
-    };</code></pre>
+  try{
+    return x instanceof y;
+  }catch{
+    return false;
+  }
+};</code></pre>
 </div>
 </div>
 <br/>
