@@ -4,23 +4,15 @@
 </p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-        <code>
-const str = "Hello World!";
+    <pre class="highlight"><code>const str = "Hello World!";
 const bytes = new TextEncoder().encode(str); // encode the string into an array of bytes
-const buffer = bytes.buffer; // retreive the ArrayBuffer representation 
-</code>
-    </pre>
+const buffer = bytes.buffer; // retreive the ArrayBuffer representation </code></pre>
 </div>
 </div>
 <p>Bringing it all together</p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-        <code>
-const stringToBuffer = str => new TextEncoder().encode(str).buffer;
-</code>
-    </pre>
+    <pre class="highlight"><code>const stringToBuffer = str => new TextEncoder().encode(str).buffer;</code></pre>
 </div>
 </div>
 <h4>ArrayBuffer To String</h4>
@@ -29,23 +21,15 @@ const stringToBuffer = str => new TextEncoder().encode(str).buffer;
 </p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-        <code>
-const buffer = new ArrayBuffer(8)
+    <pre class="highlight"><code>const buffer = new ArrayBuffer(8)
 const bytes = new Uint8Array(buffer); // convert the ArrayBuffer to an array of bytes
-const str = new TextDecoder().decode(bytes); // decode the byte array to text
-</code>
-    </pre>
+const str = new TextDecoder().decode(bytes); // decode the byte array to text</code></pre>
 </div>
 </div>
 <p>Bringing it all together</p>
 <div class="language-js highlighter-rouge">
     <div class="highlight">
-    <pre class="highlight">
-        <code>
-const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer));
-</code>
-    </pre>
+    <pre class="highlight"><code>const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer));</code></pre>
 </div>
 </div>
 <blockquote class="notecard note">
