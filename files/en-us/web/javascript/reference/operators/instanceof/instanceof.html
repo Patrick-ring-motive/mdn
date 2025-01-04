@@ -1,0 +1,24 @@
+h4>Safer `instanceOf`</h4>
+<p>
+    The easiest way to safely call `instanceof` is to wrap it in a try/catch like so.
+</p>
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>const instanceOf = (x,y) => {
+      try{
+        return x instanceof y;
+      }catch{
+        return false;
+      }
+    };</code></pre>
+</div>
+</div>
+<br/>
