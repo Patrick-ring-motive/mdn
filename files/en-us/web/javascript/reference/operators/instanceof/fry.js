@@ -19,7 +19,7 @@ void async function Instanceof(){
   }
   const dir = (loc) => `https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/operators/typeof/${loc}.html?${globalThis.cache}`;
   const helpers = zfetchText(dir('helpers'));
-  const instOf = zfetchText(dir('instanceof').replace('typeof','instanceof');
+  const instOf = zfetchText(dir('instanceof').replace('typeof','instanceof'));
   const divHelpers = document.createElement('div');
   const divInstOf = document.createElement('div');
   divHelpers.innerHTML = await helpers;
