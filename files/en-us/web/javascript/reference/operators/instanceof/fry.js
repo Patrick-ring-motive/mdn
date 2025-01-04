@@ -21,7 +21,7 @@ void async function Instanceof(){
   const helpers = zfetchText(dir('helpers'));
   const instOf = zfetchText(dir('instanceof').replace('typeof','instanceof');
   const divHelpers = document.createElement('div');
-  const instOf = document.createElement('div');
+  const divInstOf = document.createElement('div');
   divHelpers.innerHTML = await helpers;
   divInstOf.innerHTML = await instOf;
   (await waitSelect('section[aria-labelledby="examples"]')).appendChild(divHelpers);
