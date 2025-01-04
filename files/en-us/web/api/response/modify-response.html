@@ -22,3 +22,18 @@ response = new Response(response.body,responseInit);
 response.headers.set('Content-Type','text/plain');</code></pre>
 </div>
 </div>
+<p>Here is a more concuse way of doing this using some advanced techniques.</p>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>/**/get a response object using fetch
+let response = await fetch('https://example.com');
+Object.defineProperty(response,'headers',{
+  value : new Headers(response.headers)
+});
+response = new Response(response.body,response);
+
+/**/the response can now be modified
+response.headers.set('Content-Type','text/plain');</code></pre>
+</div>
+</div>
