@@ -1,3 +1,4 @@
+<h4>Type Checking</h4>
 <p>
     Since many data types can be represented as either primitive or in object form, both forms must be checked for to be thorough. Use these handy helper functions.
 </p>
@@ -17,6 +18,7 @@ const isNumber = x => typeof x === 'number' || x instanceof Number;
 const isBigInt = x => typeof x === 'bigint' || x instanceof BigInt;
 const isString = x => typeof x === 'string' || x instanceof String;
 const isSymbol = x => typeof x === 'symbol' || x instanceof Symbol;
+const isObject = x => typeof x === 'object' && x !== null;
 const isArray = x => Array.isArray(x) || x instanceof Array;</code></pre>
 </div>
 </div>
