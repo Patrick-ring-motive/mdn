@@ -19,6 +19,7 @@ void async function Typeof(){
   }
   const dir = (loc) => `https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/main/files/en-us/web/javascript/reference/operators/typeof/${loc}.html?${globalThis.cache}`;
   const helpers = zfetchText(dir('helpers'));
+  const divHelpers = document.createElement('div');
   divHelpers.innerHTML = await helpers;
   (await waitSelect('section[aria-labelledby="basic_usage"]')).appendChild(divHelpers);
 
