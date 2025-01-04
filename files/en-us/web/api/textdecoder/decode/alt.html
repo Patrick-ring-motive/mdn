@@ -1,1 +1,18 @@
-String.fromCharCode(...bytes);
+<h4>Safer <code>instanceOf</code></h4>
+<p>
+    A quick stand in you can use in lieu of a proper decoder is <code>String.fromCharCode</code>.
+</p>
+<style>
+[precode]{
+    margin-left:0 !important;
+    padding-left:0 !important;
+    border-left-width:0 !important;
+}
+</style>
+<div class="language-js highlighter-rouge">
+    <div class="highlight">
+    <pre class="highlight" precode>
+<code precode>const decode = bytes => String.fromCharCode(...bytes);</code></pre>
+</div>
+</div>
+<br/>
