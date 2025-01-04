@@ -8,7 +8,7 @@ globalThis.q = (varFn) => {
     }
   }
 }
-void async function Typeof(){
+void async function Instanceof(){
   try{
     globalThis.declare??(await Promise.any([
       import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`),
@@ -21,7 +21,7 @@ void async function Typeof(){
   const helpers = zfetchText(dir('helpers'));
   const divHelpers = document.createElement('div');
   divHelpers.innerHTML = await helpers;
-  (await waitSelect('section[aria-labelledby="basic_usage"]')).appendChild(divHelpers);
+  (await waitSelect('section[aria-labelledby="examples"]')).appendChild(divHelpers);
 
 
 
