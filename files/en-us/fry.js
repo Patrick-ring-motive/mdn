@@ -1,4 +1,5 @@
 if(/cache=false/.test(location.href)){globalThis.cache = new Date().getTime();}
+globalThis['/en-US/']=true;
 globalThis.q = (varFn) => {
   try{
     return varFn?.();
