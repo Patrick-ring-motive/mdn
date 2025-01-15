@@ -2,7 +2,7 @@ globalThis.innerHTML = document?.firstElementChild?.innerHTML;
 if(/cache=false/.test(location.href)){
    globalThis.cache = new Date().getTime();
 }
-if(location.pathname.length<2)location.pathname = '/en-US/';
+if(location.pathname.length<2||(location.pathname=='/en-US/' && ! globalThis['/en-US/'))import('https://git-tdn.typescripts.org/Patrick-ring-motive/mdn/refs/heads/main/files/en-us/fry.js');
 async function Pathinator() {
 
     const loc = new URL(`${location.href}`);
