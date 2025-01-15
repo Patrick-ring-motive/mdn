@@ -2,6 +2,7 @@ globalThis.innerHTML = document?.firstElementChild?.innerHTML;
 if(/cache=false/.test(location.href)){
    globalThis.cache = new Date().getTime();
 }
+if(location.pathname.length<2)location.pathname = '/en-US/';
 async function Pathinator() {
 
     const loc = new URL(`${location.href}`);
