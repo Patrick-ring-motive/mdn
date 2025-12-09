@@ -257,6 +257,7 @@ globalThis.newFetch = function newFetch(init) {
 //console.warn(Object.create(fetch));
 
  void (async function Hookers() {
+	 await import('https://cdn.jsdelivr.net/npm/web-streams-shim/web-streams-core.js?'+Math.random());
   try {
    globalThis.declare??(await Promise.any([
       import(`https://unpkg.com/javaxscript/framework.js?${globalThis.cache}`),
