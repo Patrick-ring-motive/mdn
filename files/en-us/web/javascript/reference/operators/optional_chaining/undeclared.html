@@ -1,7 +1,7 @@
 <p>
   To workaround a variable that may or may not have been declared, we use the function <code>q</code> that wraps the variable in a try/catch. I like to use 'q' in related helper functions to signify 'question mark' to remind me of the <code>?</code> in optional chaining.</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const q = (varFn) => {
   try{
@@ -15,14 +15,14 @@
 
 q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
 
-</div>
+  </div>
 </div>
 <p>The <code>q</code> function is a simple but powerful utility for handling situations where optional chaining alone isn't enough. It shines in scenarios where variables might not be declared, and you need a safe way to access them without throwing errors. Here are two key use cases for <code>q</code></p>
 <h4>Handling Global Object Differences and References</h4>
 <p>Different JavaScript environments use different global objects (e.g., global in Node.js, globalThis in browsers). With <code>q</code>, you can safely reference the appropriate global object in any environment</p>
 
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const globalObject = q(()=>globalThis) // works in most modern runtimes
                   ?? q(()=>self) // also works in most modern runtimes
@@ -33,27 +33,27 @@ q(()=>undeclaredVar)?.prop; /**/undefined</code></pre>
 for(let x of ['globalThis','self','global']){
   globalObject[x] = globalObject;
 }</code></pre>
-</div>
+  </div>
 </div>
 <p>
-This ensures you have a consistent global object reference across environments, making your code more portable and robust. You would need to transpile for edge cases because older contexts that don't support <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis"><code>globalThis</code></a> probably don't support <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing"><code>??</code></a>.
+  This ensures you have a consistent global object reference across environments, making your code more portable and robust. You would need to transpile for edge cases because older contexts that don't support <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis"><code>globalThis</code></a> probably don't support <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing"><code>??</code></a>.
 </p>
 <h4>Async Race Conditions</h4>
 <p>
-In asynchronous code, there are situations where a variable may not be defined yet due to race conditions. The <code>q</code> function helps safely check for the variable’s existence without throwing a runtime error.
+  In asynchronous code, there are situations where a variable may not be defined yet due to race conditions. The <code>q</code> function helps safely check for the variable’s existence without throwing a runtime error.
 </p>
 
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>async function fetchData() {
   await someAsyncOperation();
   const value = q(()=>someVariable) ?? 'default value';
   console.log(value);
 }</code></pre>
-</div>
+  </div>
 </div>
 
 <p>
-This pattern ensures you can safely access variables even in race conditions, providing a fallback value if the variable isn’t available yet.
+  This pattern ensures you can safely access variables even in race conditions, providing a fallback value if the variable isn’t available yet.
 </p>
