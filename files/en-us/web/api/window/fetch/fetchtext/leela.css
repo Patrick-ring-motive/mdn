@@ -1,6 +1,7 @@
-section[aria-labelledby]{
+section[aria-labelledby] {
   display: none !important;
 }
-.main-page-content>header{
-  display:none;
+
+.main-page-content>header {
+  display: none;
 }
