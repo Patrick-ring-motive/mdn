@@ -3,13 +3,13 @@
   This example fetches 3 urls and waits for the promises to settle. Once settled, the rejected promises and unsuccessful http responses are filtered out out and the reults are converted to the underlying response.
 </p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const goodResults = (await Promise.allSettled([
     fetch(location.href),
     fetch('https://example.com/2'),
     fetch('https://example.com/3'),
   ])).filter(x=>x?.value?.ok).map(x=>x.value); //returns only valid responses</code></pre>
-</div>
+  </div>
 </div>
 <br>
