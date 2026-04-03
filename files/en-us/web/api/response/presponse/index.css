@@ -3,8 +3,7 @@
     section[aria-labelledby="examples"],
     section[aria-labelledby="syntax"],
     .main-page-content>header,
-    .breadcrumb-current-page[href="https://developer.typescripts.org/en-US/docs/Web/API/Response/Response"]
-    {
-        display:none !important;
-        visibility:hidden !important;
+    .breadcrumb-current-page[href="https://developer.typescripts.org/en-US/docs/Web/API/Response/Response"] {
+      display: none !important;
+      visibility: hidden !important;
     }
