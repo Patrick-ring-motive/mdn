@@ -1,10 +1,10 @@
 <h3>Modifying a text body</h3>
 <p>If you know that the response contains text, you can read it using the <code>.text()</code> method.
-reading the response body using any of the methods available, will consume the <code>ReadableStream</code> and you won't be able to access the body in the same way again.
-Be sure to store the text into a variable if you need it later.
+  reading the response body using any of the methods available, will consume the <code>ReadableStream</code> and you won't be able to access the body in the same way again.
+  Be sure to store the text into a variable if you need it later.
 </p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
   
@@ -20,11 +20,11 @@ if(/text|html|script|xml|json/i.test(response.headers.get('Content-Type')){
   response = new Response(responseText,response); 
   
 }</code></pre>
-</div>
+  </div>
 </div>
 <p>This process automatically decodes and then encodes back the body using utf-8. If you need to use a different encoding then resolve using <code>arrarBuffer()</code> and use a TextDecoder and TextEncoder. Here is an example how you might use encoders if you are not sure if your response is text or not.</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>let response = await fetch('https://example.com');
   
@@ -51,5 +51,5 @@ try{
 
 /**/ Use the modified array buffer body to create a new response object.
 response = new Response(responseArrayBuffer,response);</code></pre>
-</div>
+  </div>
 </div>
