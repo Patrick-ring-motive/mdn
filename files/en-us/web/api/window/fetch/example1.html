@@ -1,13 +1,13 @@
-
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const myImage = document.querySelector("img");
 const request = new Request("flowers.jpg");
@@ -15,5 +15,5 @@ const response = await fetch(request);
 const responseBlob = await response.blob();
 myImage.src = URL.createObjectURL(responseBlob);
 </code></pre>
-</div>
+  </div>
 </div>
