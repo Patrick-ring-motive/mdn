@@ -1,16 +1,17 @@
 <h4>Type Checking</h4>
 <p>
-    Since many data types can be represented as either primitive or in object form, both forms must be checked for to be thorough. These are some handy helper functions for validating types.
+  Since many data types can be represented as either primitive or in object form, both forms must be checked for to be thorough. These are some handy helper functions for validating types.
 </p>
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const isNullish = x => x === undefined || x === null;
     
@@ -27,6 +28,6 @@ const isSymbol = x => typeof x === 'symbol' || x instanceof Symbol;
 const isObject = x => typeof x === 'object' && x !== null;
 
 const isArray = x => Array.isArray(x) || x instanceof Array;</code></pre>
+  </div>
 </div>
-</div>
-<br/>
+<br />
