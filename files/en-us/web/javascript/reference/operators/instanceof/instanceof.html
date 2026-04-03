@@ -1,16 +1,17 @@
 <h4>Safer <code>instanceOf</code></h4>
 <p>
-    The easiest way to safely call <code>instanceof</code> on a possibly invalid constructor is to wrap it in a <code>try/catch</code> like so.
+  The easiest way to safely call <code>instanceof</code> on a possibly invalid constructor is to wrap it in a <code>try/catch</code> like so.
 </p>
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const instanceOf = (x,y) => {
   try{
@@ -19,6 +20,6 @@
     return false;
   }
 };</code></pre>
+  </div>
 </div>
-</div>
-<br/>
+<br />
