@@ -1,17 +1,18 @@
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <h3>Fetch Wrapper for Concurrent Requests</h3>
 <p>
-    To fetch sources concurrently, it can be convenient to have a wrapper that waits for the full response.
+  To fetch sources concurrently, it can be convenient to have a wrapper that waits for the full response.
 </p>
 <div class="language-js highlighter-rouge">
-<div class="highlight">
-<pre class="highlight" precode>
+  <div class="highlight">
+    <pre class="highlight" precode>
 <code precode>async function fetchText(){
   return await (await fetch(...arguments)).text();
 }
@@ -21,9 +22,9 @@ const resources = await Promise.all([
   fetchText("https://example.com/2"),
   fetchText("https://example.com/3")
 ]);</code></pre>
-</div>
+  </div>
 </div>
 <p>
-	By wrapping the <code>fetch()</code> call inside a function <code>fetchText</code>, you make it reusable and concise. The function resolves with the text of the response directly, simplifying the syntax for handling multiple responses.
-	This is a common pattern when you need to fetch multiple resources concurrently. By passing an array of promises to <code>Promise.all()</code>, all the requests are fired off at once, and the function only proceeds when all promises resolve.
+  By wrapping the <code>fetch()</code> call inside a function <code>fetchText</code>, you make it reusable and concise. The function resolves with the text of the response directly, simplifying the syntax for handling multiple responses.
+  This is a common pattern when you need to fetch multiple resources concurrently. By passing an array of promises to <code>Promise.all()</code>, all the requests are fired off at once, and the function only proceeds when all promises resolve.
 </p>
