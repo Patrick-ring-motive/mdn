@@ -1,24 +1,25 @@
 <h4>Short-Circuit Your Short-Circuiting</h4>
 <img src="https://i.kym-cdn.com/entries/icons/facebook/000/036/819/ouscover.jpg" style="max-width:75vmin;" title="I short circuited your short circuiting."></img>
 <p>
-    It can be more performant and more readable to force a typing part way through an optional chain.
+  It can be more performant and more readable to force a typing part way through an optional chain.
 </p>
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const response = await fetch('https://typescripts.org');
 const isScript = `${response?.headers?.get?.('content-type')}`.toLowerCase().includes('script');</code></pre>
-</div>
+  </div>
 </div>
 <p>
-    Notice how after the backtick we dont need to use optionals because we know that we must have string at that point in the chain.
-    This would break if for some reason the type was Symbol because <code>`${Symbol}`</code> throws an error. <code>String(Symbol)</code> will work though.
-    If there is an <code>undefined</code> in the chain then it will get coerced into a String <code>'undefined'</code> from which we can safely use String methods.
+  Notice how after the backtick we dont need to use optionals because we know that we must have string at that point in the chain.
+  This would break if for some reason the type was Symbol because <code>`${Symbol}`</code> throws an error. <code>String(Symbol)</code> will work though.
+  If there is an <code>undefined</code> in the chain then it will get coerced into a String <code>'undefined'</code> from which we can safely use String methods.
 </p>
