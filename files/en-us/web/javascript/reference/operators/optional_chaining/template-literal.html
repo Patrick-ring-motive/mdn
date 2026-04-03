@@ -1,23 +1,24 @@
 <p>
-    <code>String.raw</code> is an exceptional case because it only allows template literals as inputs. Most functions that can take template literals can also be executed with regular function calls.
+  <code>String.raw</code> is an exceptional case because it only allows template literals as inputs. Most functions that can take template literals can also be executed with regular function calls.
 </p>
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>arr?.join``; /**/ invalid syntax
 arr?.join(''); /**/ valid syntax</code></pre>
-</div>
+  </div>
 </div>
 <p>This comes in quite handy for methods that potentiallly return <code>undefined</code> like <code>String.prototype.match</code>.
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const str = 'Hello world!';
 
@@ -28,12 +29,12 @@ console.log(result); /**/ "Hello world!"
 // If the regular expression doesn't match anything:
 const noMatch = str.match(/z+/)?.join('');
 console.log(noMatch); /**/ undefined</code></pre>
+  </div>
 </div>
-</div>
-<br/>
+<br />
 <p>Before optional chaining we had to write code like this.</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const str = 'Hello world!';
 
@@ -44,6 +45,6 @@ console.log(oldResult); /**/ "Hello world!"
 // If no match is found:
 const oldNoMatch = (str.match(/z+/)||[]).join('');
 console.log(oldNoMatch); /**/ ""</code></pre>
+  </div>
 </div>
-</div>
-<br/>
+<br />
