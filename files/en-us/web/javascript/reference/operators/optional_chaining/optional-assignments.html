@@ -1,28 +1,29 @@
 <p>
-    Optional chaining assignment has a <a target="_blank" href="https://github.com/tc39/proposal-optional-chaining-assignment">stage 1 proposal</a> and is even implemented in the <a target="_blank" href="https://babeljs.io">Babeljs transpiler</a>.
-    In lieu of this, the next best thing is to use the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing">nullish coalescing operator</a> to simulate the behavior.
+  Optional chaining assignment has a <a target="_blank" href="https://github.com/tc39/proposal-optional-chaining-assignment">stage 1 proposal</a> and is even implemented in the <a target="_blank" href="https://babeljs.io">Babeljs transpiler</a>.
+  In lieu of this, the next best thing is to use the <a href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing">nullish coalescing operator</a> to simulate the behavior.
 </p>
 <style>
-[precode]{
-    margin-left:0 !important;
-    padding-left:0 !important;
-    border-left-width:0 !important;
-}
+  [precode] {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left-width: 0 !important;
+  }
+
 </style>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const link = document.querySelector('a');
 (link??{}).href = 'https://typescripts.org';
 (link?.style??{}).color = 'green';</code></pre>
-</div>
+  </div>
 </div>
 <p>
-    This works by creating a dummy stand-in object when the desired object is undefined.
-    It isn't very memory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
+  This works by creating a dummy stand-in object when the desired object is undefined.
+  It isn't very memory efficient if the nullish case is the more common one but that is the tradeoff for more concise and readable code. The slightly more verbose code below is roughly equivalent.
 </p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const link = document.querySelector('a');
 if(link){
@@ -31,6 +32,6 @@ if(link){
     link.style.color = 'green';
   }
 }</code></pre>
+  </div>
 </div>
-</div>
-<br/>
+<br />
