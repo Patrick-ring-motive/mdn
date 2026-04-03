@@ -1,30 +1,29 @@
-pre[loglevel]{
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.75),
-        -1px 1px 0 rgba(0,0,0,0.75),
-        -1px -1px 0 rgba(0,0,0,0.75),
-        1px -1px 0 rgba(0,0,0,0.75);
+pre[loglevel] {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75),
+    -1px 1px 0 rgba(0, 0, 0, 0.75),
+    -1px -1px 0 rgba(0, 0, 0, 0.75),
+    1px -1px 0 rgba(0, 0, 0, 0.75);
 }
 
 [copy-button="done"]>button[title]:hover::after {
   content: attr(title) !important;
-  position:absolute !important;
-  z-index:2 !important;
-    text-shadow: 1px 1px 0 white,
-        -1px 1px 0 white,
-        -1px -1px 0 white,
-        1px -1px 0 white;
-  color:rgb(0,0,0);
+  position: absolute !important;
+  z-index: 2 !important;
+  text-shadow: 1px 1px 0 white,
+    -1px 1px 0 white,
+    -1px -1px 0 white,
+    1px -1px 0 white;
+  color: rgb(0, 0, 0);
 }
 
-div.highlight:has(pre.highlight){
-  background-color:#f5f2f0;
+div.highlight:has(pre.highlight) {
+  background-color: #f5f2f0;
 }
 
 [darkish="true"] div.highlight:has(pre.highlight),
-.dark div.highlight:has(pre.highlight){
-  background-color: rgb(200,200,225);
+.dark div.highlight:has(pre.highlight) {
+  background-color: rgb(200, 200, 225);
 }
-
 
 .top-banner,
 .auth-container,
@@ -42,48 +41,48 @@ ul.social-icons,
 a[href="https://www.mozilla.org"],
 a[href="https://foundation.mozilla.org/"],
 .page-footer-legal-text::first-line,
-li.top-level-entry:has(a[href*="/en-US/plus"i]),
-a[href*="/en-US/plus"i],
-[id="mdn-plus-button"]{
-  display:none !important;
-  visibility:hidden !important;
+li.top-level-entry:has(a[href*="/en-US/plus" i]),
+a[href*="/en-US/plus" i],
+[id="mdn-plus-button"] {
+  display: none !important;
+  visibility: hidden !important;
 }
 
-a[title="Go back to the home page"]{
-  visibility:hidden;
-  text-decoration:none;
+a[title="Go back to the home page"] {
+  visibility: hidden;
+  text-decoration: none;
 }
 
-svg[class*="nodejsLogo"i],
+svg[class*="nodejsLogo" i],
 .mdn-footer-logo,
-svg[id="mdn-docs-logo"]{
-  visibility:hidden !important;
+svg[id="mdn-docs-logo"] {
+  visibility: hidden !important;
 }
 
 a[aria-label="Home"]::before,
 a[title="Go back to the home page"],
-a[aria-label="MDN homepage"]::before{
-  content:"tdn";
+a[aria-label="MDN homepage"]::before {
+  content: "tdn";
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", "Comic Sans", cursive, "Exo 2", monospace !important;
   font-weight: bold;
   font-size: xx-large;
   color: cadetblue !important;
 }
 
-html[window-location*="marklar"i] a[aria-label="Home"]::before,
-html[window-location*="marklar"i] a[title="Go back to the home page"],
-html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
-  content:"marklar";
+html[window-location*="marklar" i] a[aria-label="Home"]::before,
+html[window-location*="marklar" i] a[title="Go back to the home page"],
+html[window-location*="marklar" i] a[aria-label="MDN homepage"]::before {
+  content: "marklar";
 }
 
 .dark-mode a[aria-label="Home"]::before,
 .dark-mode a[title="Go back to the home page"],
 .dark a[aria-label="MDN homepage"]::before,
-[darkish="true"] a[aria-label="MDN homepage"]::before{
+[darkish="true"] a[aria-label="MDN homepage"]::before {
   color: #24d6bc !important;
 }
 
-:root:not(.dark){
+:root:not(.dark) {
   --text-link: cadetblue !important;
   --text-primary-green: cadetblue !important;
 }
@@ -91,7 +90,7 @@ html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
 :root.dark,
 :root .dark,
 :root.dark-mode,
-:root .dark-mode{
+:root .dark-mode {
   --text-link: #24d6bc !important;
   --color-links: #24d6bc !important;
   --green1: #24d6bc !important;
@@ -103,167 +102,174 @@ html[window-location*="marklar"i] a[aria-label="MDN homepage"]::before{
 }
 
 :root.dark-mode .hljs-quote,
-:root.dark-mode[window-location*="nodejs.org"i] a:link{
+:root.dark-mode[window-location*="nodejs.org" i] a:link {
   color: #24d6bc !important;
 }
 
-    html:not([window-location*="hostname=nodejs.org"]) .language-js *{
-      font-size:var(--type-smaller-font-size) !important;
-    }
-    html[user-agent*="ios"i]:not([window-location*="hostname=nodejs.org"]) .language-js *,
-    html[user-agent*="mobile"i]:not([window-location*="hostname=nodejs.org"]) .language-js *,
-    html[orientation="portrait"]:not([window-location*="hostname=nodejs.org"]) .language-js *,
-    html:not([window-location*="hostname=nodejs.org"]) .language-js[shrink-me="true"] *
-    {
-      font-size: 3vmin !important;
-    }
+html:not([window-location*="hostname=nodejs.org"]) .language-js * {
+  font-size: var(--type-smaller-font-size) !important;
+}
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code{
-        color:rgb(0,0,0);
-    }
-    
-    html[window-location*="hostname=nodejs.org"] [name="outer-div"]{
-      filter: invert(1) hue-rotate(180deg);
-    }
+html[user-agent*="ios" i]:not([window-location*="hostname=nodejs.org"]) .language-js *,
+html[user-agent*="mobile" i]:not([window-location*="hostname=nodejs.org"]) .language-js *,
+html[orientation="portrait"]:not([window-location*="hostname=nodejs.org"]) .language-js *,
+html:not([window-location*="hostname=nodejs.org"]) .language-js[shrink-me="true"] * {
+  font-size: 3vmin !important;
+}
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad),
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad),
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge,
-    .dark .highlighter-rouge{
-      filter: invert(1) hue-rotate(180deg);
-      background-color:rgb(200,200,225) !important;
-      color:rgb(0,0,0);
-    }
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .language-js{
-      background-color:rgb(200,200,225) !important;
-    }
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
+html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code {
+  color: rgb(0, 0, 0);
+}
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .example-header>.language-js,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .example-header>.language-js{
-      background-color:rgba(200,200,225,0) !important;
-    }
+html[window-location*="hostname=nodejs.org"] [name="outer-div"] {
+  filter: invert(1) hue-rotate(180deg);
+}
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .example-header>button.copy-icon,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .example-header>button.copy-icon{
-      position:absolute !important;
-      right:1vmax;
-    }
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad),
+html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad),
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .highlighter-rouge,
+.dark .highlighter-rouge {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: rgb(200, 200, 225) !important;
+  color: rgb(0, 0, 0);
+}
 
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code *
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code *,
-    html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js *,
-    html:not([window-location*="hostname=nodejs.org"]) .dark .language-js *{
-      text-shadow:
-        1px 1px 0 rgb(220,220,250),
-        -1px 1px 0 rgb(220,220,250),
-        -1px -1px 0 rgb(220,220,250),
-        1px -1px 0 rgb(220,220,250) !important;
-      
-      .token.punctuation{
-        color:blueviolet !important;
-      }
-      .token.template-punctuation{
-        color:brown !important;
-      }
-    }
-    .highlighter-rouge,
-    .highlighter-rouge>.highlight,
-    .highlighter-rouge>.highlight>.highlight{
-      border-radius:1vmin;
-    }
-    span.token.operator{
-      background-color:rgba(0,0,0,0) !important;
-    }
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js,
+html:not([window-location*="hostname=nodejs.org"]) .dark .language-js {
+  background-color: rgb(200, 200, 225) !important;
+}
 
-:root[darkish="true"]{
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .example-header>.language-js,
+html:not([window-location*="hostname=nodejs.org"]) .dark .example-header>.language-js {
+  background-color: rgba(200, 200, 225, 0) !important;
+}
+
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .example-header>button.copy-icon,
+html:not([window-location*="hostname=nodejs.org"]) .dark .example-header>button.copy-icon {
+  position: absolute !important;
+  right: 1vmax;
+}
+
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code,
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .code-example pre:not(.example-bad)>code * html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code,
+html:not([window-location*="hostname=nodejs.org"]) .dark .code-example pre:not(.example-bad)>code *,
+html:not([window-location*="hostname=nodejs.org"]) [darkish="true"] .language-js *,
+html:not([window-location*="hostname=nodejs.org"]) .dark .language-js * {
+  text-shadow:
+    1px 1px 0 rgb(220, 220, 250),
+    -1px 1px 0 rgb(220, 220, 250),
+    -1px -1px 0 rgb(220, 220, 250),
+    1px -1px 0 rgb(220, 220, 250) !important;
+
+  .token.punctuation {
+    color: blueviolet !important;
+  }
+
+  .token.template-punctuation {
+    color: brown !important;
+  }
+}
+
+.highlighter-rouge,
+.highlighter-rouge>.highlight,
+.highlighter-rouge>.highlight>.highlight {
+  border-radius: 1vmin;
+}
+
+span.token.operator {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+:root[darkish="true"] {
   --text-link: #24d6bc !important;
   --text-primary-green: #24d6bc !important;
 }
 
-:root [darkish="true"]{
+:root [darkish="true"] {
   --text-link: #24d6bc !important;
   --text-primary-green: #24d6bc !important;
 }
 
-.dark-mode .hljs-keyword{
+.dark-mode .hljs-keyword {
   color: rgb(255, 123, 114);
 }
 
-.dark-mode .hljs-title.function_{
+.dark-mode .hljs-title.function_ {
   color: rgb(210, 168, 255);
 }
 
-.dark-node .hljs-title.class_{
+.dark-node .hljs-title.class_ {
   color: rgb(255, 166, 87);
 }
 
-.dark-mode .hljs-function{
+.dark-mode .hljs-function {
   color: lemonchiffon;
 }
 
-.dark-mode .hljs-string{
+.dark-mode .hljs-string {
   color: rgb(165, 214, 255);
 }
 
-.dark-mode .hljs-number{
+.dark-mode .hljs-number {
   color: chartreuse;
 }
 
-.dark-mode .hljs-variable.language_{
+.dark-mode .hljs-variable.language_ {
   color: red;
 }
 
-.darkmode .hljs-built_in{
+.darkmode .hljs-built_in {
   color: green;
 }
 
-.dark-mode .hljs-params{
+.dark-mode .hljs-params {
   color: rgb(121, 192, 255);
 }
 
-.dark-mode .hljs-literal{
+.dark-mode .hljs-literal {
   color: cornflowerblue;
 }
 
-.dark-mode .hljs-property{
+.dark-mode .hljs-property {
   color: burlywood;
 }
 
-
 .dark-mode code,
-.dark-mode code *{
-  text-shadow: 1px 1px 0 rgb(0,0,0),
-        -1px 1px 0 rgb(0,0,0),
-        -1px -1px 0 rgb(0,0,0),
-        1px -1px 0 rgb(0,0,0);
+.dark-mode code * {
+  text-shadow: 1px 1px 0 rgb(0, 0, 0),
+    -1px 1px 0 rgb(0, 0, 0),
+    -1px -1px 0 rgb(0, 0, 0),
+    1px -1px 0 rgb(0, 0, 0);
 }
 
-html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-], 
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-],
 html[window-location*="hostname=nodejs.org"] pre[class*=language-] {
   background-color: cadetblue !important;
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
   color: blue;
-  border-radius:1vmax;
+  border-radius: 1vmax;
 }
-html[window-location*="hostname=nodejs.org"][user-agent*="mobile"i] :not(pre)>code[class*=language-], 
-html[window-location*="hostname=nodejs.org"][user-agent*="mobile"i] pre[class*=language-] {
-  border-radius:1vmin;
+
+html[window-location*="hostname=nodejs.org"][user-agent*="mobile" i] :not(pre)>code[class*=language-],
+html[window-location*="hostname=nodejs.org"][user-agent*="mobile" i] pre[class*=language-] {
+  border-radius: 1vmin;
 }
-html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] code, 
-html[window-location*="hostname=nodejs.org"] pre[class*=language-] code{
+
+html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] code,
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] code {
   color: aqua;
 }
-html[window-location*="hostname=nodejs.org"] pre[class*=language-] .token.parameter{
+
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] .token.parameter {
   color: chartreuse;
 }
+
 html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] .token.parameter {
   color: cornflowerblue;
 }
+
 html[window-location*="hostname=nodejs.org"] :not(pre)>code[class*=language-] *,
-html[window-location*="hostname=nodejs.org"] pre[class*=language-] *{
+html[window-location*="hostname=nodejs.org"] pre[class*=language-] * {
   text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0) !important;
 }
