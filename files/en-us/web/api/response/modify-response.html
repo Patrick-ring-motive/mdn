@@ -1,7 +1,7 @@
 <h3>Mutating the response</h3>
 <p>Response object fields are read only and immutable if sourced from a network request. Modifying them requires serializing the data and creating a new Response object</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>/**/get a response object using fetch
 let response = await fetch('https://example.com');
@@ -20,11 +20,11 @@ response = new Response(response.body,responseInit);
 
 /**/the response can now be modified
 response.headers.set('Content-Type','text/plain');</code></pre>
-</div>
+  </div>
 </div>
 <p>Here is a more concuse way of doing this using some advanced techniques.</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>/**/get a response object using fetch
 let response = await fetch('https://example.com');
@@ -35,5 +35,5 @@ response = new Response(response.body,response);
 
 /**/the response can now be modified
 response.headers.set('Content-Type','text/plain');</code></pre>
-</div>
+  </div>
 </div>
