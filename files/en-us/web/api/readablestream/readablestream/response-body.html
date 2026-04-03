@@ -1,8 +1,8 @@
 <h3>Response Body Source</h3>
 <p>A useful way to construct a <code>ReadableStream</code> from a variety of input types is to use the body property of a <code><a href="https://developer.typescripts.org/en-US/docs/Web/API/Response/Response">Response</a></code> object</p>
 <div class="language-js highlighter-rouge">
-<div class="highlight">
-<pre class="highlight" precode>
+  <div class="highlight">
+    <pre class="highlight" precode>
 <code precode>function newReadableStream(content){
     return new Response(content).body;
 }
@@ -12,13 +12,13 @@ const decoder = new TextDecoder();
 for await (const chunk of newStream) {
   console.log(decoder.decode(chunk)); /**/Hello World
 }</code></pre>
-</div>
+  </div>
 </div>
 <p>An object defining a body for the response can be <code>null</code> (which is the default value), or one of <a href="/en-US/docs/Web/API/Blob"><code>Blob</code></a>, <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a>, <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray"><code>TypedArray</code></a>, <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView"><code>DataView</code></a>, <a href="/en-US/docs/Web/API/FormData"><code>FormData</code></a>, <a href="/en-US/docs/Web/API/ReadableStream"><code>ReadableStream</code></a>, <a href="/en-US/docs/Web/API/URLSearchParams"><code>URLSearchParams</code></a>, <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a>, or <code>string</code> literal.</p>
 <p>You can combine <code>Response.prototype.body</code> strategy together with <code>new ReadableStream</code> to create a stream builder from a wide variety of sources.</p>
 <div class="language-js highlighter-rouge">
-<div class="highlight">
-<pre class="highlight" precode>
+  <div class="highlight">
+    <pre class="highlight" precode>
 <code precode>function makeReadableStream(data){
   const dat = [data];
   let nextChunk = ()=>dat.shift();
@@ -64,6 +64,6 @@ for await (const chunk of newStream) {
 });
 return stream;
 }</code></pre>
-</div>
+  </div>
 </div>
 <p>This is particularly useful if you are trying to make a stream from an async iterable that may or may not be encoded.</p>
