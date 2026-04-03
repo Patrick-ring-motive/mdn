@@ -1,37 +1,37 @@
 <h4>String To ArrayBuffer</h4>
 <p>
-    Here is a simple way to synchronously convert a <code>String</code> to an <code>ArrayBuffer</code>.
+  Here is a simple way to synchronously convert a <code>String</code> to an <code>ArrayBuffer</code>.
 </p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight"><code>const str = "Hello World!";
 const bytes = new TextEncoder().encode(str); // encode the string into an array of bytes
 const buffer = bytes.buffer; // retreive the ArrayBuffer representation </code></pre>
-</div>
+  </div>
 </div>
 <p>Bringing it all together</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight"><code>const stringToBuffer = str => new TextEncoder().encode(str).buffer;</code></pre>
-</div>
+  </div>
 </div>
 <h4>ArrayBuffer To String</h4>
 <p>
-    Here is the reverse operation to convert an <code>ArrayBuffer</code> a <code>String</code>.
+  Here is the reverse operation to convert an <code>ArrayBuffer</code> a <code>String</code>.
 </p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight"><code>const buffer = new ArrayBuffer(8)
 const bytes = new Uint8Array(buffer); // convert the ArrayBuffer to an array of bytes
 const str = new TextDecoder().decode(bytes); // decode the byte array to text</code></pre>
-</div>
+  </div>
 </div>
 <p>Bringing it all together</p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight"><code>const bufferToString = buffer => new TextDecoder().decode(new Uint8Array(buffer));</code></pre>
-</div>
+  </div>
 </div>
 <blockquote class="notecard note">
-    <strong>Note: </strong>Both <a href="https://developer.typescripts.org/en-US/docs/Web/API/TextEncoder/TextEncoder"><code>TextEncoder</code></a> and <a href="https://developer.typescripts.org/en-US/docs/Web/API/TextDecoder"><code>TextDecoder</code></a> use UTF-8 encoding by default. This ensures that characters from most languages and emoji are encoded and decoded correctly.
+  <strong>Note: </strong>Both <a href="https://developer.typescripts.org/en-US/docs/Web/API/TextEncoder/TextEncoder"><code>TextEncoder</code></a> and <a href="https://developer.typescripts.org/en-US/docs/Web/API/TextDecoder"><code>TextDecoder</code></a> use UTF-8 encoding by default. This ensures that characters from most languages and emoji are encoded and decoded correctly.
 </blockquote>
