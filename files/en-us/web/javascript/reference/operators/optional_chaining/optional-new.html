@@ -2,7 +2,7 @@
   To emulate using optional chaining with the <code>new</code> operator we can use this function <code>newQ</code>. Again I use 'Q' to signify the question mark from <code>?.</code>
 </p>
 <div class="language-js highlighter-rouge">
-    <div class="highlight">
+  <div class="highlight">
     <pre class="highlight" precode>
 <code precode>const newQ = (...args) => {
    const fn = args?.shift?.();
@@ -15,6 +15,6 @@ const entries = [["Content-Type","text/html"]];
 const headers = newQ(self.Headers,entries)
              ?? newQ(self.Map,entries)
              ?? entries.reduce((y, x) => ((y[x[0]] = x[1]), y), {}));</code></pre>
-</div>
+  </div>
 </div>
 <br>
