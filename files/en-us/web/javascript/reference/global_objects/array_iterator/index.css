@@ -1,7 +1,8 @@
-    .icon-experimental{
-      display:none !important;
-      visibility:hidden !important;
+    .icon-experimental {
+      display: none !important;
+      visibility: hidden !important;
     }
+
     section[aria-labelledby="description"],
     section[aria-labelledby="iterator_helpers"],
     section[aria-labelledby="proper_iterators"],
@@ -17,18 +18,20 @@
     li:has(a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from"]),
     a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/from"],
     li:has(a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"]),
-    a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"]
-    {
-        display:none !important;
-        visibility:hidden !important;
+    a[href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Iterator"] {
+      display: none !important;
+      visibility: hidden !important;
     }
-    div.section-content p{
-        margin:unset !important;
+
+    div.section-content p {
+      margin: unset !important;
     }
-    article.main-page-content>header>h1{
-        visibility:hidden;
+
+    article.main-page-content>header>h1 {
+      visibility: hidden;
     }
-    em:has(a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator"]){
-        background-color: rgba(0,0,0,0) !important;
-        border-color: rgba(0,0,0,0) !important;
+
+    em:has(a[href="https://developer.typescripts.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator"]) {
+      background-color: rgba(0, 0, 0, 0) !important;
+      border-color: rgba(0, 0, 0, 0) !important;
     }
